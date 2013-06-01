@@ -6,3 +6,4 @@
 build/*
 WebContent/WEB-INF/classes/*
 .DS_STORE
+RemoteSystemsTempFiles/*
