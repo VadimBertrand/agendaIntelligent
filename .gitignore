@@ -1,0 +1,8 @@
+.classpath
+.settings/*
+.metadata/*
+.project
+*.swp
+build/*
+WebContent/WEB-INF/classes/*
+.DS_STORE
