@@ -1,0 +1,5375 @@
+* commit 126230d270d75ccdf3453846126b36256693affa
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Nov 9 18:14:16 2012 +0100
+| 
+|     Bump kindleteool ebuild to 1.5.5
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    6 ++--
+|  .../dev-util/kindletool/kindletool-1.5.4.ebuild   |   33 -------------------
+|  .../dev-util/kindletool/kindletool-1.5.5.ebuild   |   33 +++++++++++++++++++
+|  gentoo/dev-util/kindletool/kindletool-9999.ebuild |    4 +--
+|  4 files changed, 38 insertions(+), 38 deletions(-)
+|  
+* commit 622576402e12fda124e079fd19c80356a9137217
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Nov 9 18:08:56 2012 +0100
+| 
+|     Bump kindletool portfile to 1.5.5
+| 
+|  ports/PortIndex                 |    2 +-
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 137cf6b3d8f928ba47c3a60857c4a0e7e5e6ce05
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Nov 9 18:07:38 2012 +0100
+| 
+|     Bump fallback version to 1.5.5
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/kindletool.1  |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  3 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 8e8a50a20d3f9df9d76ba37408b60a13ea88162b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Nov 8 22:48:54 2012 +0100
+| 
+|     Stoopid typo.
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit fb38fe63df29e05f42445c560d05a410dae9b861
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Nov 8 22:46:39 2012 +0100
+| 
+|     Only flag kernel images in recovery updates
+| 
+|  KindleTool/create.c      |   15 ++++++++-------
+|  KindleTool/kindle_tool.c |    1 -
+|  KindleTool/kindletool.1  |    6 +-----
+|  README.md                |    1 -
+|  4 files changed, 9 insertions(+), 14 deletions(-)
+|  
+* commit 18ca6c0de5fdfe8e0101f9c0e8890ed69798c0c7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Nov 8 22:40:12 2012 +0100
+| 
+|     Use the proper blocksize when building the bundlefile of recovery tarballs
+| 
+|  KindleTool/create.c      |   27 ++++++++++++++++++++++-----
+|  KindleTool/kindle_tool.h |    5 +++--
+|  2 files changed, 25 insertions(+), 7 deletions(-)
+|  
+* commit 8b0fae5f4d3989adca3ce5b2e589d954c58458c3
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Nov 8 21:37:55 2012 +0100
+| 
+|     Update doc
+| 
+|  KindleTool/create.c      |    2 +-
+|  KindleTool/kindle_tool.c |    8 ++++++--
+|  KindleTool/kindletool.1  |    4 ++--
+|  README.md                |    8 ++++++--
+|  4 files changed, 15 insertions(+), 7 deletions(-)
+|  
+* commit 6cedd53ce1f6876d0b213946d7f36e7f8961072a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Nov 8 21:27:10 2012 +0100
+| 
+|     Fix the recap for deviceless formats
+| 
+|  KindleTool/create.c |   38 ++++++++++++++++++++++++--------------
+|  1 file changed, 24 insertions(+), 14 deletions(-)
+|  
+* commit 87db79b393a8ded0c3b83c64fba2c63fba4ab258
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Nov 8 20:36:58 2012 +0100
+| 
+|     Fix the device count validation for deviceless formats
+| 
+|  KindleTool/convert.c |    6 +++++-
+|  KindleTool/create.c  |    5 ++---
+|  2 files changed, 7 insertions(+), 4 deletions(-)
+|  
+* commit 63da76efb61c24fc6a7742c1169fd0b117bf2816
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Nov 8 20:21:28 2012 +0100
+| 
+|     Potentially properly implement the platform stuff...
+| 
+|  KindleTool/convert.c     |    8 ++++----
+|  KindleTool/create.c      |   22 +++++++++++++++++-----
+|  KindleTool/kindle_tool.c |   14 ++++++++++----
+|  KindleTool/kindle_tool.h |   14 +++++++++-----
+|  4 files changed, 40 insertions(+), 18 deletions(-)
+|  
+* commit 35172f06f9c810a5f1c27251d6fda7184a5e4394
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Nov 7 23:32:18 2012 +0100
+| 
+|     Jot down a few things to fix tomorrow...
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit a12f07c7468239a8318c1523ca2ad2e963ac4f35
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Nov 7 22:55:30 2012 +0100
+| 
+|     WRONG! :D
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 5bfc0b1e4cc31ecfdd0ba4e8aabffca5d5bf07bd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Oct 31 13:30:10 2012 +0100
+| 
+|     Oops. Make directories searchable when we build a tarball ourselves...
+| 
+|  KindleTool/create.c |    6 ++++++
+|  1 file changed, 6 insertions(+)
+|  
+* commit 57947b4af28016b4a9aaf7ae2515e036a864662b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Oct 29 19:36:10 2012 +0100
+| 
+|     Mention the simple Linux buildscript in the doc
+| 
+|  COMPILING |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 06f9b3a87335c4851e785d68aada3222a54f9a4d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Oct 29 19:32:11 2012 +0100
+| 
+|     Better be safe than sorry ;).
+| 
+|  tools/simple-linux-static-build.sh |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 361ec2b3066c2db28274dfd0fa365e527dabaf74
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Oct 29 19:22:59 2012 +0100
+| 
+|     Nice typo.
+| 
+|  tools/simple-linux-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 0a7d056cbe7731677f90b08b438ed38c3dc7f192
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Oct 29 19:22:45 2012 +0100
+| 
+|     Use native arch in the simple build script ;).
+| 
+|  tools/simple-linux-static-build.sh |    9 ++-------
+|  1 file changed, 2 insertions(+), 7 deletions(-)
+|  
+* commit 1e90124764d456485f3d9b5d284fe992a619ad47
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Oct 29 19:18:54 2012 +0100
+| 
+|     Commit a slightly tweaked version of the buildscript for Linux users
+|     using a distribution that doesn't ship libarchive >= 3.0.3
+| 
+|  tools/simple-linux-static-build.sh |  100 ++++++++++++++++++++++++++++++++++
+|  1 file changed, 100 insertions(+)
+|  
+* commit ed86f436f2e1b2beca7f173e8bfaf2f2faff22da
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Oct 29 18:33:06 2012 +0100
+| 
+|     Add device aliases for the whole model list for the K4, the Touch, and the PaperWhite
+| 
+|  KindleTool/create.c      |   52 ++++++++++++++++++++++++++++++++++++++++++++
+|  KindleTool/kindle_tool.c |    4 ++++
+|  KindleTool/kindletool.1  |    4 ++--
+|  README.md                |    4 ++++
+|  4 files changed, 62 insertions(+), 2 deletions(-)
+|  
+* commit ae83167e6a65d5b7f31c0ea763947d3dad5cd335
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 27 18:02:13 2012 +0200
+| 
+|     Bump kindleteool ebuild to 1.5.4
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    4 +--
+|  .../dev-util/kindletool/kindletool-1.5.3.ebuild   |   33 -------------------
+|  .../dev-util/kindletool/kindletool-1.5.4.ebuild   |   33 +++++++++++++++++++
+|  3 files changed, 35 insertions(+), 35 deletions(-)
+|  
+* commit 303fe4b2f98cb8436142501acff075ac8f14dacf
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 27 00:46:59 2012 +0200
+| 
+|     Bump kindletool portfile to 1.5.4
+| 
+|  ports/PortIndex                 |    2 +-
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 78988100243f235fd1f9806a8f03084f9b109031
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 27 00:46:02 2012 +0200
+| 
+|     Bump fallback version to 1.5.4
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit e79ae7348eac67fb92108eab803fd5e6eb6f4120
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Oct 25 23:44:05 2012 +0200
+| 
+|     Let the datamining dwarves out to play in debug builds...
+| 
+|  KindleTool/Makefile      |    4 ++++
+|  KindleTool/create.c      |   18 ++++++++++++++++++
+|  KindleTool/kindle_tool.c |   14 ++++++++++++++
+|  KindleTool/kindle_tool.h |   16 ++++++++--------
+|  4 files changed, 44 insertions(+), 8 deletions(-)
+|  
+* commit 84494452ab74f9d19eeb5c6b0d6c0d29a1f2df3a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Oct 25 20:17:55 2012 +0200
+| 
+|     Add support for the UK PaperWhite 3G
+| 
+|  KindleTool/create.c      |    5 +++++
+|  KindleTool/kindle_tool.c |    5 ++++-
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/kindletool.1  |    2 +-
+|  README.md                |    3 ++-
+|  5 files changed, 13 insertions(+), 4 deletions(-)
+|  
+* commit 187735cbd760afd1d107dc11a6bd24c352e2f89f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Oct 25 19:07:50 2012 +0200
+| 
+|     Fix MarkDown => PlainText regex mess for the latest README changes...
+| 
+|  tools/kindletool-static-build.sh      |    8 ++++----
+|  tools/mingw/kindletool-mingw-build.sh |    2 +-
+|  2 files changed, 5 insertions(+), 5 deletions(-)
+|  
+* commit 8c3207a066d9c127c0cdaea8419762846ddbf4ae
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Oct 25 18:59:47 2012 +0200
+| 
+|     Workaround for broken/finicky markdown parser (I'm looking at you github [since, like, a week])...
+| 
+|  README.md |   12 ++++++------
+|  1 file changed, 6 insertions(+), 6 deletions(-)
+|  
+* commit 66c97fc87fe0160306237f3e62f9b7fc2c54bb7b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 17:39:55 2012 +0200
+| 
+|     Slightly more accurate comment when it's in the right place ;)
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit d670a6e5301e9358cbc412c8f0dc84d0b1a6b30d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 17:13:18 2012 +0200
+| 
+|     Update doc
+| 
+|  KindleTool/kindle_tool.c |    1 +
+|  KindleTool/kindletool.1  |    3 +++
+|  README.md                |    1 +
+|  3 files changed, 5 insertions(+)
+|  
+* commit 2a1492f2a241b122fb37a3ca501c182d3f824714
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 17:05:57 2012 +0200
+| 
+|     Don't create a bogus, empty tar.gz when we only want to unwrap a package
+| 
+|  KindleTool/convert.c |    8 +++-----
+|  1 file changed, 3 insertions(+), 5 deletions(-)
+|  
+* commit 066fddbe668026aadebcc8338ef605b913d204b9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 17:00:16 2012 +0200
+| 
+|     Don't try to unwrap packages without an UpdateSignature header
+| 
+|  KindleTool/convert.c |   48 ++++++++++++++++++++++++++++++++++++++++--------
+|  1 file changed, 40 insertions(+), 8 deletions(-)
+|  
+* commit d46421c09333afc1c9d8446d2b463535e21ded8a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 16:53:41 2012 +0200
+| 
+|     Fix stupid typo
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 6215aa45f3258ec54b02080edfd63481b983fcf4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 16:52:03 2012 +0200
+| 
+|     Add a convert switch to unwrap packages (bascially strip the SP01 wrapping)
+| 
+|  KindleTool/convert.c     |   86 +++++++++++++++++++++++++++++++++++++++-----
+|  KindleTool/kindle_tool.h |    2 +-
+|  2 files changed, 79 insertions(+), 9 deletions(-)
+|  
+* commit 3ceced1a6da064acb17a5910154999256762ae2d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 16:22:19 2012 +0200
+| 
+|     Fix usage of a deprecated libarchive API call
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 921440eb04ae3cd02e18cb7a5d7e19f2be508cb5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 21 16:20:30 2012 +0200
+| 
+|     Wrap recovery_v2 updates in a signed package...
+| 
+|  KindleTool/create.c |   89 +++++++++++++++++++++++++++++++++++++++++++++++--
+|  1 file changed, 86 insertions(+), 3 deletions(-)
+|  
+* commit 7e2f266b8bc73baf0f3e962a9eee09b9f0c9b1dc
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 20 20:26:16 2012 +0200
+| 
+|     Add a note about some packages needing wrapping before I forget...
+| 
+|  KindleTool/create.c |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 375c427f0680e7fa99d377d06f468c2068625f62
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 23:40:09 2012 +0200
+| 
+|     Bump kindletool ebuild to 1.5.3
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    4 +--
+|  .../dev-util/kindletool/kindletool-1.5.1.ebuild   |   33 -------------------
+|  .../dev-util/kindletool/kindletool-1.5.3.ebuild   |   33 +++++++++++++++++++
+|  3 files changed, 35 insertions(+), 35 deletions(-)
+|  
+* commit 06e4aebd9fd971723aea3533929def0482883d72
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 23:37:51 2012 +0200
+| 
+|     Bump kindletool portfile to 1.5.3
+| 
+|  ports/PortIndex                 |    2 +-
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit fd5d1388e2a3a1695753023a4c276cf31e447396
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 23:36:13 2012 +0200
+| 
+|     Bump fallback version to 1.5.3
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit b92a2b3942b5b5cd70204646947781b53dee279f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 19:27:08 2012 +0200
+| 
+|     Use pw instead of kpw as the base shortname for the PaperWhite, to be consistent with the DX (handle both silently to avoid breaking existing buildscripts)
+| 
+|  KindleTool/create.c      |    4 ++--
+|  KindleTool/kindle_tool.c |    4 ++--
+|  KindleTool/kindletool.1  |    2 +-
+|  README.md                |    4 ++--
+|  4 files changed, 7 insertions(+), 7 deletions(-)
+|  
+* commit 16ae48e2db25f72479cbb7cf1626dc8d569dd980
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 05:36:19 2012 +0200
+| 
+|     Thou shall not suffer a typo to live!
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit c366c3e08f3b8115e9a8d2e423e1458a5386e462
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 01:38:24 2012 +0200
+| 
+|     Mixed up luigi & yoshi... (mario => luigi => shasta => yoshi)
+| 
+|  KindleTool/kindle_tool.c |    4 ++--
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/kindletool.1  |    2 +-
+|  README.md                |    4 ++--
+|  4 files changed, 6 insertions(+), 6 deletions(-)
+|  
+* commit 2e745bf7fbe1204872778a5691508b859c38d88f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 01:14:23 2012 +0200
+| 
+|     Oops, fix the extra LF that slipped through ;).
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 9033f13fdd9295e0d2fafe0734223daab21d6848
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 01:12:18 2012 +0200
+| 
+|     Fix docs & recap: Recovery V2 uses tgtrev
+| 
+|  KindleTool/create.c      |   12 ++++++++++--
+|  KindleTool/kindle_tool.c |    8 ++++----
+|  KindleTool/kindletool.1  |    6 +++---
+|  README.md                |   10 +++++-----
+|  4 files changed, 22 insertions(+), 14 deletions(-)
+|  
+* commit 5f3b40f93efa38b17b3def83151d2355dd01f6c9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 00:58:26 2012 +0200
+| 
+|     Moar comments!
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 5557d480ab50d3ed91eb03766cf7589aa6fbaa85
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 00:54:41 2012 +0200
+| 
+|     A fixed-length printf also solves valgrind's warning, but I kinda like the zero init anyway ;).
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 85df2a7ca717587bb5c0acfa3ed7e9ca63b2658b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 00:48:24 2012 +0200
+| 
+|     Explain the valgrind warning
+| 
+|  KindleTool/convert.c |    6 +++++-
+|  1 file changed, 5 insertions(+), 1 deletion(-)
+|  
+* commit cc6bb2fbd38463d39a4aefb3551413743ef0c3ce
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 00:38:24 2012 +0200
+| 
+|     Stupid workaround for valgrind whining about our potentially uninitliazed header.magic_number printf...
+| 
+|  KindleTool/convert.c |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit a71d466a6dd66c08a611beaba250d0f5ae52ad4a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 00:30:46 2012 +0200
+| 
+|     Simplify FB02 v2 creation
+| 
+|  KindleTool/create.c |   19 +++++--------------
+|  1 file changed, 5 insertions(+), 14 deletions(-)
+|  
+* commit 6bf42104387b26575e210bf361dd4e81f2a7225e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 00:20:39 2012 +0200
+| 
+|     Workaround some minor quirky clang's sca warnings
+| 
+|  KindleTool/convert.c |    5 +++--
+|  1 file changed, 3 insertions(+), 2 deletions(-)
+|  
+* commit be779196702fb0492579a0b30c71a87eb21af53d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Oct 7 00:13:46 2012 +0200
+| 
+|     Fix some clang warnings
+| 
+|  KindleTool/convert.c |    2 +-
+|  KindleTool/create.c  |    2 ++
+|  2 files changed, 3 insertions(+), 1 deletion(-)
+|  
+* commit 47651ed0a4a9c31a1d9f5fb366cea27af3d35c15
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 22:50:16 2012 +0200
+| 
+|     More manpage formatting tweaks
+| 
+|  KindleTool/kindletool.1 |   36 ++++++++++++++++++------------------
+|  1 file changed, 18 insertions(+), 18 deletions(-)
+|  
+* commit 1c2c087e5b80db9d693a14ba3d4a77a8e7109523
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 22:47:33 2012 +0200
+| 
+|     Tweak manpage formatting a bit
+| 
+|  KindleTool/kindletool.1 |   27 ++++++++++++++++++---------
+|  1 file changed, 18 insertions(+), 9 deletions(-)
+|  
+* commit 2771d6d722272511ac1a41d0454525094f9b2029
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 22:43:53 2012 +0200
+| 
+|     Update docs
+| 
+|  KindleTool/kindle_tool.c |   14 ++++++++++++--
+|  KindleTool/kindletool.1  |   32 ++++++++++++++++++++++++++++----
+|  README.md                |   14 ++++++++++++--
+|  3 files changed, 52 insertions(+), 8 deletions(-)
+|  
+* commit 8d105ad09dc8e7faf2247bce99f44924ec7e8324
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 21:36:46 2012 +0200
+| 
+|     Minor feedback formatting tweaks
+| 
+|  KindleTool/convert.c |    4 ++--
+|  KindleTool/create.c  |    4 ++--
+|  2 files changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit dc4a89151b9ad26a9bce7affdc455aa093b393f7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 21:18:35 2012 +0200
+| 
+|     Handle recovery v2 in convert
+| 
+|  KindleTool/convert.c     |   93 ++++++++++++++++++++++++++++++++++++++++++++
+|  KindleTool/kindle_tool.h |    7 ++--
+|  2 files changed, 97 insertions(+), 3 deletions(-)
+|  
+* commit 2bcb032266c5f42584e1d0cea670eb90976363a4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 20:41:30 2012 +0200
+| 
+|     Support recovery2 FB03 update (create)
+| 
+|  KindleTool/create.c      |  108 ++++++++++++++++++++++++++++++++++++++++++--
+|  KindleTool/kindle_tool.h |    2 +-
+|  2 files changed, 105 insertions(+), 5 deletions(-)
+|  
+* commit fb4fc76168005f790cf04466d908837b0efa69cf
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 18:49:21 2012 +0200
+| 
+|     Some more user input validation for recovery v2...
+| 
+|  KindleTool/create.c |   22 ++++++++++++++++++++++
+|  1 file changed, 22 insertions(+)
+|  
+* commit 5fe37e8703873cf1db53171b6ad005266a520e66
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 03:55:13 2012 +0200
+| 
+|     Support recovery FB02 V2 in convert
+| 
+|  KindleTool/convert.c     |   13 ++++++++++++-
+|  KindleTool/create.c      |   12 ++++++------
+|  KindleTool/kindle_tool.h |    4 ++--
+|  3 files changed, 20 insertions(+), 9 deletions(-)
+|  
+* commit ad843695f263989f589096f9f718e11867013f3f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 03:46:22 2012 +0200
+| 
+|     Unbreak non V2 recovery updates
+| 
+|  KindleTool/create.c      |   26 ++++++++++++++++++--------
+|  KindleTool/kindle_tool.h |   15 +++++++++++++--
+|  2 files changed, 31 insertions(+), 10 deletions(-)
+|  
+* commit 6835fb254ae31c249c016d3841f46894a9e5155d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 03:19:50 2012 +0200
+| 
+|     Handle FBO2 recovery with v2 header (broken legacy FB02 right now).
+| 
+|  KindleTool/create.c      |   55 ++++++++++++++++++++++++++++++++++++++++----
+|  KindleTool/kindle_tool.h |    3 +--
+|  2 files changed, 52 insertions(+), 6 deletions(-)
+|  
+* commit 4b354d8482b3aca53f1509f81539644ea94aa29b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 02:54:08 2012 +0200
+| 
+|     More stuff for recovery v2... The platform stuff is a complete shot in the dark.
+| 
+|  KindleTool/create.c      |    2 +-
+|  KindleTool/kindle_tool.c |   16 ++++++++++++++++
+|  KindleTool/kindle_tool.h |   17 +++++++++++++++--
+|  3 files changed, 32 insertions(+), 3 deletions(-)
+|  
+* commit 283c10405575ee428d1714292532a8ead4ef024a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 02:12:11 2012 +0200
+| 
+|     Add some valid unknown device ids, courtesy of our friends the 7 data mining dwarves.
+| 
+|  KindleTool/kindle_tool.h |    9 +++++++++
+|  1 file changed, 9 insertions(+)
+|  
+* commit ea86956c69f953a0fefb1f70e5ac7114c45ff4df
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Oct 6 02:02:16 2012 +0200
+| 
+|     Start working on recovery V2 updates...
+| 
+|  KindleTool/kindle_tool.c |    4 ++++
+|  KindleTool/kindle_tool.h |    3 +++
+|  2 files changed, 7 insertions(+)
+|  
+* commit 99876332db179a1298be92a8a570bd465fdca076
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Oct 5 05:39:36 2012 +0200
+| 
+|     Bump fallback version to 1.5.2
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/kindletool.1  |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  3 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 5f83cbf63e5cc17e0a06e57ea35a9576d5a49d0f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Oct 3 13:52:40 2012 +0200
+| 
+|     Eh, forgot this for PW support.
+| 
+|  KindleTool/kindle_tool.c |    4 ++++
+|  1 file changed, 4 insertions(+)
+|  
+* commit f947aadace5fe035ee15328676c0a792deb0a192
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Oct 2 21:06:51 2012 +0200
+| 
+|     And a quick comment about magic numbers before I forget...
+| 
+|  KindleTool/create.c |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 1961599458f60ef5215730a7da5a477d5e8af5dc
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Oct 2 21:04:43 2012 +0200
+| 
+|     Plug PW device codes (untested)
+| 
+|  KindleTool/create.c      |   10 ++++++++++
+|  KindleTool/kindle_tool.c |    2 ++
+|  KindleTool/kindle_tool.h |    6 ++----
+|  KindleTool/kindletool.1  |    2 +-
+|  README.md                |    2 ++
+|  5 files changed, 17 insertions(+), 5 deletions(-)
+|  
+* commit f1a7216b0b905eff1fd1972c9cb06341586e9dc5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Oct 2 03:49:52 2012 +0200
+| 
+|     Update PW device codes
+| 
+|  KindleTool/kindle_tool.h |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 1618016ee3f2c21c348e2e183d6177941b4ab5f7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 24 03:51:52 2012 +0200
+| 
+|     Bump kindletool ebuild to 1.5.1
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    4 +--
+|  .../dev-util/kindletool/kindletool-1.5.0.ebuild   |   33 -------------------
+|  .../dev-util/kindletool/kindletool-1.5.1.ebuild   |   33 +++++++++++++++++++
+|  3 files changed, 35 insertions(+), 35 deletions(-)
+|  
+* commit 4259a05aeb5791316d6286ffb98e0f9285f6ecf8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 24 03:49:15 2012 +0200
+| 
+|     Bump kindletool portfile to 1.5.1
+| 
+|  ports/PortIndex                 |    2 +-
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit ab2b7a3e6ff00159c70b7b7255a668f9524ed139
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 24 03:47:57 2012 +0200
+| 
+|     Bump fallback version to 1.5.1 :)
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/kindletool.1  |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  3 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit d6f1266629c71c5467feea583f5708cd1858e89b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Sep 13 21:42:20 2012 +0200
+| 
+|     Moar comments!
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 09bfd193d62bc75932d03ff09d56c227275db1af
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Sep 13 20:42:35 2012 +0200
+| 
+|     Add the 0x hex prefix to the padding byte prints, to be less confusing
+| 
+|  KindleTool/convert.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit cffaeb7cf54961c032836c96932f3e9d29793d0b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Sep 13 20:41:17 2012 +0200
+| 
+|     Print the padding byte in OTA V1 updates too
+| 
+|  KindleTool/convert.c |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 68184cdac2620f53c6b035b8c5986fb513b4d7d0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Sep 12 03:56:35 2012 +0200
+| 
+|     The K4 2k12 info seems solid, plug it :).
+| 
+|  KindleTool/create.c      |    5 +++++
+|  KindleTool/kindle_tool.c |    7 +++++--
+|  KindleTool/kindletool.1  |    2 +-
+|  README.md                |    3 ++-
+|  4 files changed, 13 insertions(+), 4 deletions(-)
+|  
+* commit 7334a5f5368642052a9194fb53b2ecf34a8df670
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Sep 12 03:50:28 2012 +0200
+| 
+|     K4 2K12 device code (this one should be accurate)
+| 
+|  KindleTool/kindle_tool.h |    3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|  
+* commit fccd6d4589caa4516d18fdd311921734cef205f0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Sep 7 22:19:49 2012 +0200
+| 
+|     More PW warnings/comments
+| 
+|  KindleTool/kindle_tool.h |    2 ++
+|  1 file changed, 2 insertions(+)
+|  
+* commit 7e979eb39796c59426233411d7efd853cb02568e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Sep 7 22:11:26 2012 +0200
+| 
+|     Semi-blind guess on some of the new Kindles device code...
+| 
+|  KindleTool/kindle_tool.h |    2 ++
+|  1 file changed, 2 insertions(+)
+|  
+* commit b2475fa2f57ab5c0654dd2bd91779c557b615ae5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Sep 5 15:37:48 2012 +0200
+| 
+|     Typo
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 194c2e9603df1b674235ae0332a84037315c31dd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Sep 5 15:36:23 2012 +0200
+| 
+|     A few more comments about the acl/xattr ._* files on OS X...
+| 
+|  KindleTool/create.c |    4 +++-
+|  1 file changed, 3 insertions(+), 1 deletion(-)
+|  
+* commit ef1d351a70c1c3931e695dd12ce739a7eb02b3a4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Sep 4 23:06:44 2012 +0200
+| 
+|     Fix zipball filename on OS X 10.8 :?
+| 
+|  tools/kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 5b5c925c2b3cf454a95b9b09aa7d770e1721c449
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Sep 4 20:06:51 2012 +0200
+| 
+|     Bump kindletool ebuild to 1.5.0
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    4 +--
+|  .../dev-util/kindletool/kindletool-1.4.1.ebuild   |   33 -------------------
+|  .../dev-util/kindletool/kindletool-1.5.0.ebuild   |   33 +++++++++++++++++++
+|  3 files changed, 35 insertions(+), 35 deletions(-)
+|  
+* commit b4692398a122ce0a2d99291e2588f515f2da971c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Sep 4 20:04:14 2012 +0200
+| 
+|     Bump kindletool portfile to 1.5.0
+| 
+|  ports/PortIndex                 |    2 +-
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 6e31aeb21587fca20130ed1faf5ad5db3ab8b5ca
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Sep 4 15:06:53 2012 +0200
+| 
+|     Oops, remembered why I was doing that...
+| 
+|  tools/kindletool-static-build.sh      |   24 ++++++++++++------------
+|  tools/mingw/kindletool-mingw-build.sh |    6 +++---
+|  2 files changed, 15 insertions(+), 15 deletions(-)
+|  
+* commit 4a18d609e0cda634474892efc0ade31af147ad9b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Sep 4 15:03:11 2012 +0200
+| 
+|     Tweak strip's args (leave OS X at default autodetect, I'm not familiar enough with Mach-O to try to tweak it further...)
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 869c66450f0309cbe256f8469b8fba1ec6e98e2d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 23:24:42 2012 +0200
+| 
+|     Use a slightly less obscure variable name for the pointer arithmetics of the legacy mode
+| 
+|  KindleTool/create.c      |   18 ++++++++++--------
+|  KindleTool/kindle_tool.h |    2 +-
+|  2 files changed, 11 insertions(+), 9 deletions(-)
+|  
+* commit 5c2a239d7873d752ff1d868fdc367c0b13c156df
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 22:34:36 2012 +0200
+| 
+|     Tweak the versionning scheme a bit
+| 
+|  KindleTool/version.sh |    2 ++
+|  1 file changed, 2 insertions(+)
+|  
+* commit 06efd62c60038c3dfb00699b895d5ca19319417f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 22:33:09 2012 +0200
+| 
+|     Fix the static package names now that we're using a classic git describe versionning scheme...
+| 
+|  tools/kindletool-static-build.sh      |   16 ++++++++++++----
+|  tools/mingw/kindletool-mingw-build.sh |    4 +++-
+|  2 files changed, 15 insertions(+), 5 deletions(-)
+|  
+* commit 3ed520c1c946ef16f42b3360839b18244b090faf
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 22:12:52 2012 +0200
+| 
+|     Tweak a few comments
+| 
+|  KindleTool/create.c |    6 +++---
+|  1 file changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 4449bfd7ce60265d476950d261f365ffc7484a96
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 22:07:02 2012 +0200
+| 
+|     Revamp the legacy mode handling to avoid code duplication
+| 
+|  KindleTool/create.c      |  104 ++++++++++++++++++--------------------------
+|  KindleTool/kindle_tool.h |    2 +-
+|  2 files changed, 43 insertions(+), 63 deletions(-)
+|  
+* commit 5c9c65a8b6c58dabddd6325192926bdc8dddbbcf
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 21:46:51 2012 +0200
+| 
+|     Use a more classic git describe versionning scheme now that we have something stable, and regular tags
+| 
+|  KindleTool/version.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 61f8370b3048db90aea25f48569d4e39a0baef14
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 21:44:38 2012 +0200
+| 
+|     Less is more!
+| 
+|  KindleTool/create.c |   13 +++----------
+|  1 file changed, 3 insertions(+), 10 deletions(-)
+|  
+* commit 9f52d60cd14eaa829c9317fffea750a4224036fb
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 18:40:04 2012 +0200
+| 
+|     AStyle!
+| 
+|  KindleTool/create.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit bf8a7a3a2ce205bd8a84b93cb900684fd0a06690
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 18:37:49 2012 +0200
+| 
+|     Tweak a comment
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit b2a6e7f789897faa4cdf6564a64ed216b95a1bd7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 18:31:23 2012 +0200
+| 
+|     Kill debug
+| 
+|  KindleTool/create.c |    2 --
+|  1 file changed, 2 deletions(-)
+|  
+* commit 51ac5e9a945ec6470e1d76f3a0a641452794fd3f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 18:26:41 2012 +0200
+| 
+|     Rework the out-of-bound read fix in a way more in line with the rest of the code
+| 
+|  KindleTool/create.c |   35 +++++++++++++++++++++--------------
+|  1 file changed, 21 insertions(+), 14 deletions(-)
+|  
+* commit 5e00949616affd8f432c84027071413b8e7e92b4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 17:31:42 2012 +0200
+| 
+|     Bump fallback version to 1.5.0 :)
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit f62bacd33b5c817f7ba1a60c8dcfd83f5b2945b6
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 17:29:25 2012 +0200
+| 
+|     Store legacy mode tweaked paths in the bundlefile, too
+| 
+|  KindleTool/create.c |   23 ++++++++++++++++++++++-
+|  1 file changed, 22 insertions(+), 1 deletion(-)
+|  
+* commit ef26d2b904521546f63688f1774180a2fddbbea4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 16:55:28 2012 +0200
+| 
+|     More typo in comments...
+| 
+|  KindleTool/create.c |    7 ++++---
+|  1 file changed, 4 insertions(+), 3 deletions(-)
+|  
+* commit 30c6fbd0c9a55a31e09313bdc7aa06cb92fa258e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 16:48:18 2012 +0200
+| 
+|     Fix a typo in a comment
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit b5bfc9ed4d6a0c26cf1217061948cf99b4f8afb9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 16:46:04 2012 +0200
+| 
+|     Yep, fixed MinGW ;)
+| 
+|  KindleTool/create.c |    3 +--
+|  1 file changed, 1 insertion(+), 2 deletions(-)
+|  
+* commit afa0afaba9581af7bc6b9a276ec0a4477543d865
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 16:40:56 2012 +0200
+| 
+|     Kill debug
+| 
+|  KindleTool/create.c |    2 --
+|  1 file changed, 2 deletions(-)
+|  
+* commit 55bb1f070e39f60c0eea6c2985f2435a668415af
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 16:40:26 2012 +0200
+| 
+|     Fix an out-of-bound read... (Hopefully fixes the segfault on MinGW...)
+| 
+|  KindleTool/create.c |    6 +++++-
+|  1 file changed, 5 insertions(+), 1 deletion(-)
+|  
+* commit 7374cc93a1043a784701639da059dd0b5efc842f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 16:13:01 2012 +0200
+| 
+|     Fix a few stupid memory snafus... (yay, valgrind!)
+| 
+|  KindleTool/create.c |   18 +++++-------------
+|  1 file changed, 5 insertions(+), 13 deletions(-)
+|  
+* commit 4f20cb2d5af75fa2ef9d1570542f1bc0c0178a96
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 15:57:39 2012 +0200
+| 
+|     Actually plug the legacy switch ;)
+| 
+|  KindleTool/create.c      |   38 +++++++++++++++++++++++++-------------
+|  KindleTool/kindle_tool.c |    5 ++++-
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/kindletool.1  |    9 ++++++++-
+|  README.md                |    5 ++++-
+|  5 files changed, 42 insertions(+), 17 deletions(-)
+|  
+* commit 5affce2135a2ecb5edf69a804d99df1f685ebf22
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 15:37:41 2012 +0200
+| 
+|     Print what were stripping in legacy mode, using the same kind of output than GNU tar
+| 
+|  KindleTool/create.c |   17 +++++++++++------
+|  1 file changed, 11 insertions(+), 6 deletions(-)
+|  
+* commit 8feeb661fe2ce2d91e02cab194461d38a3b9f574
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 15:28:40 2012 +0200
+| 
+|     Handle trailing path separators properly when tweaking the entry pathnames in legacy mode
+| 
+|  KindleTool/create.c |   57 ++++++++++++++++++++++---------------------------
+|  1 file changed, 25 insertions(+), 32 deletions(-)
+|  
+* commit f1660788927fcf2d374bae4dfa1e2ff9d4c310ef
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Sep 3 15:14:50 2012 +0200
+| 
+|     First part of the legacy/-C chdir like create handling
+| 
+|  KindleTool/create.c      |   82 +++++++++++++++++++++++++++++++++++++++++++-
+|  KindleTool/kindle_tool.h |    3 +-
+|  2 files changed, 83 insertions(+), 2 deletions(-)
+|  
+* commit 750af267f023ce6e768a2a001fe2c9e989cc655b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Sep 2 23:29:00 2012 +0200
+| 
+|     More valgrind comments
+| 
+|  KindleTool/Makefile |    3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|  
+* commit f5e3aec48fe6a13df5717b2e8f8f638e5de10119
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Sep 2 23:24:05 2012 +0200
+| 
+|     Don't try to free potentially uninitalized stuff (thanks, GCC!)
+| 
+|  KindleTool/kindle_tool.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 3873d22079a38a2844f0332348b02590427fe6de
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Sep 2 23:20:59 2012 +0200
+| 
+|     Write down some comments about running under valgrind somewhere before I forget ;)
+| 
+|  KindleTool/Makefile |    5 +++++
+|  1 file changed, 5 insertions(+)
+|  
+* commit 77bcaf0118b663f2018c4bf5c084caf714007473
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Sep 2 23:06:35 2012 +0200
+| 
+|     More OpenSSL/valgrind fixes
+| 
+|  KindleTool/create.c      |    9 ++++++---
+|  KindleTool/kindle_tool.c |    2 +-
+|  2 files changed, 7 insertions(+), 4 deletions(-)
+|  
+* commit f71cd8ef433d44cdd423402e3186c40d494c686a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Sep 2 22:32:15 2012 +0200
+| 
+|     Fix a few OpenSSL related memleaks (found via Valgrind)
+| 
+|  KindleTool/create.c      |    5 +++++
+|  KindleTool/kindle_tool.c |    2 ++
+|  2 files changed, 7 insertions(+)
+|  
+* commit c799d21430001f70d2969e338373879f6e1bf6ed
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 22 20:07:27 2012 +0200
+| 
+|     Wee, finally ended up saving ~200KB on the MinGW builds...
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 995155e9f64c78464269fa853ed2a86550fbafd7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 22 19:58:30 2012 +0200
+| 
+|     ... NOT kissing
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 031f34ba37c40e3de6a3e7ed2a81edb89927079f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 22 19:53:43 2012 +0200
+| 
+|     OpenSSL & MinGW, sitting in a tree...
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit d84c3a10c2e6906d6a5428b272d3fef87b802eb7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 22 19:49:38 2012 +0200
+| 
+|     More OpenSSL/MinGW hatefest...
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 39bfdf705fa3cebe17dd2d8cc50c07d2ca78cf27
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 22 19:46:05 2012 +0200
+| 
+|     More MinGW + OpenSSL fun times...
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 75db3207c42f8d8111be851e694c5e4817819f1a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 22 19:39:37 2012 +0200
+| 
+|     Fix MinGW OpenSSL build...
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|  
+* commit faace4dfdffdc1f9a4cbea57bea97aa33d61f7e3
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 22 19:34:07 2012 +0200
+| 
+|     Try for a smaller MinGW binary by tweaking the OpenSSL build... Didn't save much, and 'twas somewhat painful...
+| 
+|  tools/kindletool-static-build.sh      |    6 +++---
+|  tools/mingw/kindletool-mingw-build.sh |    8 ++++++--
+|  2 files changed, 9 insertions(+), 5 deletions(-)
+|  
+* commit 77b694460dd26b6c258dbd00291f4b3a6fc6e73f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 15 19:05:19 2012 +0200
+| 
+|     Be a bit more verbose when we exit because no command was specified.
+| 
+|  KindleTool/kindle_tool.c |    3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|  
+* commit d0d998a97f5af25e7e5bf0f4f610fab8d6369bc2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 15 19:02:48 2012 +0200
+| 
+|     Catch more ways to trigger the help command, and exit with a non-zero return code when encountering an unknown command
+| 
+|  KindleTool/kindle_tool.c |    6 +++++-
+|  1 file changed, 5 insertions(+), 1 deletion(-)
+|  
+* commit 2a92afa6650bdef98772b14a808e09a2a7a3cbe7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Aug 15 05:44:55 2012 +0200
+| 
+|     Update MinGW TC URL
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 115300f58660019f0f6d208f95ff225184b555b1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Aug 14 21:57:11 2012 +0200
+| 
+|     Awesomest commit EVAR!
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit f4fab5a02072306bdcadaf5c0c374c970fd1b81a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Aug 13 20:47:53 2012 +0200
+| 
+|     Bump gentoo ebuild to 1.4.1
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    6 ++--
+|  .../dev-util/kindletool/kindletool-1.3.1.ebuild   |   33 -------------------
+|  .../dev-util/kindletool/kindletool-1.4.1.ebuild   |   33 +++++++++++++++++++
+|  3 files changed, 36 insertions(+), 36 deletions(-)
+|  
+* commit 7c2a81127c2e9c9c7813caf49141915c2e6aa9a2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Aug 13 20:44:30 2012 +0200
+| 
+|     Update MR thread URL ;)
+| 
+|  COMPILING |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 78b9d74fd07e3e20b19197084f8faf876e02cf6f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Aug 13 17:33:01 2012 +0200
+| 
+|     Bump kindletool portfile to 1.4.1
+| 
+|  ports/PortIndex                 |    2 +-
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 069ef2396463b31e4be1297e357f60b4b05ef1ad
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Aug 6 18:43:03 2012 +0200
+| 
+|     Oops, fix manpage...
+| 
+|  KindleTool/kindletool.1 |   52 ++++++++++++++++++++++-----------------------
+|  1 file changed, 26 insertions(+), 26 deletions(-)
+|  
+* commit 9af2acdf4cbabdd92b7abc94715f94eb0a2e4b3b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Aug 6 18:38:27 2012 +0200
+| 
+|     Be a bit more verbose on the root/mmc export password length issue...
+| 
+|  KindleTool/kindle_tool.c |    3 +++
+|  KindleTool/kindletool.1  |   52 +++++++++++++++++++++++---------------------
+|  README.md                |    1 +
+|  3 files changed, 31 insertions(+), 25 deletions(-)
+|  
+* commit 90c429e33010e5451b3f1ce2b0f5f1eb7563a9f0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 27 03:34:16 2012 +0200
+| 
+|     Bump fallback version to 1.4.1
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/kindletool.1  |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  3 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 6ec2cae1d9e3b74da8b8e71b108a91a66a3f16f9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jul 10 22:33:22 2012 +0200
+| 
+|     Get rid of the stupid case issues with the manpage once and for all ;)
+| 
+|  KindleTool.xcodeproj/project.pbxproj |    8 +-
+|  KindleTool/KindleTool.1              |  212 --------------------------------
+|  KindleTool/Makefile                  |   32 +----
+|  KindleTool/kindletool.1              |  212 ++++++++++++++++++++++++++++++++
+|  tools/kindletool-static-build.sh     |    6 +-
+|  5 files changed, 223 insertions(+), 247 deletions(-)
+|  
+* commit 9a23810206a427a3546d9dbed09f1c9985f67ad9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jul 10 22:24:23 2012 +0200
+| 
+|     Handle MinGW .exe file extension in a slightly prettier way
+| 
+|  KindleTool/Makefile |   22 ++++++++++------------
+|  1 file changed, 10 insertions(+), 12 deletions(-)
+|  
+* commit 0323697a71d7f38452407c16008d607f0e6906e1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jul 10 22:20:37 2012 +0200
+| 
+|     Kill redudant declarations
+| 
+|  KindleTool/Makefile |    2 --
+|  1 file changed, 2 deletions(-)
+|  
+* commit 328af23498961ae94d5f51c8a61e45c20df90c06
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jul 10 00:33:44 2012 +0200
+| 
+|     Make sure the tree is up to date when packaging a mingw build
+| 
+|  tools/mingw/kindletool-mingw-build.sh |    3 +++
+|  1 file changed, 3 insertions(+)
+|  
+* commit 660f08ebc2f7b2f0db2c670d6a6b66c86f9062d0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jul 9 19:24:43 2012 +0200
+| 
+|     Use a tabbed pointer arrow instead of a star to denote a script in the archiving status print
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 52c117d7857f397f953658c1cbab906113171637
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jul 9 19:18:17 2012 +0200
+| 
+|     Print a warning if no script was detected when creating a package tarball, and append a star (like ls -F) to script files in the status printout
+| 
+|  KindleTool/create.c      |   21 +++++++++++++++++++--
+|  KindleTool/kindle_tool.h |    1 +
+|  2 files changed, 20 insertions(+), 2 deletions(-)
+|  
+* commit 1b9f86aaee5ef383100dcfb6f9312d44d44d1115
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jul 9 05:36:36 2012 +0200
+| 
+|     Fix a typo
+| 
+|  COMPILING |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 0400ba1bbdabd4b3b4d47cbc90c5e01e7e0eb57a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jul 9 02:11:59 2012 +0200
+| 
+|     Restore Cygwin warning workaround
+| 
+|  KindleTool/kindle_tool.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 3c3895f0b1d4788ae1a6f26062652c4b051c9f6f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jul 9 01:18:52 2012 +0200
+| 
+|     Fix some misc -Wconversion warnings
+| 
+|  KindleTool/Makefile      |    1 +
+|  KindleTool/convert.c     |   10 ++++-----
+|  KindleTool/create.c      |   48 +++++++++++++++++++++++++-------------------
+|  KindleTool/kindle_tool.c |    6 +++---
+|  KindleTool/kindle_tool.h |   24 +++++++++++-----------
+|  5 files changed, 48 insertions(+), 41 deletions(-)
+|  
+* commit 08775f73ea5382bf5ef0aa8d1524dba53098a3fb
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 20:41:26 2012 +0200
+| 
+|     Use a custom KT_TMPDIR constant to avoid GCC shouting at us for redefining P_tmpdir on Win32...
+| 
+|  KindleTool/convert.c     |    2 +-
+|  KindleTool/create.c      |    8 ++++----
+|  KindleTool/kindle_tool.h |    4 +++-
+|  3 files changed, 8 insertions(+), 6 deletions(-)
+|  
+* commit cf2098181f901d1733c605151f0f1b9d786fa851
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 20:35:01 2012 +0200
+| 
+|     Unbreak native Win32?
+| 
+|  KindleTool/kindle_tool.h |    5 +++++
+|  1 file changed, 5 insertions(+)
+|  
+* commit 49a5820a877873ea02036e6689682dbb8345f593
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 19:09:54 2012 +0200
+| 
+|     Kill the P_tmpdir fallbacks, if it's not defined, we're probably on an unsupported system anyway.
+| 
+|  KindleTool/kindle_tool.h |   12 ------------
+|  1 file changed, 12 deletions(-)
+|  
+* commit 6cd5a175cc929debb993b141294d43bf70adea44
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 19:09:00 2012 +0200
+| 
+|     Moar fallbacks!
+| 
+|  KindleTool/convert.c     |    1 -
+|  KindleTool/kindle_tool.h |    9 +++++++--
+|  2 files changed, 7 insertions(+), 3 deletions(-)
+|  
+* commit 39dd1cc0875145f4a51da8d5018b9558bd60d554
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 18:58:00 2012 +0200
+| 
+|     Always use P_tmpdir to build our tempfile paths (Kills a few WIN32 ifdefs).
+| 
+|  KindleTool/convert.c     |   10 +++-------
+|  KindleTool/create.c      |   24 ++++--------------------
+|  KindleTool/kindle_tool.h |    7 +++++++
+|  3 files changed, 14 insertions(+), 27 deletions(-)
+|  
+* commit 80f1f4b2c1d9bfeb9dd9722b0896bbdb90ec492e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 05:30:22 2012 +0200
+| 
+|     Moar comments!
+| 
+|  KindleTool/kindle_tool.h |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 6ac59192fa9bda66e55f5857d3d306c77d1a3d39
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 05:20:04 2012 +0200
+| 
+|     Fix a few comments
+| 
+|  KindleTool/create.c |    3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|  
+* commit 37f9b2f350640ab3a772b81e6e85823300dc3745
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 05:14:11 2012 +0200
+| 
+|     Use human readable bitmasks for our bundlefile status bitflags, so it's less brain-hurty.
+| 
+|  KindleTool/create.c      |   20 ++++++++++----------
+|  KindleTool/kindle_tool.h |    5 +++--
+|  2 files changed, 13 insertions(+), 12 deletions(-)
+|  
+* commit c3b83b99c18721d9aed14d04b0a20c32223b058a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 04:59:46 2012 +0200
+| 
+|     Use a bitmask to set/check the state of our bundlefile
+| 
+|  KindleTool/create.c      |   22 ++++++++++------------
+|  KindleTool/kindle_tool.h |    3 +++
+|  2 files changed, 13 insertions(+), 12 deletions(-)
+|  
+* commit 5da72eb876d278360c121bbdb141ea8bf5262812
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 03:38:23 2012 +0200
+| 
+|     Commas are nice.
+| 
+|  KindleTool/create.c |   10 +++++-----
+|  1 file changed, 5 insertions(+), 5 deletions(-)
+|  
+* commit d86cf0fd12ef949833d86c8fd9f754293678bb19
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 03:35:32 2012 +0200
+| 
+|     We can fold this in a single line...
+| 
+|  KindleTool/create.c |    5 +----
+|  1 file changed, 1 insertion(+), 4 deletions(-)
+|  
+* commit 01b965af6e2ec1497f5515c54aaba83846d7594b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 03:29:26 2012 +0200
+| 
+|     Kill a bit of cruft from the recaps to save some screen estate... (Don't print UINT*_MAX, don't print the tmp var names)
+| 
+|  KindleTool/convert.c |    2 +-
+|  KindleTool/create.c  |   15 ++++++++++++---
+|  2 files changed, 13 insertions(+), 4 deletions(-)
+|  
+* commit 19a5021b08391c3b23e4e0a27a9d37435efc3c94
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 02:55:23 2012 +0200
+| 
+|     Reorder some comments
+| 
+|  KindleTool/create.c |    8 ++++----
+|  1 file changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 358be182f6d242889beb62b9e6a1f93f0e330bb5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jul 6 02:03:06 2012 +0200
+| 
+|     Put our second pass create input list in our global client data kttar struct to avoid the double pointers mess that was hurting my brain... (And reminding me how bad I suck at C xD)
+| 
+|  KindleTool/create.c      |   73 +++++++++++++++++++-------------------------
+|  KindleTool/kindle_tool.h |    2 ++
+|  2 files changed, 33 insertions(+), 42 deletions(-)
+|  
+* commit 3bc7518e23d5bc1491970e87c638e2b093c3c005
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 23:52:42 2012 +0200
+| 
+|     Kill dead code
+| 
+|  KindleTool/create.c |    7 -------
+|  1 file changed, 7 deletions(-)
+|  
+* commit c6b43840eb8e3c0751165fe3b0e5e00882941334
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 23:49:54 2012 +0200
+| 
+|     Tiny astyle run...
+| 
+|  KindleTool/create.c                   |    2 +-
+|  tools/mingw/kindletool-mingw-build.sh |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 7e1805f54991b2cd7abb6c48036e5be99c244403
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 23:47:03 2012 +0200
+| 
+|     We already take care of removing temp sig/bundlefile on failure, don't do it twice
+| 
+|  KindleTool/create.c |    2 --
+|  1 file changed, 2 deletions(-)
+|  
+* commit db55f94a90e2a3b00899243e93fe64ff497cc13d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 23:27:20 2012 +0200
+| 
+|     More duplication killing... :)
+| 
+|  KindleTool/create.c |  107 ++++++++++++++++++++-----------------------------
+|  1 file changed, 44 insertions(+), 63 deletions(-)
+|  
+* commit 2a401a8186da6f2ae007d57a05817946b6fe5a66
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 23:05:18 2012 +0200
+| 
+|     Use an helper function to do the whole for loop on read_disk_open, to avoid duplicating code between the two passes...
+| 
+|  KindleTool/create.c |  208 +++++++++++++++++++++++++------------------------
+|  1 file changed, 105 insertions(+), 103 deletions(-)
+|  
+* commit 9430f345e44ec67ed0cec5ee41400ced38b9ad7f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 20:42:08 2012 +0200
+| 
+|     extract: Use libarchive's archive_read_extract() instead of doing mostly the exact same thing ourselves.
+| 
+|  KindleTool/convert.c     |   67 ++++++--------------------------------------
+|  KindleTool/create.c      |    7 +++--
+|  KindleTool/kindle_tool.h |    1 -
+|  3 files changed, 12 insertions(+), 63 deletions(-)
+|  
+* commit 63343e252d1cae65ec355e378462949fb6c8b17e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 05:31:28 2012 +0200
+| 
+|     Reset default bytes per block setting, to make sure it matches our buffer size
+| 
+|  KindleTool/create.c |    5 +++++
+|  1 file changed, 5 insertions(+)
+|  
+* commit 4a17fb52777e70d344e17dd635a5340899480ef8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 01:32:45 2012 +0200
+| 
+|     Great, we still need the stupid GCC < 4.6 workaround to shutup a warning ;/
+| 
+|  KindleTool/create.c |    7 +++++++
+|  1 file changed, 7 insertions(+)
+|  
+* commit 0b79fdd7d29897e3ea5267c6f41441d664939846
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 01:28:26 2012 +0200
+| 
+|     Bump fallback version to 1.4.0
+| 
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  3 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit ed69b7652858917679e40259f9028dbda08eaceb
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 01:20:08 2012 +0200
+| 
+|     Don't open the output file twice...
+| 
+|  KindleTool/create.c |   13 ++-----------
+|  1 file changed, 2 insertions(+), 11 deletions(-)
+|  
+* commit d1c445ddcffd8bf2eb60c8a63b6439e177baa026
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jul 5 00:47:28 2012 +0200
+| 
+|     Forgot to ignore the MinGW build dir
+| 
+|  KindleTool/.gitignore |    1 +
+|  1 file changed, 1 insertion(+)
+|    
+*   commit 9b688a874fbf6d9eeaef9ef6dd0fd1ba0af7788a
+|\  Merge: 0e5fc87 dba4c13
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 15:42:07 2012 -0700
+| | 
+| |     Merge pull request #3 from NiLuJe/mingw
+| |     
+| |     MinGW support
+| |   
+| * commit dba4c13ddb6a5ec8db7933bc39d03b176bef8c48
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Thu Jul 5 00:37:56 2012 +0200
+| | 
+| |     ANother astyle run, and convert comments from libarchive to the same comment style as us
+| | 
+| |  KindleTool/create.c                   |   42 +++++++++++------------------
+| |  tools/mingw/kindletool-mingw-build.sh |    4 +--
+| |  2 files changed, 17 insertions(+), 29 deletions(-)
+| |   
+| * commit e1b0b006bd6ad86f075d2aa98c75b6c35cd88852
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Thu Jul 5 00:04:12 2012 +0200
+| | 
+| |     Add info abut MinGW support in docs ;)
+| | 
+| |  COMPILING |    4 ++++
+| |  1 file changed, 4 insertions(+)
+| |   
+| * commit bc62e9fa15a2af58aa4542a898cec5fa6f86f81d
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 23:27:48 2012 +0200
+| | 
+| |     Fix mingw buildscript
+| | 
+| |  tools/mingw/kindletool-mingw-build.sh |    2 +-
+| |  1 file changed, 1 insertion(+), 1 deletion(-)
+| |   
+| * commit 447f110d9746e75e265fd9ea286f96b7a7f62f09
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 23:25:08 2012 +0200
+| | 
+| |     *sigh*
+| | 
+| |  tools/mingw/kindletool-mingw-build.sh |    2 +-
+| |  1 file changed, 1 insertion(+), 1 deletion(-)
+| |   
+| * commit 3f6ba5b4afd6ab9681d17c59fdfb67d00a81b1c5
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 23:20:34 2012 +0200
+| | 
+| |     Fix mingw buildscript
+| | 
+| |  tools/mingw/kindletool-mingw-build.sh           |    2 +-
+| |  tools/mingw/zlib-1.2.7-mingw-makefile-fix.patch |   11 +++++++++--
+| |  2 files changed, 10 insertions(+), 3 deletions(-)
+| |   
+| * commit 28758230b50f45978c1adb65d92166a0d8cf8490
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 23:13:13 2012 +0200
+| | 
+| |     Update mingw cross buildscript
+| | 
+| |  tools/kindletool-static-build.sh      |    2 +-
+| |  tools/mingw/kindletool-mingw-build.sh |   49 ++++++++++++++++++++++++++++-
+| |  2 files changed, 49 insertions(+), 2 deletions(-)
+| |   
+| * commit b4161c03f67b8d5edc45df32a44fa3b38660571e
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 22:21:44 2012 +0200
+| | 
+| |     Avoid leaking a tempfile for the bundlefile if some error paths
+| | 
+| |  KindleTool/create.c |   12 +++++++++++-
+| |  1 file changed, 11 insertions(+), 1 deletion(-)
+| |   
+| * commit e6189b09acb29e998a51596eb9c39a3c0d4080d7
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 22:03:41 2012 +0200
+| | 
+| |     Kill dead code
+| | 
+| |  KindleTool/create.c |    2 --
+| |  1 file changed, 2 deletions(-)
+| |   
+| * commit 5761cbe561fe06d9b944b4efd18b60e876d62ef7
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 22:02:47 2012 +0200
+| | 
+| |     Abort on next_header2 failure, we don't want to end up with incomplete archives.
+| | 
+| |  KindleTool/create.c |   15 +++++++++------
+| |  1 file changed, 9 insertions(+), 6 deletions(-)
+| |   
+| * commit 1b21400f06dbae153e38be38264425bb5dbaac05
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 21:59:13 2012 +0200
+| | 
+| |     Reuse the same archive & archive_entry struct for the second pass ;)
+| | 
+| |  KindleTool/create.c |   60 +++++++++++++++++------------------------------
+| |  1 file changed, 21 insertions(+), 39 deletions(-)
+| |   
+| * commit fa29cb7c623e98d5ad911f9b43f429e3040fa430
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 21:51:34 2012 +0200
+| | 
+| |     Better error/cleanup handling in the write_entry helper
+| | 
+| |  KindleTool/create.c |   29 +++++++++++++++++++----------
+| |  1 file changed, 19 insertions(+), 10 deletions(-)
+| |   
+| * commit 98e2f65e8cc154803fbd77c5dd1eaadd550685fe
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 21:43:23 2012 +0200
+| | 
+| |     Use as-needed on mingw builds too
+| | 
+| |  KindleTool/Makefile                   |    2 +-
+| |  tools/mingw/kindletool-mingw-build.sh |    2 +-
+| |  2 files changed, 2 insertions(+), 2 deletions(-)
+| |   
+| * commit 9cf7bd9c34670333b4a7db48544d7f7440b15776
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 21:39:26 2012 +0200
+| | 
+| |     Don't try to link against libdl on Windows ;)
+| | 
+| |  KindleTool/Makefile |    5 ++++-
+| |  1 file changed, 4 insertions(+), 1 deletion(-)
+| |   
+| * commit 2ffddfbf6023e9fcd568688397e3944a403425fc
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 21:38:29 2012 +0200
+| | 
+| |     Use a mingw target instead of crappy CC check to detect a mingw build
+| | 
+| |  KindleTool/Makefile   |   58 +++++++++++++++++++++++++++++++--------------
+| |  KindleTool/version.sh |   10 --------
+| |  Makefile              |    3 +++
+| |  3 files changed, 43 insertions(+), 28 deletions(-)
+| |   
+| * commit e141e8232926ae6552a26f7629cfbbdff1cddca9
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 18:37:31 2012 +0200
+| | 
+| |     We know we only have regular files in our list at this point, so we don't need to lstat. Use stat instead, we avoid a WIN32 ifdef that way ;).
+| | 
+| |  KindleTool/create.c |    7 +------
+| |  1 file changed, 1 insertion(+), 6 deletions(-)
+| |   
+| * commit c6018653691cde0643e13653d0d3ddea28a1d94f
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 03:14:38 2012 +0200
+| | 
+| |     Clear up a few tiny things
+| | 
+| |  KindleTool/create.c |   10 +++++-----
+| |  1 file changed, 5 insertions(+), 5 deletions(-)
+| |   
+| * commit e30473a23bd412929974f094c7169c6f52a3db79
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 02:42:41 2012 +0200
+| | 
+| |     Be more verbose when next_header2 returns FATAL/FAILED...
+| | 
+| |  KindleTool/create.c |   14 ++++++++++++--
+| |  1 file changed, 12 insertions(+), 2 deletions(-)
+| |   
+| * commit e7ece4df25ba4b36e3f2ff9ba9b3d0ac8a31515a
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 02:32:02 2012 +0200
+| | 
+| |     Restore the double free workaround that got lost in the refactor...
+| | 
+| |  KindleTool/create.c |    4 ++++
+| |  1 file changed, 4 insertions(+)
+| |   
+| * commit 8fc64ec91c31ef57ff5dbca278b2d90f6ab8aa08
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 02:25:40 2012 +0200
+| | 
+| |     A small astyle run...
+| | 
+| |  KindleTool/create.c |   34 +++++++++++++++++-----------------
+| |  1 file changed, 17 insertions(+), 17 deletions(-)
+| |   
+| * commit f6fd5e9b701052265392151183b39e2a23a5ed05
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 02:17:17 2012 +0200
+| | 
+| |     Fix linking for everyone, MinGW or not ;).
+| | 
+| |  KindleTool/Makefile |    6 +++---
+| |  1 file changed, 3 insertions(+), 3 deletions(-)
+| |   
+| * commit 9de32be47e8e4ba7b712a3a1918cca3f5e89edbd
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 02:09:50 2012 +0200
+| | 
+| |     I like simley faces, but limit the magic_number print to 4 chars in the create recap to avoid weird stuff showing up after it ;).
+| | 
+| |  KindleTool/create.c |    2 +-
+| |  1 file changed, 1 insertion(+), 1 deletion(-)
+| |   
+| * commit 38d51f949b4e2294b695b6bbffeeaf5e4682422e
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 02:02:16 2012 +0200
+| | 
+| |     Kill dead code
+| | 
+| |  KindleTool/create.c |   14 --------------
+| |  1 file changed, 14 deletions(-)
+| |   
+| * commit 809a9013f89de76f23b758d4b4c21118fc76251d
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Wed Jul 4 01:57:48 2012 +0200
+| | 
+| |     create archivng refactor, part II. Probably needs some more tests/bugcheck/memleak hunt, but it *should* be more windows friendly
+| | 
+| |  KindleTool/create.c      |  490 ++++++++++++++++++++----------------------
+| |  KindleTool/kindle_tool.h |    2 +-
+| |  2 files changed, 240 insertions(+), 252 deletions(-)
+| |   
+| * commit bb35d3516899ad61ad1cfc123f984e87424d07d9
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 22:41:35 2012 +0200
+| | 
+| |     First part of archiving refactor... Use libarchive's API instead of slapping up an open/read loop to write data from disk to archive ;).
+| | 
+| |  KindleTool/create.c      |  175 ++++++++++++++++++++++++++++++++++++------
+| |  KindleTool/kindle_tool.h |    9 +++
+| |  2 files changed, 159 insertions(+), 25 deletions(-)
+| |   
+| * commit f2d1ba130d2d120df93e958330e8983c56d0d741
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 20:18:50 2012 +0200
+| | 
+| |     Kill the stat calls in create, archive_read_next_header2 already took care of it...
+| | 
+| |  KindleTool/create.c |   38 +++-----------------------------------
+| |  1 file changed, 3 insertions(+), 35 deletions(-)
+| |   
+| * commit e94761ab893baf457c91be38eb2a8aaad253694b
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 19:41:22 2012 +0200
+| | 
+| |     Kill MSVC ifdef's, we probably won't ever support VS ;).
+| | 
+| |  KindleTool/convert.c |    4 ----
+| |  KindleTool/create.c  |   12 ------------
+| |  2 files changed, 16 deletions(-)
+| |   
+| * commit 1b016dad4971a7780ded184b91b7451464ba0838
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 19:39:06 2012 +0200
+| | 
+| |     Huh, forgot to commit this ;)
+| | 
+| |  tools/mingw/zlib-1.2.7-mingw-makefile-fix.patch |   15 +++++++++++++++
+| |  1 file changed, 15 insertions(+)
+| |   
+| * commit d30f2d82829e5318d2c26942765ee5869dfbbccb
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 03:53:10 2012 +0200
+| | 
+| |     Fix a few comments now that I'm sure of the problem, with a few ideas on how to make it work...
+| | 
+| |  KindleTool/create.c |    4 ++--
+| |  1 file changed, 2 insertions(+), 2 deletions(-)
+| |   
+| * commit 30b1de95e179aebd06ff0698b6624411069c1510
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 03:42:22 2012 +0200
+| | 
+| |     Good news: found out why create is broken. Bad news: I hate windows. :D
+| | 
+| |  KindleTool/create.c |    9 +++++++++
+| |  1 file changed, 9 insertions(+)
+| |   
+| * commit 1dddd83c7546e0ae8ac5f5843601dba0eeb4e020
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 03:05:55 2012 +0200
+| | 
+| |     Add a print to help debugging...
+| | 
+| |  KindleTool/create.c |    3 ++-
+| |  1 file changed, 2 insertions(+), 1 deletion(-)
+| |   
+| * commit fe4c5d5dac7412d5a5c7a292c3b5d67d67768ea0
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 03:05:06 2012 +0200
+| | 
+| |     Possibly fix the whole WIN32/Posix path mess on MinGW...
+| | 
+| |  KindleTool/create.c      |   18 +++++++++++++++++-
+| |  KindleTool/kindle_tool.c |    4 ++--
+| |  2 files changed, 19 insertions(+), 3 deletions(-)
+| |   
+| * commit f8fbaba0309ec66a9acb9ccb85a1e3d2fe9ff373
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 02:32:40 2012 +0200
+| | 
+| |     Hey, apparently, there's no /tmp on Windows... *facepalm* ;D
+| | 
+| |  KindleTool/convert.c |    5 +++++
+| |  KindleTool/create.c  |   16 ++++++++++++++++
+| |  2 files changed, 21 insertions(+)
+| |   
+| * commit d09ebd3eec42370e26ab7d2eeccab02c6714f606
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 02:19:44 2012 +0200
+| | 
+| |     Open stdin & stdout in binary mode properly on MinGW
+| | 
+| |  KindleTool/kindle_tool.c              |    6 ++++++
+| |  tools/mingw/kindletool-mingw-build.sh |    4 ++--
+| |  2 files changed, 8 insertions(+), 2 deletions(-)
+| |   
+| * commit c4978b3d487553902ba349db19a3b7b98a7d207f
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 02:02:02 2012 +0200
+| | 
+| |     Just use _fullpath instead of realpath on MinGW. (We don't do any error checking on POSIX either anyway, which is not necessarily a bright idea ;D)
+| | 
+| |  KindleTool/create.c |    5 +++++
+| |  1 file changed, 5 insertions(+)
+| |   
+| * commit dbe62348e8c85008b00da45a0e4de0a2838c0625
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 01:46:17 2012 +0200
+| | 
+| |     Fix linking on MinGW
+| | 
+| |  KindleTool/Makefile |    4 ++--
+| |  1 file changed, 2 insertions(+), 2 deletions(-)
+| |   
+| * commit 3df60d4c34ad599661e0f48122a3e6483e259e69
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 01:43:49 2012 +0200
+| | 
+| |     Avoid lstat on MinGW
+| | 
+| |  KindleTool/create.c |    9 +++++++++
+| |  1 file changed, 9 insertions(+)
+| |   
+| * commit e87ec2910b8cfd583f44ef8b785fe6a490c31ff3
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 01:32:22 2012 +0200
+| | 
+| |     Really fix mkstemp on MinGW...
+| | 
+| |  KindleTool/convert.c |   10 +++++-----
+| |  KindleTool/create.c  |   27 +++++++++++++++------------
+| |  2 files changed, 20 insertions(+), 17 deletions(-)
+| |   
+| * commit 44fd1759bf3b7e2f84c03544d9fa548d35382218
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 01:19:30 2012 +0200
+| | 
+| |     Fix dumb C/P
+| | 
+| |  KindleTool/create.c |    5 ++++-
+| |  1 file changed, 4 insertions(+), 1 deletion(-)
+| |   
+| * commit a3c4b2a19d4b02759cd1d4645a70fdb2aaf8cbb7
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 01:17:39 2012 +0200
+| | 
+| |     Port the mkstemp stuff for MinGW
+| | 
+| |  KindleTool/convert.c |   16 ++++++++++++++++
+| |  KindleTool/create.c  |   36 ++++++++++++++++++++++++++++++++++++
+| |  2 files changed, 52 insertions(+)
+| |   
+| * commit 0a2fdf45d76946c6e4aebc816d5a5ff68b24256c
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 00:52:17 2012 +0200
+| | 
+| |     Fix Makefile on MinGW
+| | 
+| |  KindleTool/Makefile |    4 ++--
+| |  1 file changed, 2 insertions(+), 2 deletions(-)
+| |   
+| * commit bae2405bc1108aecf769b9614cbb9a79618b563b
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 00:50:12 2012 +0200
+| | 
+| |     We probably want a .exe on MinGW ;)
+| | 
+| |  KindleTool/Makefile |    5 +++++
+| |  1 file changed, 5 insertions(+)
+| |   
+| * commit 75a1cca0a087ad2216752ad6162211aa7ab3ac6f
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 00:47:20 2012 +0200
+| | 
+| |     printf with GNU extensions on MinGW-w64, too...
+| | 
+| |  KindleTool/Makefile |    3 +++
+| |  1 file changed, 3 insertions(+)
+| |   
+| * commit 06a59a31e59187b5f4e10e1b6966d8f912d900fe
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 00:41:11 2012 +0200
+| | 
+| |     Handle GNU extension in *printf* on MinGW
+| | 
+| |  KindleTool/Makefile |    6 ++++++
+| |  1 file changed, 6 insertions(+)
+| |   
+| * commit 1b6c283d9b4ead4437a88d75cc71579be15dca0b
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Tue Jul 3 00:38:49 2012 +0200
+| | 
+| |     Zlib/OpenSSL/Libarchive MinGW builds...
+| | 
+| |  tools/mingw/kindletool-mingw-build.sh |   97 ++++++++++++++++++++++++++++-
+| |  1 file changed, 96 insertions(+), 1 deletion(-)
+| |   
+| * commit c3c6eeaea9cb640be96b193664f82185fbf4e0f2
+| | Author: NiLuJe <ninuje@gmail.com>
+| | Date:   Mon Jul 2 23:34:24 2012 +0200
+| | 
+| |     Commit my failed attempts at using the latest mingw.org TC via CT-NG...
+| | 
+| |  tools/mingw/ct-ng-mingw-vbump.patch   |  242 ++++++++++++++++
+| |  tools/mingw/ct-ng_mingw_dot.config    |  451 +++++++++++++++++++++++++++++
+| |  tools/mingw/kindletool-mingw-build.sh |   94 ++++++
+| |  3 files changed, 787 insertions(+)
+| |   
+| * commit c9dcf4f2af481f5082827c1694c7924f4eac52c1
+|/  Author: NiLuJe <ninuje@gmail.com>
+|   Date:   Mon Jul 2 19:02:51 2012 +0200
+|   
+|       Makefile & version.sh support for mingw on Linux cross toolchains
+|   
+|    KindleTool/Makefile   |   10 ++++++++--
+|    KindleTool/version.sh |   10 ++++++++++
+|    2 files changed, 18 insertions(+), 2 deletions(-)
+|  
+* commit 0e5fc87802e3145e4db1109e7619dac05b4c0b19
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jul 1 20:13:25 2012 +0200
+| 
+|     Bump MacPorts Portfile to version 1.3.1
+| 
+|  ports/PortIndex                 |    4 ++--
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 646a7864d642d30775fb6ec328fd4cfbc074ad50
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jun 29 17:23:43 2012 +0200
+| 
+|     Add a kdev4 config fragment with the astyle settings used here
+| 
+|  tools/kdev4_astyle |   14 ++++++++++++++
+|  1 file changed, 14 insertions(+)
+|  
+* commit 793e4e2e42fa8eaf939e2a3fdeacaf90a03fd3dd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 25 05:31:18 2012 +0200
+| 
+|     Bump manpage date
+| 
+|  KindleTool/KindleTool.1 |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit fa28e5649602ea1d04aba7dfda0d9b19f7e6ce62
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 25 04:43:48 2012 +0200
+| 
+|     Bump Gentoo ebuild to version 1.3.1
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    4 +--
+|  .../dev-util/kindletool/kindletool-1.3.1.ebuild   |   33 +++++++++++++++++++
+|  gentoo/dev-util/kindletool/kindletool-1.3.ebuild  |   33 -------------------
+|  3 files changed, 35 insertions(+), 35 deletions(-)
+|  
+* commit b7bc0be6c1aab6e2bf7d92f2962ed5d639490b51
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 25 04:40:26 2012 +0200
+| 
+|     Bump fallback version to 1.3.1
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 360949fbe4eb70ca4181fb51fccee6bcb11b9163
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 25 02:04:09 2012 +0200
+| 
+|     ... Fix mode again. How I hate thee, Windows...
+| 
+|  0 files changed
+|  
+* commit ca9f318777d8f300cd0a35895f50750e0e0aecbd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 25 01:55:52 2012 +0200
+| 
+|     Fix hostname on Cygwin...
+| 
+|  KindleTool/version.sh |   13 +++++++++++--
+|  1 file changed, 11 insertions(+), 2 deletions(-)
+|  
+* commit e190fabbf7f73a8c63b0ab7073a35d781a20a85a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 25 00:30:35 2012 +0200
+| 
+|     Bump Gentoo ebuild to version 1.3
+| 
+|  gentoo/dev-util/kindletool/Manifest              |    4 +--
+|  gentoo/dev-util/kindletool/kindletool-1.2.ebuild |   33 --------------------
+|  gentoo/dev-util/kindletool/kindletool-1.3.ebuild |   33 ++++++++++++++++++++
+|  3 files changed, 35 insertions(+), 35 deletions(-)
+|  
+* commit be122cd899d43f4bff3ccb0eb56f79cf15360091
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 24 17:18:52 2012 +0200
+| 
+|     Bump macports Portfile to version 1.3 (fix #2)
+| 
+|  ports/PortIndex                 |    2 +-
+|  ports/devel/kindletool/Portfile |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit bde4b243db74fc998e3b1d208416bf44a98a4832
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 24 17:17:10 2012 +0200
+| 
+|     Bump fallback version to 1.3
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 219cf2c8a418310155c95584c65a2e12829d31dc
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 24 05:30:20 2012 +0200
+| 
+|     Always use the short hostname in the user@host tag, to avoid OS X's default of pulling the fqdn
+| 
+|  KindleTool/version.sh |    3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|  
+* commit 1d2d3de7f2c4815b15582149dbd5544d1f9a457e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jun 22 02:06:51 2012 +0200
+| 
+|     Remove useless stuff from the Gentoo ebuilds
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    4 ++--
+|  gentoo/dev-util/kindletool/kindletool-1.2.ebuild  |    8 ++------
+|  gentoo/dev-util/kindletool/kindletool-9999.ebuild |    8 ++------
+|  3 files changed, 6 insertions(+), 14 deletions(-)
+|  
+* commit d809271200dfa9cda3fc315555510b3cbd5d1628
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jun 22 01:58:02 2012 +0200
+| 
+|     Update Gentoo ebuilds
+| 
+|  gentoo/dev-util/kindletool/Manifest               |    4 +-
+|  gentoo/dev-util/kindletool/kindletool-1.2.ebuild  |   37 +++++++++++++++++++
+|  gentoo/dev-util/kindletool/kindletool-9999.ebuild |    2 +-
+|  3 files changed, 41 insertions(+), 2 deletions(-)
+|  
+* commit b3e4f7d1cd39e0212b5f2991f138ea74fd4d6a0a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jun 22 01:38:21 2012 +0200
+| 
+|     Update a few comments, and fix version.sh to avoid updating the include file when the version hasn't changed
+| 
+|  COMPILING             |    2 ++
+|  KindleTool/Makefile   |    4 +++-
+|  KindleTool/version.sh |    9 ++++-----
+|  Makefile              |    4 ++++
+|  4 files changed, 13 insertions(+), 6 deletions(-)
+|  
+* commit 99c85f7a679e8316788d2afc55d181798598db72
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 21 21:51:50 2012 +0200
+| 
+|     Update another comment
+| 
+|  KindleTool/version.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit b6ae0d9d2c886654c9c9033a9dd5faad7a5fb251
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 21 21:48:36 2012 +0200
+| 
+|     Be a bit more accurate about the state of Debian's libarchive packages ;)
+| 
+|  COMPILING             |    2 +-
+|  KindleTool/Makefile   |    3 ++-
+|  KindleTool/version.sh |    6 +++---
+|  3 files changed, 6 insertions(+), 5 deletions(-)
+|  
+* commit ca82e6ed4bc25654303dc368a4431c9f552cb839
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 21 03:06:35 2012 +0200
+| 
+|     Fix a typo, and make the pkg-config warning hurt my eyes ;)
+| 
+|  KindleTool/version.sh |    4 +++-
+|  1 file changed, 3 insertions(+), 1 deletion(-)
+|  
+* commit 7f606226d3d73fd2c37ce7f33f1e342cc01eab66
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 21 02:40:52 2012 +0200
+| 
+|     Try to detect libarchive 3 a bit more smartly on binary distros (re #1)...
+| 
+|  COMPILING             |    5 ++++-
+|  KindleTool/.gitignore |    2 ++
+|  KindleTool/Makefile   |   10 ++++++++++
+|  KindleTool/version.sh |   35 +++++++++++++++++++++++++++++++++++
+|  4 files changed, 51 insertions(+), 1 deletion(-)
+|  
+* commit 89374b87c3f3c1a2459bbfb89dc795332f6ef578
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 21 01:10:31 2012 +0200
+| 
+|     Oh, how I love stupid binary package names...
+| 
+|  COMPILING |    3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|  
+* commit 7bd6f7a661f855d9915f6b00123d4ca1060e96c5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 20 05:09:31 2012 +0200
+| 
+|     Update/Fix a bunch of comments
+| 
+|  KindleTool/convert.c     |   14 +++++++-------
+|  KindleTool/create.c      |   30 +++++++++++++++---------------
+|  KindleTool/kindle_tool.h |    4 ++--
+|  3 files changed, 24 insertions(+), 24 deletions(-)
+|  
+* commit 79cb62369be25dc11ea7bf22a392b110538b84cd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 20 03:05:35 2012 +0200
+| 
+|     Fix a potential memleak on error
+| 
+|  KindleTool/create.c |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit d1c232f16750866aab51e3188af7f75ef04965d5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 20 02:40:59 2012 +0200
+| 
+|     Nicer comments & handle errors on archive_match_path_excluded
+| 
+|  KindleTool/create.c |   21 ++++++++++++++++++---
+|  1 file changed, 18 insertions(+), 3 deletions(-)
+|  
+* commit 82478ca70e857c06459c624ddbfbc8a206efd280
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 20 02:22:55 2012 +0200
+| 
+|     Use a metadata filter instead of pattern exclusion to be able to detect directories in create...
+| 
+|  KindleTool/create.c |   63 +++++++++++++++++++++++++++++--------------------
+|  1 file changed, 37 insertions(+), 26 deletions(-)
+|  
+* commit fd5d8a89f0c464c37e80be77dc733dda314a1958
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 20 01:58:50 2012 +0200
+| 
+|     Look into libarchive's pattern matching order to see if we can't manage to avoid excluding directories...
+| 
+|  KindleTool/create.c |    6 ++++++
+|  1 file changed, 6 insertions(+)
+|  
+* commit 951f08ca548de021460b7b9fde3b38b305dd6206
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 19 20:09:38 2012 +0200
+| 
+|     Update a comment
+| 
+|  KindleTool/create.c |   20 ++++++++++----------
+|  1 file changed, 10 insertions(+), 10 deletions(-)
+|  
+* commit ed0dc0ace54917dfdf45be741a0dc0efd6373315
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 19 20:07:25 2012 +0200
+| 
+|     Fix a comment
+| 
+|  KindleTool/create.c |    9 +++------
+|  1 file changed, 3 insertions(+), 6 deletions(-)
+|  
+* commit 6e3da87a653fde5f8c36c935bfa200729f6023bd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 19 19:46:45 2012 +0200
+| 
+|     Rely exclusively on libarchive's pattern matching for exclusion in create, and use a more compact print in case of an exclusion, in line with the rest.
+| 
+|  KindleTool/create.c |   26 ++++++++------------------
+|  1 file changed, 8 insertions(+), 18 deletions(-)
+|  
+* commit d65708fce3e2d937232899fe9c0ffb890e34bf46
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 19 16:05:41 2012 +0200
+| 
+|     Forgot a LF
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit d56571e92501b208b29cfa05b870ccb14be4438a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 19 16:02:29 2012 +0200
+| 
+|     Smarter create recap (don't print settings not applicable to the current update type)
+| 
+|  KindleTool/create.c |   32 ++++++++++++++++++++++++--------
+|  1 file changed, 24 insertions(+), 8 deletions(-)
+|  
+* commit fa7f187d9b905fa5477e2de7ccdb4acf7884e2db
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 19 15:44:52 2012 +0200
+| 
+|     Missed a recovery setting to print on create's recap
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 5f1fd6c81af6f8aa8d95962a5b81ca3a470fac28
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 18 16:02:24 2012 +0200
+| 
+|     Update docs
+| 
+|  KindleTool/KindleTool.1  |    8 ++++++++
+|  KindleTool/kindle_tool.c |    2 ++
+|  README.md                |    2 ++
+|  3 files changed, 12 insertions(+)
+|  
+* commit a0142b094c761baaea2065edce513d59d7c5b649
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 18 14:53:36 2012 +0200
+| 
+|     Simple crypt() DES hashed passwords are truncated to eight characters
+| 
+|  KindleTool/kindle_tool.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 6e391f12955ed19996471a2026c6740dc68359ac
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 17 19:20:53 2012 +0200
+| 
+|     Update fallback version to 1.2
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 7cb7b3dccd5634d5240fa2fce21e09be6945eaee
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 17 18:55:59 2012 +0200
+| 
+|     Fix OSX user name for static builds
+| 
+|  tools/kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 2af5f3e435a4a114cc85b51dcb6e33b0df44d20a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jun 15 19:03:17 2012 +0200
+| 
+|     More info about the libdl/libcrypto stuff on Linux
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 3102e4c541d7967bd42313d9bd069666bb472b01
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Jun 15 01:50:08 2012 +0200
+| 
+|     We need to link against libdl on Linux (because of libcrypto), add it explicitly, or we fail to link against a static OpenSSL
+| 
+|  KindleTool/Makefile |    6 +++---
+|  1 file changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 1d6e81066e725afd7ad72d8fb65b45eebf14c369
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 14 19:09:20 2012 +0200
+| 
+|     Typo
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 0cf773b632f64cbb91fc046bf946b697b776582a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 14 19:07:45 2012 +0200
+| 
+|     Assume meta strings have to be obfuscated. (I may be completely wrong, since I've never seen an update with meta strings in the wild).
+| 
+|  KindleTool/convert.c |    1 +
+|  KindleTool/create.c  |    3 ++-
+|  2 files changed, 3 insertions(+), 1 deletion(-)
+|  
+* commit 9f58e0bb8fe8106baf2a188d36ffa7c63db46c2a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 14 18:59:46 2012 +0200
+| 
+|     Fix metastrings printing in convert
+| 
+|  KindleTool/convert.c |    6 +++++-
+|  KindleTool/create.c  |    2 +-
+|  2 files changed, 6 insertions(+), 2 deletions(-)
+|  
+* commit 79390eac01cd1d16aa4f2b7b2beaafc002dbdfc5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 14 06:22:41 2012 +0200
+| 
+|     Reset env after libarchive Linux build...
+| 
+|  tools/kindletool-static-build.sh |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit ccfcdd0b1f98da3463141c5c2c12c81f402d8f38
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 14 06:17:17 2012 +0200
+| 
+|     Don't override CFLAGS either when building for Kindle...
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 9f11e3fc8ffcea8f442138bfb8c2d96590f48e88
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 14 06:16:46 2012 +0200
+| 
+|     Don't override LDFLAGS when building for Kindle...
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit d047b9e03ff43255d967d79f7a45c53a64081796
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 13 19:21:41 2012 +0200
+| 
+|     Allow the leading character to be uppercase for the package output filename
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 640d4e99466657aaeb42f0de58f77c6286e41a7f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 13 02:24:52 2012 +0200
+| 
+|     Awesome, it's not a *Cygwin* stupid warning, but a GCC < 4.6 stupid warning. Play with the preprocessor a bit to workaround it...
+| 
+|  KindleTool/create.c      |   11 ++++++-----
+|  KindleTool/kindle_tool.h |    5 +++++
+|  2 files changed, 11 insertions(+), 5 deletions(-)
+|  
+* commit 9c07b9b31870e61fc25ca376ab9d95ff5a03d11e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 13 02:07:46 2012 +0200
+| 
+|     Dammit, Windows.
+| 
+|  0 files changed
+|  
+* commit 4100fb23814e6319c87159cd0c2cc9a2d289bd3e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 13 01:42:37 2012 +0200
+| 
+|     Kill an ugly deprecated cygwin/osx workaround now that we use tempfiles like a good little prog ;)
+| 
+|  KindleTool/create.c |   32 --------------------------------
+|  1 file changed, 32 deletions(-)
+|  
+* commit a5b9d2b5f95b8c365e4692a90ce888b22270faf8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 13 01:34:22 2012 +0200
+| 
+|     Fix my user account name on Windows for the static builds
+| 
+|  KindleTool/create.c              |    6 ++++++
+|  tools/kindletool-static-build.sh |    4 ++--
+|  2 files changed, 8 insertions(+), 2 deletions(-)
+|  
+* commit e81ee37ff6992077be6f3f0d7b8e63a81bf9dfa6
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 23:16:17 2012 +0200
+| 
+|     Another astyle run
+| 
+|  KindleTool/convert.c |    6 +++---
+|  1 file changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 2da8688e1d9fbffa175516ffecdc66c6836c3c7a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 22:34:01 2012 +0200
+| 
+|     Plug some leaks on error (extract)
+| 
+|  KindleTool/convert.c |   32 +++++++++++++++++++++++++++-----
+|  1 file changed, 27 insertions(+), 5 deletions(-)
+|  
+* commit b75532624801f4c7b6b034039f4075777aeae0cb
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 08:41:49 2012 +0200
+| 
+|     Avoid leaking on error in when building a tarball
+| 
+|  KindleTool/create.c |   23 +++++++++++++++++++++++
+|  1 file changed, 23 insertions(+)
+|  
+* commit ba7b312252c853dbfb70cae7b2d7c71c2d53289b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 07:59:48 2012 +0200
+| 
+|     Update gitignore
+| 
+|  KindleTool/.gitignore |    3 +++
+|  1 file changed, 3 insertions(+)
+|  
+* commit 7072e5c9df5af92acdc04c3b2cd40bccdd49fef8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 07:57:33 2012 +0200
+| 
+|     Kill unused var
+| 
+|  KindleTool/create.c |    1 -
+|  1 file changed, 1 deletion(-)
+|  
+* commit 8a9022c17431f87aeced4835a40f7323db8a05f2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 07:56:28 2012 +0200
+| 
+|     Tighten a few error paths to avoid fd leaks & stray tempfiles...
+| 
+|  KindleTool/convert.c |    2 ++
+|  KindleTool/create.c  |   10 ++++++++--
+|  2 files changed, 10 insertions(+), 2 deletions(-)
+|  
+* commit 8a466d6433b57b458caf28c624f6c89659dd7ba8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 07:43:26 2012 +0200
+| 
+|     Move stuff around to siplify error handling
+| 
+|  KindleTool/create.c |   29 +++++++----------------------
+|  1 file changed, 7 insertions(+), 22 deletions(-)
+|  
+* commit e07cbcf45708873dbbaa7fc1da7262edbf059540
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 07:00:45 2012 +0200
+| 
+|     Use more accurate tests to avoid potential a  potential NULL ptr deref & a memleak
+| 
+|  KindleTool/create.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 681b285058e809fde94ac1862c35aeab1c9f461c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 06:36:02 2012 +0200
+| 
+|     Pass the right number of total files to our archive builder, so it isn't confused when we pass only a signel file (it would mistake it for the bundlefile, and delete it, which is not good ^^)
+|     Don't create a temp bundlefile unless we really have an archive to build
+|     Add another level of check on error when trying to cleanup the temp bundlefile, to avoid fd mixups on some error paths...
+| 
+|  KindleTool/create.c |   75 ++++++++++++++++++-------------------------------
+|  1 file changed, 28 insertions(+), 47 deletions(-)
+|  
+* commit 0bab96f228468a384c462f503529c346bf7d90a9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 12 00:10:59 2012 +0200
+| 
+|     Plug a tiny memleak (found with gperftools), and two other potential memleaks (on error).
+| 
+|  KindleTool/Makefile                              |    6 +-
+|  KindleTool/create.c                              |   19 ++---
+|  gentoo/dev-util/gperftools/Manifest              |    2 +
+|  gentoo/dev-util/gperftools/gperftools-2.0.ebuild |   76 ++++++++++++++++++++
+|  4 files changed, 93 insertions(+), 10 deletions(-)
+|  
+* commit e4832261d780b5d2feba8c0c5a7af9d8903c37b5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 21:46:48 2012 +0200
+| 
+|     Don't delete tarball on error if we asked to keep it
+| 
+|  KindleTool/create.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 12c461db7ad818f5ba7468095f266251bb13a7f0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 20:48:00 2012 +0200
+| 
+|     Don't remove the tarball on error if we didn't create it ourselves
+| 
+|  KindleTool/create.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit cdbdd1ddb5529ff6201f9250ab686104102373b5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 19:52:24 2012 +0200
+| 
+|     Fix a comment
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 93149fb4c7c4f548673db9c9358ff7bf67be9fcb
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 19:51:32 2012 +0200
+| 
+|     Beh, forgot to revert that before commit
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 3341b60ffcc8d292b3b8c4ac52a52dc8b86498d9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 19:49:36 2012 +0200
+| 
+|     Slightly more robust error handling on create, and fix another stupid use after free
+| 
+|  KindleTool/create.c |   24 +++++++++++++++---------
+|  1 file changed, 15 insertions(+), 9 deletions(-)
+|  
+* commit cd6d997924fe1eff5dce782250fa56a49bffc43e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 19:30:27 2012 +0200
+| 
+|     Kill dead comments
+| 
+|  KindleTool/create.c |    3 ---
+|  1 file changed, 3 deletions(-)
+|  
+* commit 728213e0dc2a13854167070e15be047c55c7dd15
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 19:29:01 2012 +0200
+| 
+|     Kill debug output & dead code
+| 
+|  KindleTool/create.c |   58 -------------------------------------------------
+|  1 file changed, 58 deletions(-)
+|  
+* commit 6a01236ee9bc24b3f28d30ab7133875c04be46f0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 19:26:46 2012 +0200
+| 
+|     Use a less crappy data structure to store the input file list...
+| 
+|  KindleTool/create.c |   68 ++++++++++++++++++++++++++++++++++++++++++++-----
+|  1 file changed, 61 insertions(+), 7 deletions(-)
+|  
+* commit 3f1bf10f6418068e9454c4058b4085a829215e46
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 05:27:07 2012 +0200
+| 
+|     Always use -g3 instead of -ggdb3 in default debug CFLAGS, compiler detection is way too painful at this point of the Makefile.
+| 
+|  KindleTool/Makefile |    8 +-------
+|  1 file changed, 1 insertion(+), 7 deletions(-)
+|  
+* commit 9102d98d0ce25d925fa1fe7a53807af31362840d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 05:19:39 2012 +0200
+| 
+|     Note about clang's asan in the Makefile
+| 
+|  KindleTool/Makefile |    2 ++
+|  1 file changed, 2 insertions(+)
+|  
+* commit 72dc031a542a5514162bc5e488a2ec300b59ae7c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 05:14:57 2012 +0200
+| 
+|     Fix a stupid use after free (don't leave empty .sig file on convert, again).
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit abd53634b70f4eb6e90d2723806f1c7e93c6eb74
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 05:05:40 2012 +0200
+| 
+|     Fix a nasty double free (clang's asan is awesome).
+| 
+|  KindleTool/create.c |    4 +++-
+|  1 file changed, 3 insertions(+), 1 deletion(-)
+|  
+* commit d5986c94b81fb9ac04273e87d4a4b581092f6c33
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 04:37:52 2012 +0200
+| 
+|     Make sure strncpy adds/pads our signame with trailing NULLS to avoid it randomly blowing up... ;)
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit e74d2582187724008741adb31eff93d20c3e76d8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 04:21:46 2012 +0200
+| 
+|     Avoid potential double free on errors when using convert & multiple input files
+| 
+|  KindleTool/convert.c |    8 ++++++++
+|  1 file changed, 8 insertions(+)
+|  
+* commit 5c2b50b04ce877f1fb915c3f8951946728d2852c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 04:09:32 2012 +0200
+| 
+|     Fix a memleak on error
+| 
+|  KindleTool/convert.c |    6 ++++++
+|  1 file changed, 6 insertions(+)
+|  
+* commit 4d21264340f3d7ef489a5df886da8e9d657c9450
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 04:07:32 2012 +0200
+| 
+|     Kill a fixed PATH_MAX array in extract
+| 
+|  KindleTool/convert.c |   13 +++++++++----
+|  1 file changed, 9 insertions(+), 4 deletions(-)
+|  
+* commit a449174495c151fe93e4033b53cee0452f11348a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 03:59:29 2012 +0200
+| 
+|     Fix some strncat calls, and kill some more snprintf
+| 
+|  KindleTool/convert.c |    4 ++--
+|  KindleTool/create.c  |   16 +++++++++++-----
+|  2 files changed, 13 insertions(+), 7 deletions(-)
+|  
+* commit e4c89ce747b93d95258e9e309fde975b95df991a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 03:32:58 2012 +0200
+| 
+|     And another bunch of snprintf to strsomething (strncat this time ^^)
+| 
+|  KindleTool/convert.c |   27 +++++++++++++--------------
+|  1 file changed, 13 insertions(+), 14 deletions(-)
+|  
+* commit 2817648dc83f24b79b20693e998f55d5d0750a17
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 03:00:02 2012 +0200
+| 
+|     Use strncpy instead of snprintf when we have no formatting to do
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 579bca1e3f8d547f0052b743aedd4676dd17c3ea
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 02:28:51 2012 +0200
+| 
+|     Use unlink directly instead of remove when we're sure we're always gonna be running it on a file
+| 
+|  KindleTool/convert.c |    6 +++---
+|  KindleTool/create.c  |   16 ++++++++--------
+|  2 files changed, 11 insertions(+), 11 deletions(-)
+|  
+* commit 2da2f3bff7587a61631dd97f9fb60c364529eb8c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 02:08:15 2012 +0200
+| 
+|     Fix a tempfile leak
+| 
+|  KindleTool/create.c |    3 +++
+|  1 file changed, 3 insertions(+)
+|  
+* commit fd6ae1af695117cc42d105006313e23bc698d440
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 01:58:53 2012 +0200
+| 
+|     Another astyle run...
+| 
+|  KindleTool/convert.c |    4 ++--
+|  KindleTool/create.c  |    4 ++--
+|  2 files changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 7833a74f9f1c187a5c4448386aca6c3878c2dbf0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 01:48:04 2012 +0200
+| 
+|     Create our bundlefile in a tempfile, too... (It's a bit hackish, and the error handling may be a bit aggressive...)
+| 
+|  KindleTool/create.c      |   62 ++++++++++++++++++++++++++++++++------------
+|  KindleTool/kindle_tool.h |    2 +-
+|  2 files changed, 47 insertions(+), 17 deletions(-)
+|  
+* commit 2edf7c92a9ac145cb4b32d0768236a4e8316cac4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 01:00:53 2012 +0200
+| 
+|     If we need to build a tarball in create, do it in a tempfile
+| 
+|  KindleTool/create.c      |   51 ++++++++++++++++++++++----------------------
+|  KindleTool/kindle_tool.h |    2 +-
+|  2 files changed, 26 insertions(+), 27 deletions(-)
+|  
+* commit d9c6047278ca8b26f6cb688c9eec8e7ae4646594
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 11 00:09:11 2012 +0200
+| 
+|     Create sigfiles in a tempfile when building a tarball
+| 
+|  KindleTool/create.c |   20 +++++++++++++++-----
+|  1 file changed, 15 insertions(+), 5 deletions(-)
+|  
+* commit d7f325199ddbb5c4cf29b30fd23473edda523d23
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 10 23:50:50 2012 +0200
+| 
+|     Print what we're adding to our tarball when we create one with the create cmd
+| 
+|  KindleTool/create.c      |    4 ++++
+|  KindleTool/kindle_tool.c |    2 +-
+|  2 files changed, 5 insertions(+), 1 deletion(-)
+|  
+* commit 68717839d0047bbf9e277c7079985807d33fd0a5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 10 23:41:43 2012 +0200
+| 
+|     Add a few sanity checks around the sig output in convert cmd
+| 
+|  KindleTool/convert.c |   14 ++++++++++----
+|  1 file changed, 10 insertions(+), 4 deletions(-)
+|  
+* commit b4feb5ce49610b6e3a688af6a1e5ed0d1d81c90f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 10 23:35:02 2012 +0200
+| 
+|     Print what we're extracting (output using the standard star or utar format, I think)
+| 
+|  KindleTool/convert.c |    2 ++
+|  1 file changed, 2 insertions(+)
+|  
+* commit 3bddf0e84e07063f0b319af8f3f2851f3d3a6e39
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 10 23:29:56 2012 +0200
+| 
+|     Use a proper temporary file in the extract cmd
+| 
+|  KindleTool/convert.c |   31 +++++++++++++++----------------
+|  1 file changed, 15 insertions(+), 16 deletions(-)
+|  
+* commit 2e512d33f88623486e181eef8114bbb39b9e0f90
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 7 19:34:21 2012 +0200
+| 
+|     Only fake the static builds user@host tag if I'm using my own user account
+| 
+|  tools/kindletool-static-build.sh |   24 +++++++++++++++---------
+|  1 file changed, 15 insertions(+), 9 deletions(-)
+|  
+* commit 07f367c31f115251d01d5a4b7244631bfbe21f8b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 7 19:16:15 2012 +0200
+| 
+|     Just use Juliet's hostname on every platform for the static builds, can't guarantee I'll always run them on my own boxes.
+| 
+|  tools/kindletool-static-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 2159c90c8ae98cb28c312f4a3a111a639cb39a56
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 7 07:32:42 2012 +0200
+| 
+|     Fake the user@host tag in static builds
+| 
+|  tools/kindletool-static-build.sh |   13 ++++++++++++-
+|  1 file changed, 12 insertions(+), 1 deletion(-)
+|  
+* commit 94972d4bf33ba1e4a6eb2eb59c162cbc538a6202
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu Jun 7 06:44:49 2012 +0200
+| 
+|     Use the string version of the compiler versions macros...
+| 
+|  KindleTool/kindle_tool.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit fdb91915c89a08cee490745f14db3dded3c5942b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 6 22:00:40 2012 +0200
+| 
+|     Add a compile-time user@host tag to the version string, like the Linux kernel
+| 
+|  KindleTool/Makefile              |    4 ++++
+|  KindleTool/kindle_tool.c         |    4 ++--
+|  KindleTool/kindle_tool.h         |    5 +++++
+|  KindleTool/version.sh            |   10 ++++++++--
+|  tools/kindletool-static-build.sh |    2 ++
+|  5 files changed, 21 insertions(+), 4 deletions(-)
+|  
+* commit fa2c40957e1041d99805292ce7149d842bbbbf7e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 6 03:15:28 2012 +0200
+| 
+|     Typo
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit c1deb1bef8e078431ca88bb804f3c237de757395
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 6 03:14:12 2012 +0200
+| 
+|     To be on the safe side, keep the MACOSX_DEPLOYMENT_TARGET stuff out of the Makefile, but use it when building the static packages to make our stuff backwards compatible with OS X 10.6...
+| 
+|  KindleTool/Makefile              |   13 +++++--------
+|  tools/kindletool-static-build.sh |    8 ++++----
+|  2 files changed, 9 insertions(+), 12 deletions(-)
+|  
+* commit 8c0028588827bb7e0ff59e1033060ff24910229e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Jun 6 02:52:58 2012 +0200
+| 
+|     Some musings about the whole MACOSX_DEPLOYMENT_TARGET thing on OS X...
+| 
+|  KindleTool/Makefile              |   13 +++++++++++++
+|  tools/kindletool-static-build.sh |    2 ++
+|  2 files changed, 15 insertions(+)
+|  
+* commit 1e14bd7aa3150b590185f564792a23ee8e3dafba
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Jun 5 07:34:48 2012 +0200
+| 
+|     Fix default debug CFLAGS with clang, and make sure we add our stuff to CFLAGS even if we passed them as an argument to make...
+| 
+|  KindleTool/Makefile |   30 +++++++++++++++++++-----------
+|  1 file changed, 19 insertions(+), 11 deletions(-)
+|  
+* commit b294dd270010ada81174a19210fdcd5d6e0fcc0c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 22:15:28 2012 +0200
+| 
+|     Make that a *real* Portage overlay, fix static buildscript for the move,
+|     and update docs
+| 
+|  COMPILING                                         |    2 +-
+|  gentoo/dev-util/kindletool/Manifest               |    1 +
+|  gentoo/dev-util/kindletool/kindletool-9999.ebuild |   43 +++++++++++++++++++
+|  .../dev-utils/kindletool/kindletool-9999.ebuild   |   43 -------------------
+|  gentoo/profiles/categories                        |    1 +
+|  gentoo/profiles/repo_name                         |    1 +
+|  tools/kindletool-static-build.sh                  |    6 +--
+|  7 files changed, 50 insertions(+), 47 deletions(-)
+|  
+* commit 832821626c05b29ab4ffb767748fc5a1cb38da2b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 22:10:25 2012 +0200
+| 
+|     Move stuff around to unclutter the root of the repo
+| 
+|  .../dev-utils/kindletool/kindletool-9999.ebuild   |   43 +++
+|  kindletool-9999.ebuild                            |   43 ---
+|  kindletool-static-build.sh                        |  325 -------------------
+|  tools/kindletool-static-build.sh                  |  325 +++++++++++++++++++
+|  4 files changed, 368 insertions(+), 368 deletions(-)
+|  
+* commit 9265de06730d60c1dd1ec78a166949f727b34c37
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 22:05:57 2012 +0200
+| 
+|     Update manpage date to the date of the latest tag
+| 
+|  KindleTool/KindleTool.1 |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit e78c925e8cb0fa01e4c17667f93a91bd913adea6
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 22:04:13 2012 +0200
+| 
+|     Fix a typo in the docs
+| 
+|  KindleTool/KindleTool.1  |    4 ++--
+|  KindleTool/kindle_tool.c |    2 +-
+|  README.md                |    2 +-
+|  3 files changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 7e8446081333d493557d1feab19cb580e4eb0407
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 06:27:28 2012 +0200
+| 
+|     Build OpenSSL-0.9.8 binaries against the right set of headers
+| 
+|  kindletool-static-build.sh |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit cc876b95466ecd62e30f90161a3a72015f1ba78c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 05:27:52 2012 +0200
+| 
+|     Build our OS X static binaries against system includes...
+| 
+|  kindletool-static-build.sh |    9 ++++++---
+|  1 file changed, 6 insertions(+), 3 deletions(-)
+|  
+* commit e183d89fc6ebdb789ca5db9d978f1ea9888aa2b8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 05:10:12 2012 +0200
+| 
+|     Add a few comments about linking statically against OpenSSL (it works, but we end up with ~1MB binaries, so, I'll pass).
+| 
+|  KindleTool/Makefile        |    4 ++++
+|  kindletool-static-build.sh |    1 +
+|  2 files changed, 5 insertions(+)
+|  
+* commit e380f8b95b54df8b8caed588015f961edca29518
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 04:53:22 2012 +0200
+| 
+|     ... Fix Linux static builds.
+| 
+|  kindletool-static-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit bd75f5d383728b755d6fe4a9dfb49d0fa0483eb3
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 04:48:51 2012 +0200
+| 
+|     ... And don't remove stuff too early.
+| 
+|  kindletool-static-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit adaf694dbd278bbd239d098052699f2ba6600b29
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 04:47:49 2012 +0200
+| 
+|     Build OpenSSL-0.9.8 static builds first, so I end up with a useable binary (on my system) in the working directory...
+| 
+|  kindletool-static-build.sh |   27 +++++++++++++--------------
+|  1 file changed, 13 insertions(+), 14 deletions(-)
+|  
+* commit cf9a28fb5262befc62d8fbfa9e490dfbaefcbf7a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 04:46:21 2012 +0200
+| 
+|     Oops, properly build a 64bit OpenSSL on x86_64...
+| 
+|  kindletool-static-build.sh |    6 +++++-
+|  1 file changed, 5 insertions(+), 1 deletion(-)
+|  
+* commit 565daf84ee7ffa8e1ca9f02f575776696afe9ded
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 04:40:36 2012 +0200
+| 
+|     >_<"
+| 
+|  kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit a1a0068a6c3978cde80f63f9535ca60e101c799a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 04:38:29 2012 +0200
+| 
+|     Use a more adequate name for the Linux static packages
+| 
+|  kindletool-static-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit bb08362ad63bc853b83ec869c1e94b37d208713d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 04:36:09 2012 +0200
+| 
+|     static buildscript: Download stuff if it's missing, zip the packages on OS X, and support building x86_64 Linux packages.
+| 
+|  COMPILING                  |    2 ++
+|  kindletool-static-build.sh |   66 ++++++++++++++++++++++++++++++------------
+|  2 files changed, 49 insertions(+), 19 deletions(-)
+|  
+* commit 51f5ed93e3ac80cf9daae042437b2955cb03e459
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 01:16:42 2012 +0200
+| 
+|     Bump fallback ver to 1.1
+| 
+|  COMPILING                  |    4 ++--
+|  KindleTool/kindle_tool.h   |    2 +-
+|  KindleTool/version.sh      |    2 +-
+|  kindletool-static-build.sh |    4 ++--
+|  4 files changed, 6 insertions(+), 6 deletions(-)
+|  
+* commit 0e3ad1427b038ab087f7ffee2bb612f6e8768412
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Jun 4 01:13:44 2012 +0200
+| 
+|     Missed some indents on OS X...
+| 
+|  KindleTool/Makefile |   12 +++++++-----
+|  1 file changed, 7 insertions(+), 5 deletions(-)
+|  
+* commit 32767e83c4a470e043162c0287e66600ee1cd38b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 3 21:50:32 2012 +0200
+| 
+|     Cleanup OS X comments in static buildscript
+| 
+|  kindletool-static-build.sh |    8 ++++----
+|  1 file changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 1861834a257139e16afb08e643c96a88f129cdc4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 3 21:38:25 2012 +0200
+| 
+|     Fix Markdown to plaintext regex on OSX
+| 
+|  kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit ff9c103437e37bb3272b7864146a7733a5f90ea9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 3 21:26:25 2012 +0200
+| 
+|     Fix static builds on OSX
+| 
+|  KindleTool/Makefile        |    2 +-
+|  KindleTool/create.c        |    2 +-
+|  kindletool-static-build.sh |   19 +++++++++++--------
+|  3 files changed, 13 insertions(+), 10 deletions(-)
+|  
+* commit 97d7f0a131c8d0ead01e8e1e3a0847dd41ff88ea
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 3 20:34:02 2012 +0200
+| 
+|     Fix Makefile & kindletool portfile for MacPorts
+| 
+|  KindleTool/Makefile             |    4 ++++
+|  ports/PortIndex                 |    4 ++++
+|  ports/PortIndex.quick           |    2 ++
+|  ports/devel/kindletool/Portfile |    2 +-
+|  4 files changed, 11 insertions(+), 1 deletion(-)
+|  
+* commit fe092065c7cceecff9d3b5197a92e689fe4cdf83
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Jun 3 18:39:40 2012 +0200
+| 
+|     Print a recap on convert & extract, too
+| 
+|  KindleTool/convert.c |   16 ++++++++++++++++
+|  KindleTool/create.c  |    4 ++--
+|  2 files changed, 18 insertions(+), 2 deletions(-)
+|  
+* commit 7e00f328bcd578e290a880efcc2edf712a8c2d09
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 30 01:44:01 2012 +0200
+| 
+|     Err, don't remove stuff we still need, though... :D
+| 
+|  kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 6c061fce745ad9b481968c7eb8afb0a20a076521
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 30 01:42:52 2012 +0200
+| 
+|     Cleanup behind us after a static build...
+| 
+|  kindletool-static-build.sh |    7 +++++++
+|  1 file changed, 7 insertions(+)
+|  
+* commit 1fc7f3fc24f9a1e7abbd68a6667a5ea8ffef89ae
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 10:40:21 2012 +0200
+| 
+|     More musings about OS X in the static buildscript...
+| 
+|  kindletool-static-build.sh |    5 +++--
+|  1 file changed, 3 insertions(+), 2 deletions(-)
+|  
+* commit 8265e82c16af3d1e2f94d3aa89c8d4fbfa247f86
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:56:28 2012 +0200
+| 
+|     Urgh. Bad, bad Windows ate my exec bit!
+| 
+|  0 files changed
+|  
+* commit 5e1fc5693b39d3324aecd8b79cb7fa7c24119f8c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:44:38 2012 +0200
+| 
+|     *sigh*
+| 
+|  kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit b3e53cba3149c7fa6b8a2b4f74cdd4b7b1c6998c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:43:08 2012 +0200
+| 
+|     Huh, apparently, Win32 PE binaries have a .exe extension... Wait, I knew that, yes? :D
+| 
+|  kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 38b71f8bbf6788b3e4292c5c28755c3fedd87b4d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:40:47 2012 +0200
+| 
+|     Oops. :D
+| 
+|  kindletool-static-build.sh |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 1cb13ded073e2880e78286c9c199881e1f5a9fa1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:33:56 2012 +0200
+| 
+|     Fix missing bits of static buildscript on Cygwin
+| 
+|  kindletool-static-build.sh |   19 ++++++++++++++-----
+|  1 file changed, 14 insertions(+), 5 deletions(-)
+|  
+* commit d387a13c2f09519564fc60fb5fa3433a8b82eb06
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:17:23 2012 +0200
+| 
+|     Meep, wrong OS
+| 
+|  kindletool-static-build.sh |   11 +++++------
+|  1 file changed, 5 insertions(+), 6 deletions(-)
+|  
+* commit e3e51b63f14a0350929bd473600feb0721d90160
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:11:29 2012 +0200
+| 
+|     Update OpenSSL 0.9.8 dep in static buildscript
+| 
+|  kindletool-static-build.sh |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 3419b8f35b1ebace7925418ad2463d3b7ef8377c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:08:50 2012 +0200
+| 
+|     Epic fail. :D
+| 
+|  kindletool-static-build.sh |   33 +++++++++++++++++----------------
+|  1 file changed, 17 insertions(+), 16 deletions(-)
+|  
+* commit 69234a0c939b8ae158898fd63360c095e6f890d6
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 09:07:42 2012 +0200
+| 
+|     First stab at a multi-platform static buildscript, because I'm lazy.
+| 
+|  kindletool-static-build.sh |  348 ++++++++++++++++++++++++++++++------------
+|  1 file changed, 248 insertions(+), 100 deletions(-)
+|  
+* commit 6c8875683db231315a60d5cce6719e3f90c7e593
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 29 08:43:49 2012 +0200
+| 
+|     Minor rewording of some stuff in the docs
+| 
+|  KindleTool/kindle_tool.c |    2 +-
+|  README.md                |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 05b0439734d32b0130331cfa280c8cff39cffbf1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 28 22:18:01 2012 +0200
+| 
+|     Fix stripping on OS X (at least, make it run. it may very well break the binary since I don't know anything about the mach-o format, but hey! :D)
+| 
+|  KindleTool/Makefile |    9 ++++++++-
+|  1 file changed, 8 insertions(+), 1 deletion(-)
+|  
+* commit 9026040a2703742c98094303bd83273a049948e5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 28 05:30:04 2012 +0200
+| 
+|     Move the GCC/Clang version detection from the makefile to the code itself, it's easier to detect/parse Clang this way
+| 
+|  KindleTool/Makefile      |    2 +-
+|  KindleTool/kindle_tool.c |    6 +++++-
+|  KindleTool/version.sh    |   10 ----------
+|  3 files changed, 6 insertions(+), 12 deletions(-)
+|  
+* commit 7bc3f88e7e586040cac5c2bdadb5f50b3e49e14a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 28 02:19:57 2012 +0200
+| 
+|     Fix static linking on Cygwin once and for all!
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 0ba97ee3e54eea69ccd9ff290c4530c87c7a044b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 28 00:53:59 2012 +0200
+| 
+|     Better Makefile syntax for linking...
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit f79885ca48cc0f345af3a15b9f724dd5deac94e2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 28 00:48:51 2012 +0200
+| 
+|     Fix Makefile to avoid potential linking issues (hopefully, that'll fix static linking on Cygwin)
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 23e04298e92632fb8e9089137feb6fff0e1dd66b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 23:50:03 2012 +0200
+| 
+|     Brainfart.
+| 
+|  KindleTool/Makefile |   12 +++++++-----
+|  1 file changed, 7 insertions(+), 5 deletions(-)
+|  
+* commit ac40f237eb46fb00ca8ac0219083bf8843d1a747
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 23:47:37 2012 +0200
+| 
+|     Update Makefile & Gentoo ebuild to play nice which each other @ install
+| 
+|  KindleTool/Makefile    |    7 +++++--
+|  kindletool-9999.ebuild |   15 ---------------
+|  2 files changed, 5 insertions(+), 17 deletions(-)
+|  
+* commit 1b67a532d0ac4615ad164dd8170670b3201b8f37
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 09:23:06 2012 +0200
+| 
+|     MacPorts ftw!
+| 
+|  COMPILING |    3 +--
+|  1 file changed, 1 insertion(+), 2 deletions(-)
+|  
+* commit e17b74ff0ceea45f389d0fc045368a6a7454b314
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 09:06:29 2012 +0200
+| 
+|     Create a kindletool Portfile :)
+| 
+|  COMPILING                       |    9 ++++-----
+|  ports/devel/kindletool/Portfile |   22 ++++++++++++++++++++++
+|  2 files changed, 26 insertions(+), 5 deletions(-)
+|  
+* commit 14d742d878a2bbbe78e347218edd868d743db8cc
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 08:50:18 2012 +0200
+| 
+|     Add an install target to the Makefiles (that follows DESTDIR)
+| 
+|  KindleTool/Makefile |   26 +++++++++++++++++++++++++-
+|  Makefile            |    3 +++
+|  2 files changed, 28 insertions(+), 1 deletion(-)
+|  
+* commit 6b75e82bd44655de992a86e35dec5da36aa42bb2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 08:37:02 2012 +0200
+| 
+|     Fix a bunch of typos
+| 
+|  COMPILING |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 57c8482d610d5543d668d5bfbf679324eea1bc48
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 08:35:50 2012 +0200
+| 
+|     Forgot to add the portfile repo...
+| 
+|  ports/archivers/libarchive/Portfile |   35 +++++++++++++++++++++++++++++++++
+|  1 file changed, 35 insertions(+)
+|  
+* commit 24513421d2eb89b32d082efefe4911e2f49af4b5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 08:35:19 2012 +0200
+| 
+|     Update OS X build instructions. (I'll probably end up writing a portfile for kindletool too, once I setup a proper install target in the Makefiles)
+| 
+|  COMPILING               |    9 ++++-----
+|  KindleTool/KindleTool.1 |    4 ----
+|  README.md               |    4 ----
+|  3 files changed, 4 insertions(+), 13 deletions(-)
+|  
+* commit 74081ca001dbe721023a88c33df07b1091e69e09
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 08:26:09 2012 +0200
+| 
+|     Slightly saner fix for the 'oops, not using an absolute path' bug I caught on OS X
+| 
+|  KindleTool/create.c |   51 +++++++++++++++++--------------------------------
+|  1 file changed, 18 insertions(+), 33 deletions(-)
+|  
+* commit 36b595557c20aa03bdcda7b9941f5f5792c9cf3b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 08:02:22 2012 +0200
+| 
+|     w00t, unbreak the Makefiles on Linux
+| 
+|  KindleTool/Makefile   |    3 +--
+|  KindleTool/version.sh |    2 +-
+|  2 files changed, 2 insertions(+), 3 deletions(-)
+|  
+* commit 1a4930678b7a48205806f89d035170c1ffc02d56
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 06:47:20 2012 +0200
+| 
+|     More OS X Makefile fix… (FWIW, The Xcode project file works)
+| 
+|  KindleTool/Makefile   |   34 +++++++++++++++++++++-------------
+|  KindleTool/version.sh |    7 ++++++-
+|  2 files changed, 27 insertions(+), 14 deletions(-)
+|  
+* commit aecb9e98523e9b27d2f2b836a1fa04005a936f03
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 27 06:17:28 2012 +0200
+| 
+|     OS X friendly commit (fix Makefile, and fix sigfile archival)!
+| 
+|  KindleTool/Makefile |    4 ++--
+|  KindleTool/create.c |   26 ++++++++++++++++----------
+|  2 files changed, 18 insertions(+), 12 deletions(-)
+|  
+* commit bab75db69ae6acdb73a5f16c089aaa07ad3d3f03
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri May 25 05:10:41 2012 +0200
+| 
+|     create: Output to stdout if output is a single dash, like tar c
+| 
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/create.c      |   20 +++++++-------------
+|  KindleTool/kindle_tool.c |    2 +-
+|  README.md                |    2 +-
+|  4 files changed, 10 insertions(+), 16 deletions(-)
+|  
+* commit 512137c48abc3974355e070a9b86f918686b98b2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri May 25 04:57:05 2012 +0200
+| 
+|     We don't support create to stdout with multiple file inputs, update the docs accordingly, and try to open the output *after* the sanity checks...
+| 
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/create.c      |   20 +++++++++++---------
+|  KindleTool/kindle_tool.c |    2 +-
+|  README.md                |    2 +-
+|  4 files changed, 14 insertions(+), 12 deletions(-)
+|  
+* commit 73174667dd2306b222527581f4e857c337a5f032
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 23:57:30 2012 +0200
+| 
+|     Use a simpler format (based on the basename, like the Python tool did) instead of the absolute sourcepath for the last field of the bundlefield
+| 
+|  KindleTool/create.c      |    9 +++++++--
+|  KindleTool/kindle_tool.h |    1 +
+|  2 files changed, 8 insertions(+), 2 deletions(-)
+|  
+* commit 5a630dfefe613ae1ff19b44027f2c4048a3bea2d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 23:31:34 2012 +0200
+| 
+|     astyle strikes again!
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 9d2d0748146217ce1d6960c54946df04398581e1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 23:30:49 2012 +0200
+| 
+|     Update docs
+| 
+|  KindleTool/KindleTool.1 |    3 +++
+|  README.md               |    1 +
+|  2 files changed, 4 insertions(+)
+|  
+* commit b32bf0177cc2313db71885496e1d9059c11bfa2d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 23:30:14 2012 +0200
+| 
+|     Support converting unsigned packages
+| 
+|  KindleTool/convert.c     |   46 +++++++++++++++++++++++++-------------------
+|  KindleTool/create.c      |    6 +++---
+|  KindleTool/kindle_tool.c |    9 ++++++---
+|  KindleTool/kindle_tool.h |   10 +++++-----
+|  4 files changed, 40 insertions(+), 31 deletions(-)
+|  
+* commit c0b8d6f5543581529822c31c2b72afafed1d79dd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 22:57:15 2012 +0200
+| 
+|     Oops, I was a bit hasty... Avoid a potential double free (caught by clang's static analyzer, yay!)
+| 
+|  KindleTool/create.c |    5 +++++
+|  1 file changed, 5 insertions(+)
+|  
+* commit a4d7863f15350c9779261a8c59d0409c954725e5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 22:42:50 2012 +0200
+| 
+|     Rework some stuff to make it less painful to free allocated memory, especially on errors
+| 
+|  KindleTool/convert.c |   18 +++---
+|  KindleTool/create.c  |  150 ++++++++++++++++++++++--------------------------
+|  2 files changed, 79 insertions(+), 89 deletions(-)
+|  
+* commit 67212057b1fba301eb4d26d543bae4ce43a07309
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 21:28:41 2012 +0200
+| 
+|     Make sure packages follow the update*.bin naming convention
+|     Don't delete input when using a single tarball
+| 
+|  KindleTool/convert.c |    6 ++---
+|  KindleTool/create.c  |   68 +++++++++++++++++++++++++++++++++++++-----------
+|  2 files changed, 56 insertions(+), 18 deletions(-)
+|  
+* commit 3bfd68f5b1a223c2f78c8bcb5d4c6f0d573563f6
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 24 07:17:38 2012 +0200
+| 
+|     Fix a bunch of memory leaks (mostly on errors) reported by clang 3.1 sa
+| 
+|  KindleTool/convert.c |    1 +
+|  KindleTool/create.c  |   53 ++++++++++++++++++++++++++++++++++++++++++++++--
+|  2 files changed, 52 insertions(+), 2 deletions(-)
+|  
+* commit 08885b06f26539e798862251cb5e55a3dc61a08e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 23:17:43 2012 +0200
+| 
+|     Shut some trivial clang static analyzer warnings up
+| 
+|  KindleTool/convert.c |    4 ++--
+|  KindleTool/create.c  |    3 +--
+|  2 files changed, 3 insertions(+), 4 deletions(-)
+|  
+* commit 33d25bee2f47aeba33c8c110a7de20aa37f68df2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 22:50:45 2012 +0200
+| 
+|     Update docs
+| 
+|  KindleTool/KindleTool.1  |    2 ++
+|  KindleTool/kindle_tool.c |    1 +
+|  README.md                |    1 +
+|  3 files changed, 4 insertions(+)
+|  
+* commit 919b90def4fbaf052fca05dafbb7d9aceff1f3bb
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 22:29:36 2012 +0200
+| 
+|     Don't die horribly when trying to determine the rev number if we simply don't have git installed
+| 
+|  KindleTool/version.sh |    5 +++++
+|  1 file changed, 5 insertions(+)
+|  
+* commit 893629bec67946edb96fb2311b96e207e4900b39
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 22:14:56 2012 +0200
+| 
+|     Update COMPILING with a note about Debian crazy naming scheme for zlib.
+| 
+|  COMPILING |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit d5470a89668220e96fc4220f1cf6688174547845
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 20:29:37 2012 +0200
+| 
+|     Hey, useless commit! :D
+| 
+|  KindleTool/create.c |    1 -
+|  1 file changed, 1 deletion(-)
+|  
+* commit 0789b1d8cb49cf5490012d0069d8ac59b3aa8be9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 20:04:09 2012 +0200
+| 
+|     Properly handle bundlefile exclusion via libarchive...
+| 
+|  KindleTool/convert.c |    2 +-
+|  KindleTool/create.c  |   25 ++++++++++++-------------
+|  2 files changed, 13 insertions(+), 14 deletions(-)
+|  
+* commit 58d2eaff9c8c6405c80319d63e3962d25487675e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 07:14:11 2012 +0200
+| 
+|     Properly inhibits specific 'variable set but unused' warnings via the unused attribute (AFAICT, it's portable enough for what we care about, GCC and clang)
+| 
+|  KindleTool/convert.c |    2 +-
+|  KindleTool/create.c  |    3 +--
+|  2 files changed, 2 insertions(+), 3 deletions(-)
+|  
+* commit 1b678d7f14dd302e862d8ac00905fef95c64a93d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 04:25:06 2012 +0200
+| 
+|     Sigh. *Really* fix the ebuild...
+| 
+|  kindletool-9999.ebuild |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit b92b15e8c216609044c58e48ab3219ce253941d2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 04:12:18 2012 +0200
+| 
+|     Update Gentoo ebuild, the README moved, duh.
+| 
+|  kindletool-9999.ebuild |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit e87feb2683041b309f0c46c89c3e02c896c42b84
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 03:41:56 2012 +0200
+| 
+|     Don't deviate too much from the old plaintext README when doing a
+|     markdown => plaintext conversion for static builds
+| 
+|  kindletool-static-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 0ed9d8a3fed21055bfa0c92eddbd95bec0a518f5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 03:24:40 2012 +0200
+| 
+|     Kill stray double quotes...
+| 
+|  README.md |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit bf1ebb96627875839656090c7a8dbe09b6853013
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 03:20:17 2012 +0200
+| 
+|     Oops, don't let kate strip trailing whitespaces, we do need them in
+|     Markdown...
+| 
+|  README    |   91 -----------------------------------------------------------
+|  README.md |   38 ++++++++++++-------------
+|  2 files changed, 19 insertions(+), 110 deletions(-)
+|  
+* commit 9b4c6e6a55696c23473a32833f3494e57a972568
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 03:01:54 2012 +0200
+| 
+|     Move to a Markdown README, it's prettier! (Also, less broken in GitHub for Windows).
+| 
+|  README.md                  |  102 ++++++++++++++++++++++++++++++++++++++++++
+|  kindletool-static-build.sh |    8 +++-
+|  2 files changed, 108 insertions(+), 2 deletions(-)
+|  
+* commit 7d5a0935f47ffd355022020b55227a8b56ae73b7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 02:19:44 2012 +0200
+| 
+|     Quick astyle run after getting back to a proper text editor...
+| 
+|  KindleTool/create.c      |   12 ++++++------
+|  KindleTool/kindle_tool.c |    2 +-
+|  2 files changed, 7 insertions(+), 7 deletions(-)
+|  
+* commit 19babceaef5e554071d256df1b6621046c61133a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 02:07:23 2012 +0200
+| 
+|     Put some stuff in a slightly more logical order
+| 
+|  KindleTool/create.c |   15 +++++++++------
+|  1 file changed, 9 insertions(+), 6 deletions(-)
+|  
+* commit f6fc8fa0ce18b2b88f0baa66bb9636b61f5c8d49
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 01:25:15 2012 +0200
+| 
+|     Slightly more accurate pattern matching
+| 
+|  KindleTool/create.c |   11 +++++------
+|  1 file changed, 5 insertions(+), 6 deletions(-)
+|  
+* commit e1428f893461f06e9471a168d7aee4f5ff560718
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 23 00:46:39 2012 +0200
+| 
+|     Oops, print warnings/errors to stderr ;)
+| 
+|  KindleTool/create.c |   12 ++++++------
+|  1 file changed, 6 insertions(+), 6 deletions(-)
+|  
+* commit 2e67bc4add4ec85a52c1cbed435b5a5100d0b2ab
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 22:28:56 2012 +0200
+| 
+|     Kill deprecated comments
+| 
+|  KindleTool/create.c |    5 -----
+|  1 file changed, 5 deletions(-)
+|  
+* commit 3199cb97b5b989a31ce63a950e0132d4a3d44639
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 22:28:04 2012 +0200
+| 
+|     More ugly workarounds to allow repacking a valid update package straight away without manually tinkering with it...
+| 
+|  KindleTool/create.c      |   52 +++++++++++++++++++++++++++++++++++++++++---
+|  KindleTool/kindle_tool.h |    1 +
+|  2 files changed, 50 insertions(+), 3 deletions(-)
+|  
+* commit b4b926d4f67fd50c8112965038b0297ae8f55c36
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 20:06:48 2012 +0200
+| 
+|     Die in a fire, CRLF. (How the hell did it get there anyway? Windows magic! >_<")
+| 
+|  KindleTool/kindle_tool.h |  420 ++++++++++++++++++++++----------------------
+|  1 file changed, 210 insertions(+), 210 deletions(-)
+|  
+* commit d6fdc1325bcd7fb50caf62358c7abbfabf5ec511
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 19:56:56 2012 +0200
+| 
+|     Use libarchive's pattern matching to exclude .sig files, instead of doing it ourselves
+| 
+|  KindleTool/create.c |   24 ++++++++++++++++++++++--
+|  1 file changed, 22 insertions(+), 2 deletions(-)
+|  
+* commit e7dc5d938801cd4d32ac2b9bcb803a335064b44b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 19:06:53 2012 +0200
+| 
+|     Remove ugly debug print
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 2638b3947991caca4626aeec198a9d09e0da4215
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 19:03:13 2012 +0200
+| 
+|     When checking file extensions, do it in a case insensitive way, to avoid suprises on Windows...
+| 
+|  KindleTool/create.c      |    3 +-
+|  KindleTool/kindle_tool.h |  420 ++++++++++++++++++++++----------------------
+|  2 files changed, 211 insertions(+), 212 deletions(-)
+|  
+* commit 4b29212eb6c17803d0e8be4e6174b4225161494c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 18:56:00 2012 +0200
+| 
+|     Slightly less specific Cygwin detection in the makefile, I'm assuming everyone is running on an NT kernel...
+| 
+|  KindleTool/Makefile      |    5 ++---
+|  KindleTool/create.c      |    1 -
+|  KindleTool/kindle_tool.c |    2 +-
+|  3 files changed, 3 insertions(+), 5 deletions(-)
+|  
+* commit 8fc5e753d588636e0375b7c0a90d1157f3823d1d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 22 18:51:08 2012 +0200
+| 
+|     Fix makefile to build properly on Cygwin
+| 
+|  COMPILING                |   12 ++++++++----
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/Makefile      |   18 +++++++++++++++---
+|  KindleTool/create.c      |   15 +++++++++++----
+|  KindleTool/kindle_tool.c |    8 +++++---
+|  README                   |    2 +-
+|  6 files changed, 41 insertions(+), 16 deletions(-)
+|  
+* commit d1513b30d01035396ddc41995d6692499255af9e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 21:21:12 2012 +0200
+| 
+|     Since we're now building the VERSION file in static builds, use it instead of the makefile include
+| 
+|  kindletool-static-build.sh |   10 ++++------
+|  1 file changed, 4 insertions(+), 6 deletions(-)
+|  
+* commit 2e8474b1c0a0fee3422d4b3dd6606033f44c1f55
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 20:22:11 2012 +0200
+| 
+|     Build & bundle the VERSION file in static builds
+| 
+|  kindletool-static-build.sh |    8 ++++++--
+|  1 file changed, 6 insertions(+), 2 deletions(-)
+|  
+* commit 6a62f02534f8ad1d5327aba3252fd5962d502adc
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 20:19:04 2012 +0200
+| 
+|     Build & bundle a ChangeLog in static builds
+| 
+|  kindletool-static-build.sh |    6 ++++--
+|  1 file changed, 4 insertions(+), 2 deletions(-)
+|  
+* commit 1961ae22e7bfaaf6bd24662a39aa58f75ed57d3e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 06:51:26 2012 +0200
+| 
+|     Makefile: Use CPPFLAGS/LDFLAGS for custom include/libdir searchpath, instead of cluttering CFLAGS
+| 
+|  KindleTool/Makefile        |   12 ++++++++----
+|  kindletool-static-build.sh |    5 +++--
+|  2 files changed, 11 insertions(+), 6 deletions(-)
+|  
+* commit 29be76936457da1bc48c5260af5daa881e57f98e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 05:15:37 2012 +0200
+| 
+|     Update docs
+| 
+|  COMPILING |    7 ++++---
+|  1 file changed, 4 insertions(+), 3 deletions(-)
+|  
+* commit 0a21f18580896406a9b6be7dae100168c1016926
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 04:54:17 2012 +0200
+| 
+|     Fix docs
+| 
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/kindle_tool.c |    2 +-
+|  README                   |    2 +-
+|  3 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 932627dadb97651b9e940c590c23957da4d9cca4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 04:52:33 2012 +0200
+| 
+|     create: Actually allow using ulong as src/tgt rev on ota2 and default to UINT64_MAX, except for update types that expects an uint, where we keep using UINT32_MAX
+| 
+|  KindleTool/create.c |    9 +++++----
+|  1 file changed, 5 insertions(+), 4 deletions(-)
+|  
+* commit 644867f3ac1e6c7de99021c0c8172ebb1e1fa22d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 04:30:29 2012 +0200
+| 
+|     create: Use our dirty_bundlefile var instead of checking if we're the last file when building a tarball
+| 
+|  KindleTool/create.c |    9 +++++----
+|  1 file changed, 5 insertions(+), 4 deletions(-)
+|  
+* commit 8bd5a846ccf622436c5b0d1f354e8c6394a4b7de
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 04:21:55 2012 +0200
+| 
+|     convert: Print the padding byte found in official OTA V2 updates...
+| 
+|  KindleTool/convert.c |    8 ++++++--
+|  1 file changed, 6 insertions(+), 2 deletions(-)
+|  
+* commit cb434435b07cd67206949d3b50b0160034fbeae2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 01:34:33 2012 +0200
+| 
+|     Fix docs
+| 
+|  KindleTool/KindleTool.1 |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 51190c81dd41b8688ccd1653f2188fa7d276f2ee
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 01:00:32 2012 +0200
+| 
+|     Makefile: Use a lowercase manpage name on Linux
+| 
+|  KindleTool/.gitignore      |    2 ++
+|  KindleTool/Makefile        |    6 +++++-
+|  kindletool-9999.ebuild     |    2 +-
+|  kindletool-static-build.sh |    8 ++++----
+|  4 files changed, 12 insertions(+), 6 deletions(-)
+|  
+* commit b90d4b9ba31e75d1411bcb31ec60d1d0082e5c1f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 00:47:50 2012 +0200
+| 
+|     Add some more comment about x86/x86_64
+| 
+|  KindleTool/create.c |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit c34e9e4c14ca018fd77f5d0b55bce3bee55701b9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 00:19:40 2012 +0200
+| 
+|     One more astyle run...
+| 
+|  KindleTool/convert.c     |    6 +++---
+|  KindleTool/create.c      |   10 +++++-----
+|  KindleTool/kindle_tool.c |    2 +-
+|  3 files changed, 9 insertions(+), 9 deletions(-)
+|  
+* commit d10f4ae843fcc73a836d07ba71a52a8cbc787fb0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 00:16:52 2012 +0200
+| 
+|     Fix docs
+| 
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/kindle_tool.c |    2 +-
+|  README                   |    2 +-
+|  3 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 505528e61cdf58bf17b5c15a3a59d6a1cdc26a46
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 14 00:14:56 2012 +0200
+| 
+|     More types fun times fixes!
+|     create: Revert the previous changes for critical, apparently it's really supposed to be 1 byte + 1 padding byte
+|     convert: On the other hand, fix convert so that it *also* assumes that critical is an unsigned char, so don't pick up the padding byte garbage found in official updates
+|     create: Remove the crappy src/tgt rev clamping on OTA V1, it's unneeded
+|     convert: Fix OTA V1 src/tgt rev parsing: use a proper printf conversion format (It's an uint32, not an int, that's why we ended up with -1 when putting UINT32_MAX in an int...)
+| 
+|  KindleTool/convert.c     |   12 ++++++------
+|  KindleTool/create.c      |   20 ++++++--------------
+|  KindleTool/kindle_tool.h |    2 +-
+|  3 files changed, 13 insertions(+), 21 deletions(-)
+|  
+* commit d4eef4d696340bed21e3ebb39018dd150eaa97f4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 13 22:16:38 2012 +0200
+| 
+|     Fix comment
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 26d973fac4079429dc72defc8d5f818335c7fdb1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 13 22:12:31 2012 +0200
+| 
+|     create: Properly allow putting an ushort instead of an uchar in critical. (Hopefully, I didn't scramble OTA2 headers...).
+|     Also fix previous commit for OTA V1 optional while we're at it, and make sure it's an uchar everywhere
+| 
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/create.c      |    8 +++-----
+|  KindleTool/kindle_tool.c |    2 +-
+|  KindleTool/kindle_tool.h |    2 +-
+|  README                   |    2 +-
+|  5 files changed, 7 insertions(+), 9 deletions(-)
+|  
+* commit cb995ef07bee8b708b5f2b96e5da8e41e20b053a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 13 21:44:21 2012 +0200
+| 
+|     Fix some clang warnings
+| 
+|  KindleTool/kindle_tool.h |    8 ++++----
+|  1 file changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 04a54804cc7a343b2cf56df1464f1ef312dc3def
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 13 21:18:35 2012 +0200
+| 
+|     Makefile: Use $CC to make clang happy
+| 
+|  KindleTool/Makefile |   10 +++++-----
+|  1 file changed, 5 insertions(+), 5 deletions(-)
+|  
+* commit 1538df7a35803e9a635de221599976d89a4da435
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 13 21:08:15 2012 +0200
+| 
+|     convert: Strip .bin from the package signature filename.
+|     Don't leave empty package sigs around
+| 
+|  KindleTool/convert.c |   12 +++++++++++-
+|  1 file changed, 11 insertions(+), 1 deletion(-)
+|  
+* commit 810bfd8c9e223f87f17e079ad817d7d23c70b857
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 13 20:48:36 2012 +0200
+| 
+|     Hand edit the XCode project file to fix linking
+| 
+|  KindleTool.xcodeproj/project.pbxproj |    6 ++----
+|  1 file changed, 2 insertions(+), 4 deletions(-)
+|  
+* commit 941af5bbb3803ea40a9aff8d4ff68cd62aad420c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 13 20:45:54 2012 +0200
+| 
+|     convert: Use snprintf when manipulating file extensions
+| 
+|  KindleTool/convert.c |   54 +++++++++++++++++++++++++++++-------------------
+|  KindleTool/create.c  |    6 +++---
+|  2 files changed, 36 insertions(+), 24 deletions(-)
+|  
+* commit b062ae990f09fe17b91ade13e25b2c42aaab0e97
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 10 20:00:46 2012 +0200
+| 
+|     Fix docs
+| 
+|  KindleTool/KindleTool.1 |    4 ++--
+|  README                  |    4 ++--
+|  2 files changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 457563fc27ef2bc895121692730ac693377be8e0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 10 20:00:13 2012 +0200
+| 
+|     The md/dm commands were inverted, fix it.
+| 
+|  KindleTool/kindle_tool.c |   18 +++++++++---------
+|  1 file changed, 9 insertions(+), 9 deletions(-)
+|  
+* commit 5fac74f478a20d447f1d36254d8404a44e3ff568
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 10 19:59:47 2012 +0200
+| 
+|     Fix some comments
+| 
+|  KindleTool/create.c |   19 +++++++++----------
+|  1 file changed, 9 insertions(+), 10 deletions(-)
+|  
+* commit a51f68e009a2022e3841fb07ea0dd4adf2ba48d9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 06:31:52 2012 +0200
+| 
+|     Wow, yeah, go to sleep, NOW! *_*
+| 
+|  kindletool-static-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 5db4921bc9e65acf1a3fb8def4d8d80d21d59cc5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 06:30:40 2012 +0200
+| 
+|     Ouch. Proably means it's time to go to sleep...
+| 
+|  kindletool-static-build.sh |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 7169c5fe160e4bc5cfb005d6164a26edddc02a12
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 06:29:29 2012 +0200
+| 
+|     Bundle the manpage with static builds
+| 
+|  kindletool-static-build.sh |    2 ++
+|  1 file changed, 2 insertions(+)
+|  
+* commit 9664057e43f15dd8471c8a12120e7b4ec6f831d1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 05:00:59 2012 +0200
+| 
+|     static-build: Drop a readme & credits file in the packages.
+| 
+|  kindletool-static-build.sh |   17 +++++++++++++++--
+|  1 file changed, 15 insertions(+), 2 deletions(-)
+|  
+* commit 482b5d84cb3db6e105a1fbfc4b433d573f671920
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 04:48:53 2012 +0200
+| 
+|     Moar pretty!
+| 
+|  kindletool-static-build.sh |   14 +++++++++++---
+|  1 file changed, 11 insertions(+), 3 deletions(-)
+|  
+* commit 58fdec01e47f638124e4cabe80dcf1b456b54480
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 04:45:24 2012 +0200
+| 
+|     Add the quick'n dirty script I used to compile & package a static build (Pretty gentoo-centric).
+| 
+|  kindletool-static-build.sh |   88 ++++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 88 insertions(+)
+|  
+* commit 190d80653d98998abcd52c3abc5e509eda1e3a96
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 04:15:53 2012 +0200
+| 
+|     typo
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit ddf4a1a2530137764faf658cdcb77787f99833b1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 04:15:25 2012 +0200
+| 
+|     create: Let's avoid creating broken packages
+| 
+|  KindleTool/create.c |    7 +++++++
+|  1 file changed, 7 insertions(+)
+|  
+* commit 3f38b4c8c8539e3303202ef1beb4ddb3318d8f8d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 04:09:56 2012 +0200
+| 
+|     create: Fix default magic number for K4/K5 recovery packages
+| 
+|  KindleTool/create.c |    8 ++++++++
+|  1 file changed, 8 insertions(+)
+|  
+* commit 9d3aa23abde726e937cfcebef8b9d3bb4d75447c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 04:01:40 2012 +0200
+| 
+|     Fix kindle target, we don't want a *fully* static build.
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit bbe17b02b60742e6eee9d511daed0f9f1a120c6d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 03:44:24 2012 +0200
+| 
+|     Update docs
+| 
+|  KindleTool/KindleTool.1  |    3 +++
+|  KindleTool/kindle_tool.c |    1 +
+|  README                   |    1 +
+|  3 files changed, 5 insertions(+)
+|  
+* commit 80de61afcd9c06176fea614631c6e41216a15aee
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed May 9 03:41:57 2012 +0200
+| 
+|     Support building unsigned packages
+| 
+|  KindleTool/create.c      |  144 ++++++++++++++++++++++++++++++++++----------
+|  KindleTool/kindle_tool.c |    8 ++-
+|  KindleTool/kindle_tool.h |   10 +--
+|  3 files changed, 122 insertions(+), 40 deletions(-)
+|  
+* commit 252c65a0b1f4d5d7ec206389d990d79bdbdd5692
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 22:40:48 2012 +0200
+| 
+|     create: Support the 2 somewhat murky new k5 device codes found in the official 5.1.0 update
+| 
+|  KindleTool/KindleTool.1  |    2 +-
+|  KindleTool/create.c      |   10 ++++++++++
+|  KindleTool/kindle_tool.c |    6 ++++++
+|  KindleTool/kindle_tool.h |    2 ++
+|  README                   |    2 ++
+|  5 files changed, 21 insertions(+), 1 deletion(-)
+|  
+* commit c9669f0fe337396346eede5b51cfb925321d5cde
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 22:32:44 2012 +0200
+| 
+|     convert: Print unknown device codes (in hex, 0 padded).
+| 
+|  KindleTool/convert.c |    6 +++++-
+|  1 file changed, 5 insertions(+), 1 deletion(-)
+|  
+* commit 0defbca63a511efb02fcf2139d6effcf7f94072b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 20:54:35 2012 +0200
+| 
+|     version.sh: Don't add the GCC tag when we just want to create a VERSION file
+| 
+|  KindleTool/version.sh |    6 ++++--
+|  1 file changed, 4 insertions(+), 2 deletions(-)
+|  
+* commit 8412a5465f2e768d51bf8948f1e53d7b7a827215
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 06:27:25 2012 +0200
+| 
+|     Moar comments!
+| 
+|  KindleTool/version.sh |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit ce8073fa9f9ce0555de71327e52edce777739cc8
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 05:17:29 2012 +0200
+| 
+|     astyle strikes again!
+| 
+|  KindleTool/create.c |    9 +++++----
+|  1 file changed, 5 insertions(+), 4 deletions(-)
+|  
+* commit 3dbf5ee7cd0c1ec3de427c83f260b44d05fa3e8c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 05:00:37 2012 +0200
+| 
+|     version.sh: Make sure we're always run by bash, even when make calls us,
+|     because we do use bash features that aren't available in some other
+|     defaut sh shells (say, dash, for example...)
+| 
+|  KindleTool/Makefile   |    5 +++--
+|  KindleTool/version.sh |   22 ++++++++++++----------
+|  2 files changed, 15 insertions(+), 12 deletions(-)
+|  
+* commit 21c423483ec6bc6899ca0693e18bf70519976ba1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 04:47:08 2012 +0200
+| 
+|     version.sh: Switch to the fake SVN-like version tag
+| 
+|  KindleTool/version.sh |   14 +++++++++++---
+|  1 file changed, 11 insertions(+), 3 deletions(-)
+|  
+* commit 7924805ad6cf7805e2b03cbbbacd8f3bef7c0d67
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 04:23:22 2012 +0200
+| 
+|     version.sh: Fix/expand some comments
+| 
+|  KindleTool/version.sh |    6 ++++--
+|  1 file changed, 4 insertions(+), 2 deletions(-)
+|  
+* commit 21a0318eae7d53888b44319e629c6112bdbde126
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 04:18:40 2012 +0200
+| 
+|     version.sh: Support SVN-like version tagging, via a bit of tagging
+|     trickery ;)
+| 
+|  KindleTool/version.sh |   10 ++++++++++
+|  1 file changed, 10 insertions(+)
+|  
+* commit 1375784616c7fa7d3932c87501833da6fbed62b0
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 02:17:23 2012 +0200
+| 
+|     *brainfart*
+| 
+|  KindleTool/create.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 4ceedd2395a17f73bce973a50245c6e669f1ac4c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue May 8 02:10:24 2012 +0200
+| 
+|     create: Fix some validation logic being a bit too dumb
+| 
+|  KindleTool/create.c |   11 ++++++-----
+|  1 file changed, 6 insertions(+), 5 deletions(-)
+|  
+* commit 807ca568bd86fd0438fc92685aecfea39767d793
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon May 7 06:35:39 2012 +0200
+| 
+|     Show some more warnings (same flags as libarchive's deug builds), and fix them.
+| 
+|  KindleTool/Makefile      |   11 ++++++++-
+|  KindleTool/convert.c     |   42 +++++++++++++++++-----------------
+|  KindleTool/create.c      |   54 ++++++++++++++++++++++----------------------
+|  KindleTool/kindle_tool.c |   24 ++++++++++++++++----
+|  KindleTool/kindle_tool.h |   19 +---------------
+|  5 files changed, 79 insertions(+), 71 deletions(-)
+|  
+* commit 781213ae9894efb404d0351f4d8cefa74a7d0983
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 19:57:03 2012 +0200
+| 
+|     version: Show the libarchive release we built against
+| 
+|  KindleTool/kindle_tool.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 1b5dd60b48cf9a6266d6309b3c8a947f1612adba
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 19:49:16 2012 +0200
+| 
+|     Bump libarchive dep to >= 3.0.3, apparently there were some moderately serious bugs in previous 3.x releases.
+| 
+|  COMPILING                |    2 +-
+|  KindleTool/kindle_tool.h |    4 ++--
+|  2 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 5582725c05178a6c162d638dfb17df6cc36cf057
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 11:07:53 2012 +0200
+| 
+|     Moar pretty!
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit e339dd3bc47043601ec5aa840ed6fa032020aeb9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 11:04:19 2012 +0200
+| 
+|     Fail earlier & more gracefully if we're building against a too old libarchive version
+| 
+|  KindleTool/kindle_tool.h |    5 +++++
+|  1 file changed, 5 insertions(+)
+|  
+* commit 6f0a3dd5817179652ef88fe5c63dbb1c36388dfc
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 09:24:15 2012 +0200
+| 
+|     Use explicit casts instead of the C99 macros, kdevelop's syntax checker chokes on these...
+| 
+|  KindleTool/convert.c |    4 ++--
+|  KindleTool/create.c  |    4 ++--
+|  2 files changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 31d8b807d80700b5fba132682ee1fc2af083f6c9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 09:20:59 2012 +0200
+| 
+|     *facepalm*
+| 
+|  KindleTool/convert.c |    4 ++--
+|  KindleTool/create.c  |    2 +-
+|  2 files changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 20f09915a5261a0fc0b7f7115914b8c926effe82
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 09:17:40 2012 +0200
+| 
+|     Use ugly C99 64bit int printf macros to avoid warning on x86_64.
+| 
+|  KindleTool/Makefile  |    2 +-
+|  KindleTool/convert.c |    4 ++--
+|  KindleTool/create.c  |    4 ++--
+|  3 files changed, 5 insertions(+), 5 deletions(-)
+|  
+* commit f63b43d6bceb3fd9ea1b7000ec7f0407c9f056f5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 08:23:26 2012 +0200
+| 
+|     version.sh: Avoid double bracket tests, apparently, shells than don't handle them are more common than I thought... (Again, thanks to ixtab for reporting this).
+| 
+|  KindleTool/version.sh |   12 ++++++------
+|  1 file changed, 6 insertions(+), 6 deletions(-)
+|  
+* commit 22ee7121e767b229bb922d2160c15a4d8225963c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun May 6 08:18:56 2012 +0200
+| 
+|     Kill libarchive 2 ifdef's, we depend on libarchive 3 (Thanks to ixtab for testing this :)).
+| 
+|  COMPILING            |    2 +-
+|  KindleTool/convert.c |    8 --------
+|  KindleTool/create.c  |    8 --------
+|  3 files changed, 1 insertion(+), 17 deletions(-)
+|  
+* commit 7db0dfad55e6ac2123674e5f8866810bac6a337a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat May 5 04:42:52 2012 +0200
+| 
+|     Rephrase ota/ota2 help. It's targeted at a device generation, not a FW version.
+| 
+|  KindleTool/KindleTool.1  |    4 ++--
+|  KindleTool/kindle_tool.c |    4 ++--
+|  README                   |    4 ++--
+|  3 files changed, 6 insertions(+), 6 deletions(-)
+|  
+* commit a826088c48000db5a9a60e2ad69a84be65fdaf92
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat May 5 04:39:11 2012 +0200
+| 
+|     Finished manpage, yay!
+| 
+|  KindleTool/KindleTool.1 |  180 +++++++++++++++++++++++++++++++++++++++++++--
+|  README                  |    2 +-
+|  2 files changed, 176 insertions(+), 6 deletions(-)
+|  
+* commit 5fc20b54317b76e8cc2343e2c9aea906004bd9e4
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri May 4 06:00:47 2012 +0200
+| 
+|     man: Less annoying syntax
+| 
+|  KindleTool/KindleTool.1 |    9 +++++----
+|  1 file changed, 5 insertions(+), 4 deletions(-)
+|  
+* commit 86a52e9a6745f2c5ed9b23e4a58b0c32f46e98d1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri May 4 05:52:04 2012 +0200
+| 
+|     Fix the makefile once and for all (no more crazy recursion & deps, fixed default target).
+|     Start working on a proper manpage.
+| 
+|  KindleTool/KindleTool.1 |  108 ++++++++++++---------------------------------
+|  KindleTool/Makefile     |   20 ++++-----
+|  2 files changed, 39 insertions(+), 89 deletions(-)
+|  
+* commit 4318dae193554ab860fbbad3cae6e8d65d56fcdf
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 06:50:25 2012 +0200
+| 
+|     version.sh: Avoid a fork, I don't really care about supporting weird old shells, I'm assuming we're running on a somewhat recent bash version
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit f556d239a6fbc993f7d001a18c592463e5c1352b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 06:06:25 2012 +0200
+| 
+|     Update doc
+| 
+|  KindleTool/kindle_tool.c |    8 +++++++-
+|  README                   |    6 ++++++
+|  2 files changed, 13 insertions(+), 1 deletion(-)
+|  
+* commit a8d6b2ef76fd94ec609005fba72a22261a2ee1c9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 06:00:53 2012 +0200
+| 
+|     Re-add GCC version to the version tag...
+| 
+|  KindleTool/version.sh |   10 +++++++++-
+|  1 file changed, 9 insertions(+), 1 deletion(-)
+|  
+* commit 4fdd4e6b16108fdc74ad49e050ceeaa13983eba1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 05:54:08 2012 +0200
+| 
+|     Tweak the version tag output
+| 
+|  KindleTool/kindle_tool.h |    2 +-
+|  KindleTool/version.sh    |    9 +++++----
+|  2 files changed, 6 insertions(+), 5 deletions(-)
+|  
+* commit bdae7ec336648cf38b6ae3980d8628070bb5db04
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 05:50:09 2012 +0200
+| 
+|     More makefile tweaks
+| 
+|  KindleTool/Makefile |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 33bb0bfe1528c8073ce4be9d835b7532c79031e1
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 05:42:50 2012 +0200
+| 
+|     Slightly smarter version handling (heavily inspired from git's setup).
+| 
+|  KindleTool/.gitignore    |    2 ++
+|  KindleTool/Makefile      |   12 ++++++++---
+|  KindleTool/kindle_tool.c |    2 +-
+|  KindleTool/kindle_tool.h |    5 ++++-
+|  KindleTool/version.h     |    1 -
+|  KindleTool/version.sh    |   48 ++++++++++++++++++++++++++++++++------------
+|  Makefile                 |    2 +-
+|  7 files changed, 52 insertions(+), 20 deletions(-)
+|  
+* commit fb8e8425c4637bf8a839feb2fef38416d0346a1b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 04:57:05 2012 +0200
+| 
+|     Try some more stuff for version handling
+| 
+|  KindleTool/Makefile  |    3 ++-
+|  KindleTool/version.h |    2 +-
+|  2 files changed, 3 insertions(+), 2 deletions(-)
+|  
+* commit 90de7c719aedf2ee3e8b8da74acbc445b6863608
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 04:49:38 2012 +0200
+| 
+|     Add a slightly crappy version command with git info
+| 
+|  KindleTool/Makefile      |    1 +
+|  KindleTool/kindle_tool.c |    8 ++++++++
+|  KindleTool/kindle_tool.h |    5 ++++-
+|  KindleTool/version.h     |    1 +
+|  KindleTool/version.sh    |   27 +++++++++++++++++++++++++++
+|  5 files changed, 41 insertions(+), 1 deletion(-)
+|  
+* commit 2df78d7aa2a71c041d847b6001a98bcaee5d685e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 04:11:52 2012 +0200
+| 
+|     Be consistent when naming OTA V1
+| 
+|  KindleTool/create.c      |    2 +-
+|  KindleTool/kindle_tool.c |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit c5303acbfd235557d4223bd61aaee8ce07837edf
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Thu May 3 04:08:40 2012 +0200
+| 
+|     create: (very) slightly saner error handling when creating intermediate archive (mostly try not to leave a broken bundle/sigfile behind).
+| 
+|  KindleTool/create.c |   50 ++++++++++++++++++++++++++++++++++++-------------
+|  1 file changed, 37 insertions(+), 13 deletions(-)
+|  
+* commit 651484bf4846ed95d1686355618b7d1bb9c17d46
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 29 05:20:52 2012 +0200
+| 
+|     create: Slightly prettier recap of the bundle version/magic string.
+| 
+|  KindleTool/convert.c     |    2 +-
+|  KindleTool/create.c      |    2 +-
+|  KindleTool/kindle_tool.c |   18 ++++++++++++++++++
+|  KindleTool/kindle_tool.h |    1 +
+|  4 files changed, 21 insertions(+), 2 deletions(-)
+|  
+* commit e7f4ed25a7ad63c67dfe1311a926c85c772170b7
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 29 04:55:19 2012 +0200
+| 
+|     Oops. Use the proper _FILE_OFFSET_BITS define name, and remove the thus useless explicit cast.
+| 
+|  KindleTool/Makefile |    2 +-
+|  KindleTool/create.c |    2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit 1447853fb3960e097397c6ceb7b10e9c6cf4bb04
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 29 00:21:04 2012 +0200
+| 
+|     create: Use strcmp instead of strncmp on the device arg, we absolutely want a perfect match, since every generation begins with the exact same chars, or we end up confusing every kindle in a generation for the one first matched against...
+| 
+|  KindleTool/create.c |   24 ++++++++++++------------
+|  1 file changed, 12 insertions(+), 12 deletions(-)
+|  
+* commit c4e6029524f5a6ce26a26425e73da499992b54d3
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 23:01:49 2012 +0200
+| 
+|     A few makefile tweaks
+| 
+|  KindleTool/Makefile |    8 ++++----
+|  1 file changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 148d21bb5133889a1b10a124b75063fe705c334d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 22:16:57 2012 +0200
+| 
+|     Oops. Allow parallel make.
+| 
+|  Makefile |   10 +++++-----
+|  1 file changed, 5 insertions(+), 5 deletions(-)
+|  
+* commit 8ea11780abbcb254c9d733c0337e1e0bbca8cf64
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 20:34:22 2012 +0200
+| 
+|     *sigh*
+| 
+|  KindleTool/create.c |    9 +++++----
+|  1 file changed, 5 insertions(+), 4 deletions(-)
+|  
+* commit 314623e6ddfbf45fa5918a20b98316175dcd203e
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 20:14:50 2012 +0200
+| 
+|     create: Handle archive creation failure a bit more gracefully
+| 
+|  KindleTool/create.c |   18 +++++++++++++++---
+|  1 file changed, 15 insertions(+), 3 deletions(-)
+|  
+* commit 8110d4ee81329212f74fc89fc523aa705a104e52
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 20:06:11 2012 +0200
+| 
+|     Prefer env base CFLAGS in release builds
+| 
+|  KindleTool/Makefile |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 80d6829247a21d44d9d4cd506f4a7bf5ead78a4b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 02:50:34 2012 +0200
+| 
+|     Annoying commit ahead: Run the source/header files through astyle.
+| 
+|  KindleTool/convert.c     |   87 ++++++++------
+|  KindleTool/create.c      |  193 ++++++++++++++++-------------
+|  KindleTool/kindle_tool.c |  287 ++++++++++++++++++++++----------------------
+|  KindleTool/kindle_tool.h |   45 ++++---
+|  4 files changed, 329 insertions(+), 283 deletions(-)
+|  
+* commit b1c8256f2af723c073631c52e5360f88fc29a05a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 02:46:04 2012 +0200
+| 
+|     Cheap shutting up of some gcc warnings
+| 
+|  KindleTool/convert.c |   11 ++++++-----
+|  1 file changed, 6 insertions(+), 5 deletions(-)
+|  
+* commit adc8ea814c736dfb12d7fc8bbefeb8201f82e8a3
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 02:41:26 2012 +0200
+| 
+|     create: In addition to .ffs files, treat .sh files as update scripts, like the python tool.
+| 
+|  KindleTool/create.c      |    4 ++--
+|  KindleTool/kindle_tool.c |    2 +-
+|  README                   |    2 +-
+|  3 files changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit ee7710f79eaa6859e46115221b14f0072f2b6915
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 02:37:18 2012 +0200
+| 
+|     create: Fix direct munge of a single tgz input file when outputting to a file. (I'm starting to feel the effect of the stack of crappy workarounds... :D)
+| 
+|  KindleTool/create.c |    6 +++---
+|  1 file changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit e2b2579e17e637be31ab819835a20561fbea3154
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 02:23:02 2012 +0200
+| 
+|     create: Fix a bunch of dumb mistakes
+| 
+|  KindleTool/create.c |    7 ++++---
+|  1 file changed, 4 insertions(+), 3 deletions(-)
+|  
+* commit 83b6dd4aad9777c6fb0596db7a727ac9be58394c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 02:12:34 2012 +0200
+| 
+|     create: Slightly smarter/prettier recap
+| 
+|  KindleTool/create.c |   17 ++++++++++++-----
+|  1 file changed, 12 insertions(+), 5 deletions(-)
+|  
+* commit f96d4b331a3fd4bf9b99133f158984db70ecba44
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 02:03:12 2012 +0200
+| 
+|     create: Restore single package tarball as input support (restore backwards compat with ixtab's tools)
+|     create: Print a small recap of what we're building
+| 
+|  COMPILING                |    4 ----
+|  KindleTool/create.c      |   32 +++++++++++++++++++++++++++++++-
+|  KindleTool/kindle_tool.c |    1 +
+|  KindleTool/kindle_tool.h |    2 ++
+|  README                   |    1 +
+|  5 files changed, 35 insertions(+), 5 deletions(-)
+|  
+* commit fa33f517e9a50b68673318d5ab7da6ac01284da5
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 01:22:37 2012 +0200
+| 
+|     create: Restore output to stdout feature.
+|     create: Add a crappily named -a/--archive switch to keep the archive built, just before it was signed & munged.
+| 
+|  COMPILING                |    2 +-
+|  KindleTool/create.c      |   49 ++++++++++++++++++++++++++++++++------------
+|  KindleTool/kindle_tool.c |    5 +++--
+|  KindleTool/kindle_tool.h |    1 -
+|  README                   |    5 +++--
+|  5 files changed, 43 insertions(+), 19 deletions(-)
+|  
+* commit 4961186941411c0ffd655fdfb1f9eb0aed157444
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 00:06:13 2012 +0200
+| 
+|     Slightly less braindead clamping on ota v1 target_revision
+| 
+|  KindleTool/convert.c |    8 ++++----
+|  KindleTool/create.c  |    4 ++--
+|  2 files changed, 6 insertions(+), 6 deletions(-)
+|  
+* commit a0192bf1c1334692c6b5f872e4baacf062316d39
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 28 00:00:28 2012 +0200
+| 
+|     extract: Don't preserve permissions, most packages are filled with root owned files, so that gets annoying fast ;).
+|     convert: Throw a linefeed between each package on stderr
+|     create: I didn't check if it actually worked before, but ota v1 packages ended up with a funny default target_revision. Fix it to match the behaviour of the python tool.
+|     create: Forbid creating ota v1 updates for anything newer than a K3gb, because it produces garbage, and is probably unsupported/a bad idea anyway ;).
+| 
+|  KindleTool/convert.c |    6 ++++++
+|  KindleTool/create.c  |   19 +++++++++++++++++++
+|  2 files changed, 25 insertions(+)
+|  
+* commit 6644e724af4091927177befe6b48e166af44bf03
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 20:22:42 2012 +0200
+| 
+|     Update build instructions (probably incorrect, I don't have a Mac, nor a Cygwin env, and I don't use binary distros...).
+|     Add Gentoo live ebuild.
+| 
+|  COMPILING              |   16 +++++++++----
+|  KindleTool/Makefile    |    2 +-
+|  kindletool-9999.ebuild |   58 ++++++++++++++++++++++++++++++++++++++++++++++
+|  3 files changed, 71 insertions(+), 5 deletions(-)
+|  
+* commit 24363554bebab43b54e91bfca621802234f3456c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 04:51:55 2012 +0200
+| 
+|     Remove crappy printf debugging ;)
+| 
+|  KindleTool/convert.c     |    9 ---------
+|  KindleTool/create.c      |   30 ------------------------------
+|  KindleTool/kindle_tool.c |    1 -
+|  3 files changed, 40 deletions(-)
+|  
+* commit 3d15b5deaeabc7a04b9465aa1d49c73bb034faee
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 04:34:48 2012 +0200
+| 
+|     Ignore build output
+| 
+|  KindleTool/.gitignore |    4 ++++
+|  1 file changed, 4 insertions(+)
+|  
+* commit ca2bbd07bde1665cb52deac882f6f9a4776529b9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 04:23:24 2012 +0200
+| 
+|     Add a kindle target to the makefiles, for cross-compilation
+| 
+|  KindleTool/Makefile |   17 +++++++++++++++++
+|  Makefile            |    3 +++
+|  2 files changed, 20 insertions(+)
+|  
+* commit 0a846019c57969a8f7440cb70d4ffbe724b542f2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 04:17:37 2012 +0200
+| 
+|     Update the doc. Yep, create can't output to stdout anymore. If that really bothers someone, I'll try to re-add this...
+| 
+|  KindleTool/kindle_tool.c |    9 ++++-----
+|  README                   |    9 ++++-----
+|  2 files changed, 8 insertions(+), 10 deletions(-)
+|  
+* commit e869e759e948f1d814e23f7f126e5d307ffb84ea
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 04:04:14 2012 +0200
+| 
+|     convert: Oops, forgot to set the defauly for -s...
+| 
+|  KindleTool/convert.c |    1 +
+|  KindleTool/create.c  |   10 +++++-----
+|  2 files changed, 6 insertions(+), 5 deletions(-)
+|  
+* commit ee03bf1b13d7f2a94bc44afb6d7e31e340a2a034
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 03:58:21 2012 +0200
+| 
+|     Weee! working (hopefully) create support! Still need to check that it actually produce correct outputs, though ;).
+|     Delete a bunch of dead code while we're here! Goodbye libtar!
+| 
+|  KindleTool/Makefile      |    6 +-
+|  KindleTool/convert.c     |   36 +----
+|  KindleTool/create.c      |  379 +++++---------------------------------------
+|  KindleTool/kindle_tool.c |    2 +-
+|  KindleTool/kindle_tool.h |    9 +-
+|  5 files changed, 50 insertions(+), 382 deletions(-)
+|  
+* commit 3570504b4b6f624b18c60523dad012175c55a64b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 03:04:41 2012 +0200
+| 
+|     create: delete our sigfiles & our bundlefile, and fix bundlefire archival (we need to close its fd before read_disk).
+| 
+|  KindleTool/create.c |   66 ++++++++++++++-----------------------------------
+|  1 file changed, 18 insertions(+), 48 deletions(-)
+|  
+* commit 02eab7886a3bf6f9f3f5de6f12bf4a4e69d22032
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 02:43:01 2012 +0200
+| 
+|     WIP create: Really getting there, with a crapload of code duplication. I think the main issue in the previous commits was the 'size' entry of the sigfile (not set/wrong).
+| 
+|  KindleTool/create.c |  138 +++++++++++++++++++++++++++++++------------------
+|  1 file changed, 88 insertions(+), 50 deletions(-)
+|  
+* commit e52c73f88dd1c3a64fd82f7993b187549a5ac269
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 27 02:12:33 2012 +0200
+| 
+|     WIP create support part III: Still broken. Getting there, though.
+| 
+|  KindleTool/Makefile      |    3 ++-
+|  KindleTool/create.c      |   53 ++++++++++++++++++++++++++------------------
+|  KindleTool/kindle_tool.h |    2 +-
+|  3 files changed, 35 insertions(+), 23 deletions(-)
+|  
+* commit fb91442447c5b5e08a85544180d04a2c276f8575
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Apr 25 20:44:14 2012 +0200
+| 
+|     WIP create via libarchive, part II.
+|     Again, broken commit because I've got to go. Got a baby to sit on... (What? That's not what babysitting is supposed to mean? :D).
+| 
+|  KindleTool/create.c      |  144 ++++++++++++++++++++++++++++++++++++++++----
+|  KindleTool/kindle_tool.h |    4 +-
+|  2 files changed, 132 insertions(+), 16 deletions(-)
+|  
+* commit 18ad6229118edfe77e1b8b1c18d4d9ce18d04c7f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Wed Apr 25 18:52:50 2012 +0200
+| 
+|     Misc tiny fixes, and gitignore kdev stuff
+| 
+|  .gitignore               |    2 ++
+|  KindleTool/create.c      |    5 +++++
+|  KindleTool/kindle_tool.h |    5 +++++
+|  3 files changed, 12 insertions(+)
+|  
+* commit e7fa3e9a764b4d5ef73d69ed5009e7873e2cfc0f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Apr 24 06:20:36 2012 +0200
+| 
+|     Add kate modelines to follow the mostly prominent 4 spaces indents coding style, because my usual 8 spaces tabs are killing me ;D.
+| 
+|  KindleTool/convert.c     |    2 ++
+|  KindleTool/create.c      |    2 ++
+|  KindleTool/kindle_tool.c |    2 ++
+|  KindleTool/kindle_tool.h |    2 ++
+|  README                   |    4 +++-
+|  5 files changed, 11 insertions(+), 1 deletion(-)
+|  
+* commit 2dabe1b5f167e1ac01046565c541b572be457be2
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Tue Apr 24 05:27:27 2012 +0200
+| 
+|     WIP create support using libarchive. Obviously broken right now, but I have a busy week ahead, so commit.
+| 
+|  KindleTool/convert.c     |    2 +-
+|  KindleTool/create.c      |  234 +++++++++++++++++++++++++++++++++++++++++++-
+|  KindleTool/kindle_tool.c |    2 +-
+|  README                   |    2 +-
+|  4 files changed, 232 insertions(+), 8 deletions(-)
+|  
+* commit a3462ce93380feeff0c745e829f8af2dfbf3e7b6
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Apr 23 21:04:07 2012 +0200
+| 
+|     Add a few comments about the output directory handling with libarchive in the extract command...
+|     
+|     And on this note, I'll go unpack the Kindle Touch I finally received, yay!
+| 
+|  KindleTool/convert.c |    5 ++++-
+|  1 file changed, 4 insertions(+), 1 deletion(-)
+|  
+* commit 5f0b62ee8ccd058558029961f7b790ae78143644
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Apr 23 06:00:13 2012 +0200
+| 
+|     Fix extract command, and move to libarchive instead of libtar.
+| 
+|  KindleTool/Makefile      |    2 +-
+|  KindleTool/convert.c     |  162 ++++++++++++++++++++++++++++++++++----------
+|  KindleTool/kindle_tool.h |    4 ++
+|  3 files changed, 130 insertions(+), 38 deletions(-)
+|  
+* commit 1716eabe27ff18bb05c9e8bcc48ab869a017e0a6
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Apr 23 01:36:21 2012 +0200
+| 
+|     Fix dm/md/info
+| 
+|  KindleTool/kindle_tool.c |    9 +++++++++
+|  1 file changed, 9 insertions(+)
+|  
+* commit caad5ca47c2611c2f932cff43d0d0ce0db3bf63d
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Apr 23 00:55:21 2012 +0200
+| 
+|     Fix doc & help to hint at multiple files support
+| 
+|  KindleTool/convert.c     |    2 +-
+|  KindleTool/kindle_tool.c |    2 +-
+|  README                   |    7 +++++--
+|  3 files changed, 7 insertions(+), 4 deletions(-)
+|  
+* commit e5c05910e8e4f04a6ef732f18ca9ec9de2e6f3b9
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Mon Apr 23 00:52:49 2012 +0200
+| 
+|     convert: Possibly avoid leaking stuff... (Did I mention I such at C? Yeah, that's fun! :D)
+| 
+|  KindleTool/convert.c |   27 ++++++++++++++-------------
+|  1 file changed, 14 insertions(+), 13 deletions(-)
+|  
+* commit 2beecd0f8322566223a04c8bbb36cc213812a994
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 03:31:42 2012 +0200
+| 
+|     Resync docs
+| 
+|  COMPILING                |    3 +++
+|  KindleTool/kindle_tool.c |    1 +
+|  README                   |    3 ++-
+|  3 files changed, 6 insertions(+), 1 deletion(-)
+|  
+* commit 06a1de40878b669300d6052b64a72ed99765556b
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 03:15:20 2012 +0200
+| 
+|     convert: Just in case, init our fail counter as true
+| 
+|  KindleTool/convert.c |    1 +
+|  1 file changed, 1 insertion(+)
+|  
+* commit 879f0a7a2fc35ddb29e04757cd6183bf583020fd
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 03:14:17 2012 +0200
+| 
+|     convert: Reset our failure marker in a sensible/useful place...
+| 
+|  KindleTool/convert.c |    4 +---
+|  1 file changed, 1 insertion(+), 3 deletions(-)
+|  
+* commit 1178123af8f7456abf6b8bb8ea017ce905e43792
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 03:10:59 2012 +0200
+| 
+|     convert: No matter what, don't delete a package we failed to convert
+| 
+|  KindleTool/convert.c |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit b6778c641d5150d08549d0714c15cc04425e087f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 03:09:14 2012 +0200
+| 
+|     Woo, and fix stupid typo :D
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 710f485a7d37588a03decf3fc14b52a7c4326013
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 03:08:50 2012 +0200
+| 
+|     Fix stupid oversight
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit de4c4f8eaa50084690865da288dade6a8eb60368
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 03:08:27 2012 +0200
+| 
+|     Fix multifile convert by building the package sigature filename from the package filename
+| 
+|  KindleTool/convert.c     |   38 ++++++++++++++++++++++++++++----------
+|  KindleTool/kindle_tool.c |    2 +-
+|  2 files changed, 29 insertions(+), 11 deletions(-)
+|  
+* commit afb78b94a6c5355f8108656d8e3ae070d9243dce
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sun Apr 22 02:42:13 2012 +0200
+| 
+|     Fix arg parsing & segfaults for convert cmd (multifile support is a WIP)
+| 
+|  KindleTool/convert.c     |  108 +++++++++++++++++++++++++++-----------------
+|  KindleTool/kindle_tool.c |   52 +++++++++++++++------
+|  2 files changed, 103 insertions(+), 57 deletions(-)
+|  
+* commit ecbe6daa88419092a142a3b6a7a8c3fe5365189a
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 21 23:00:34 2012 +0200
+| 
+|     Remove cruft from Makefile
+| 
+|  KindleTool/Makefile |    2 --
+|  1 file changed, 2 deletions(-)
+|  
+* commit f5268a24556b90042adeb967c13216f24630cacb
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 21 22:57:04 2012 +0200
+| 
+|     Add a 'strip' target to makefiles to strip release binaries
+| 
+|  KindleTool/Makefile |   11 ++++++++---
+|  Makefile            |    3 +++
+|  2 files changed, 11 insertions(+), 3 deletions(-)
+|  
+* commit b2507f7300309b7ea67919d46b1c59374705a8ff
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Sat Apr 21 22:49:22 2012 +0200
+| 
+|     Rewrite Makefiles, just to make sure I still know how this stuff is supposed to work... ;)
+| 
+|  KindleTool/Makefile |   43 +++++++++++++++++++++++++++++++++++--------
+|  Makefile            |    7 +++++--
+|  2 files changed, 40 insertions(+), 10 deletions(-)
+|  
+* commit 247e29d478286bb07c27a2c11ac9e79ab14659da
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 20 07:53:27 2012 +0200
+| 
+|     Fix Makefile ($LD usually points to ld, not gcc, while $LDFLAGS is usually formatted for gcc, not ld)
+| 
+|  KindleTool/Makefile |    3 +--
+|  1 file changed, 1 insertion(+), 2 deletions(-)
+|  
+* commit 96bdcd083b1ddfa8768d240e717f6815cbe17c84
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 20 07:26:29 2012 +0200
+| 
+|     -Wall is my friend
+| 
+|  KindleTool/Makefile |    4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|  
+* commit e7ee5703dd6315e66bbcba432c48e10cf083090f
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 20 05:59:45 2012 +0200
+| 
+|     Wee, annoying whitespace removal commit, part II!
+| 
+|  COMPILING                |    4 ++--
+|  KindleTool/kindle_tool.h |    8 ++++----
+|  README                   |   22 +++++++++++-----------
+|  3 files changed, 17 insertions(+), 17 deletions(-)
+|  
+* commit d6ea939c1e93ba74be13c5de2739ac6e1bba314c
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 20 05:56:09 2012 +0200
+| 
+|     Wee, annoying whitespace removal commit, yay!
+| 
+|  KindleTool/convert.c     |   42 +++++++++++++++++------------------
+|  KindleTool/create.c      |   52 ++++++++++++++++++++++----------------------
+|  KindleTool/kindle_tool.c |   14 ++++++------
+|  3 files changed, 54 insertions(+), 54 deletions(-)
+|  
+* commit a428c3a44a36682e51cba7db30654a34943988aa
+| Author: NiLuJe <ninuje@gmail.com>
+| Date:   Fri Apr 20 05:51:30 2012 +0200
+| 
+|     Try to get CC/LD & C/LDFLAGS from env first, only use sane defaults as a fallback
+| 
+|  KindleTool/Makefile |    8 ++++----
+|  1 file changed, 4 insertions(+), 4 deletions(-)
+|  
+* commit 3cb332f076bdba7e900af22120c3c7e27a5117aa
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Thu Jan 12 16:36:35 2012 -0600
+| 
+|     Changed k5w's device id to 0x11
+| 
+|  KindleTool/create.c      |    1 -
+|  KindleTool/kindle_tool.h |    2 +-
+|  2 files changed, 1 insertion(+), 2 deletions(-)
+|  
+* commit e220e7219484327122156771e1bc3ca84502eebb
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Thu Jan 12 16:18:57 2012 -0600
+| 
+|     Uses memcpy instead of set for OTAv2 creation. Hopefully no more junk data in header.
+| 
+|  COMPILING           |   16 ++++++++++++++++
+|  KindleTool/create.c |   16 ++++++++--------
+|  2 files changed, 24 insertions(+), 8 deletions(-)
+|  
+* commit 57f1fd667e14ed50f9406b33d97ab241a5d1e67e
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sun Jan 8 13:03:48 2012 -0600
+| 
+|     Add license notice.
+| 
+|  KindleTool/convert.c     |   16 ++++++++++++++--
+|  KindleTool/create.c      |   16 ++++++++++++++--
+|  KindleTool/kindle_tool.c |   16 ++++++++++++++--
+|  KindleTool/kindle_tool.h |   16 ++++++++++++++--
+|  4 files changed, 56 insertions(+), 8 deletions(-)
+|  
+* commit 95bad1af8facac80324281c4c3d5fe273eaffffb
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sun Jan 8 12:56:58 2012 -0600
+| 
+|     Uses stat for more portability
+| 
+|  KindleTool/Makefile |    2 +-
+|  KindleTool/create.c |   12 ++++++------
+|  2 files changed, 7 insertions(+), 7 deletions(-)
+|  
+* commit d441453f4e02613a81d3d24d7f195525cf566aa7
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sun Jan 8 00:14:20 2012 -0600
+| 
+|     Changed void to char to avoid gcc warning.
+| 
+|  KindleTool/convert.c |    2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|  
+* commit 63bb3d40cd2168e3a714e2debf519e48261e095a
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sun Jan 8 00:13:53 2012 -0600
+| 
+|     Added crappy makefile.
+| 
+|  KindleTool/Makefile |   17 +++++++++++++++++
+|  Makefile            |    5 +++++
+|  2 files changed, 22 insertions(+)
+|  
+* commit 29afe0f34fdbcaee3ba91332f4bed35f49953836
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sat Jan 7 23:12:30 2012 -0600
+| 
+|     Fixed lots of bugs.
+|     First beta release.
+|     Added usage guide.
+| 
+|  KindleTool/convert.c     |    2 -
+|  KindleTool/create.c      |   76 +++++++++++++++-----------
+|  KindleTool/kindle_tool.c |  129 +++++++++++++++++++++++++++++++++++++++++++-
+|  KindleTool/kindle_tool.h |   10 ++--
+|  README                   |   77 +++++++++++++++++++++++++-
+|  5 files changed, 254 insertions(+), 40 deletions(-)
+|  
+* commit 6186daa4ed309a0d1ae029e94f7556a976e12e30
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sat Jan 7 13:57:32 2012 -0600
+| 
+|     Finished create.
+| 
+|  KindleTool/create.c |   33 +++++++++++++++------------------
+|  1 file changed, 15 insertions(+), 18 deletions(-)
+|  
+* commit ae57f78d1492253ab48a5583b0e11e02b0c54715
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sat Jan 7 13:14:38 2012 -0600
+| 
+|     tmpnam() -> tmpfile()
+|     Remember to close all file handles
+|     Fixed some bugs
+| 
+|  KindleTool/convert.c     |   46 ++++++++++++++++++-------
+|  KindleTool/create.c      |   82 ++++++++++++++++++++++++++------------------
+|  KindleTool/kindle_tool.c |   24 +++++++++++--
+|  KindleTool/kindle_tool.h |    2 +-
+|  4 files changed, 105 insertions(+), 49 deletions(-)
+|  
+* commit 5c407f5010b70f13c5995f646dd55869a5712bce
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Jan 6 22:52:17 2012 -0600
+| 
+|     Fixed and tested update extraction.
+| 
+|  KindleTool/convert.c |   37 ++++++++++++++++++++-----------------
+|  KindleTool/create.c  |    2 ++
+|  2 files changed, 22 insertions(+), 17 deletions(-)
+|  
+* commit d0f0a7ad6a5ed0fa78bcb655449a4dd87c841a50
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Jan 6 21:46:49 2012 -0600
+| 
+|     Fixed and tested md and dm.
+|     Fixed and tested convert
+|     printf -> fprintf to stderr instead of stdout because user might want to redirect output
+| 
+|  KindleTool/convert.c     |  114 ++++++++++++++++++++++----------------------
+|  KindleTool/kindle_tool.c |   31 ++++++++----
+|  2 files changed, 77 insertions(+), 68 deletions(-)
+|  
+* commit 5219f342ac61eb093fa91f2d642d87955d0632b3
+| Author: unknown <crhscs058@T104312.crhs.katyisd.org>
+| Date:   Fri Jan 6 13:38:39 2012 -0600
+| 
+|     Finished extraction.
+|     Moved stuff around
+| 
+|  KindleTool/convert.c     |  157 ++++++++++++++++++++++---
+|  KindleTool/create.c      |  210 ++++++++++++++++++++++++++++++++-
+|  KindleTool/kindle_tool.c |  280 +-------------------------------------------
+|  KindleTool/kindle_tool.h |    7 +-
+|  4 files changed, 359 insertions(+), 295 deletions(-)
+|  
+* commit ad18c11b414a937ed13a2242cd37dbd160c71b7b
+| Author: unknown <crhscs058@T104312.crhs.katyisd.org>
+| Date:   Thu Jan 5 13:38:33 2012 -0600
+| 
+|     Work on extracting.
+| 
+|  KindleTool/convert.c     |   44 ++++++++++++++++++++
+|  KindleTool/create.c      |   96 ++++++++++++++++++++++----------------------
+|  KindleTool/kindle_tool.c |    2 +-
+|  KindleTool/kindle_tool.h |    5 ++-
+|  4 files changed, 96 insertions(+), 51 deletions(-)
+|  
+* commit 60af6570ee1d945f70fecaaf032b4e6eeb8ae0ec
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Thu Jan 5 06:58:22 2012 -0600
+| 
+|     Names of devices changed to match that of old tools.
+| 
+|  KindleTool/kindle_tool.c |    6 +++---
+|  1 file changed, 3 insertions(+), 3 deletions(-)
+|  
+* commit 658fd0f100e7c8e4d4fd9546b16bc10d644f5e7c
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Wed Jan 4 16:03:08 2012 -0600
+| 
+|     Finished all update creation. (untested)
+| 
+|  KindleTool/convert.c     |   14 +++++------
+|  KindleTool/create.c      |   59 ++++++++++++++++++++++++++++++++++++++------
+|  KindleTool/kindle_tool.c |    5 ++--
+|  KindleTool/kindle_tool.h |   34 ++++++++++++-------------
+|  4 files changed, 77 insertions(+), 35 deletions(-)
+|  
+* commit 36436a32dd6c616c78f253104d638044c2ca8c14
+| Author: unknown <crhscs058@T104312.crhs.katyisd.org>
+| Date:   Wed Jan 4 13:43:51 2012 -0600
+| 
+|     Worked on creating updates.
+|     Unions.
+| 
+|  KindleTool/convert.c     |   85 +++++++++++++++++---------------------------
+|  KindleTool/create.c      |   21 ++++++++---
+|  KindleTool/kindle_tool.c |   10 +++---
+|  KindleTool/kindle_tool.h |   10 +++++-
+|  4 files changed, 62 insertions(+), 64 deletions(-)
+|  
+* commit 49b291b6b9ea9c634001a8e4ee1569a2b5f3c102
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Tue Jan 3 21:39:19 2012 -0600
+| 
+|     Finished OTA V2 update creation.
+| 
+|  KindleTool/convert.c     |   23 ++-----
+|  KindleTool/create.c      |  163 +++++++++++++++++++++++++++++++++++++++++---
+|  KindleTool/kindle_tool.c |   20 ++++--
+|  KindleTool/kindle_tool.h |    7 ++
+|  4 files changed, 182 insertions(+), 31 deletions(-)
+|  
+* commit 72884320d8500a2fbcfe5863baf7bc640336e95e
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Tue Jan 3 15:15:22 2012 -0600
+| 
+|     Added support for Kindle Touch Wifi only.
+|     Used better data structures to make sure sizes are the same on all platforms.
+|     More work on parsing command line.
+|     Sig files are now created in a temporary folder instead of creating and deleting files in input folder.
+| 
+|  KindleTool/convert.c     |   50 ++++----
+|  KindleTool/create.c      |   23 ++--
+|  KindleTool/extract.c     |  279 --------------------------------------------
+|  KindleTool/kindle_tool.c |  230 +++++++++++++++++++++++++++++++++---
+|  KindleTool/kindle_tool.h |   36 ++++--
+|  5 files changed, 276 insertions(+), 342 deletions(-)
+|  
+* commit 9c7966c45631110b7bbbdc6b845f0fb92c7c6587
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Tue Jan 3 12:12:09 2012 -0600
+| 
+|     Renamed "extract" to "convert"
+|     Begin work on command line parsing
+| 
+|  KindleTool.xcodeproj/project.pbxproj |   10 +-
+|  KindleTool/convert.c                 |  279 ++++++++++++++++++++++++++++++++
+|  KindleTool/create.c                  |   57 ++++++-
+|  KindleTool/kindle_tool.c             |  165 +++++++++++++++----
+|  KindleTool/kindle_tool.h             |   30 ++--
+|  5 files changed, 490 insertions(+), 51 deletions(-)
+|  
+* commit 8da135180eff1f34f01c9cb7de2b20f479d6763a
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sat Dec 31 19:44:13 2011 -0600
+| 
+|     Signing complete
+|     Tar generation complete
+| 
+|  KindleTool.xcodeproj/project.pbxproj |    8 +++
+|  KindleTool/create.c                  |   96 ++++++++++++++++++++------------
+|  KindleTool/kindle_tool.c             |   29 +++++++---
+|  KindleTool/kindle_tool.h             |   43 +++++++-------
+|  4 files changed, 110 insertions(+), 66 deletions(-)
+|  
+* commit 1b54b99bd8f54887613add4409512c107e439065
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sat Dec 31 16:55:51 2011 -0600
+| 
+|     Cleaner error handling
+|     Tar generation done (but untested)
+| 
+|  KindleTool/create.c      |  321 ++++++++++++++++++++++++++------------------
+|  KindleTool/kindle_tool.h |    9 +-
+|  2 files changed, 195 insertions(+), 135 deletions(-)
+|  
+* commit 43595b650fdaf428b9b2f16fd17e285b1050e675
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Sat Dec 31 15:51:29 2011 -0600
+| 
+|     Beginning work on creating updates.
+|     Added signing/hashing functions
+|     Moved some stuff around
+| 
+|  KindleTool.xcodeproj/project.pbxproj |   13 +-
+|  KindleTool/create.c                  |  220 ++++++++++++++++++++++++++++++++
+|  KindleTool/extract.c                 |   35 ++---
+|  KindleTool/extract.h                 |   22 ----
+|  KindleTool/kindle_tool.c             |   69 ++++++++--
+|  KindleTool/kindle_tool.h             |   41 +++++-
+|  6 files changed, 351 insertions(+), 49 deletions(-)
+|  
+* commit 8cd3de3f1b127f35386ee75a7902558e1d0fd233
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Oct 28 22:19:09 2011 -0500
+| 
+|     Added test cases. Make sure to change the paths to fit your computer!
+| 
+|  KindleTool/kindle_tool.c |   18 +++++++++++++++---
+|  1 file changed, 15 insertions(+), 3 deletions(-)
+|  
+* commit f935046d8ec8859c1ad5d968d8009db70f723e62
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Oct 28 22:15:01 2011 -0500
+| 
+|     Recoded header handling. Finished coding (proper way) V2 OTA update extraction. Should work with any future update amazon throws at us. The header size is no longer fixed, so that's why it looks so complicated.
+| 
+|  KindleTool/extract.c     |  187 ++++++++++++++++++++++++++++++++++++--------
+|  KindleTool/extract.h     |   10 ++-
+|  KindleTool/kindle_tool.c |   29 +------
+|  KindleTool/kindle_tool.h |   73 ++++++++---------
+|  4 files changed, 196 insertions(+), 103 deletions(-)
+|  
+* commit f6932a3cc4da72ac47e79317632abbd53b302220
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Oct 28 20:00:56 2011 -0500
+| 
+|     added readme
+| 
+|  README |    2 ++
+|  1 file changed, 2 insertions(+)
+|  
+* commit 6f8dd15acba1daf735471626316e83adadf44984
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Oct 28 19:59:55 2011 -0500
+| 
+|     Moved files around. First public release.
+| 
+|  KindleTool.xcodeproj/project.pbxproj |    6 +++---
+|  KindleTool/extract.h                 |   20 ++++++++++++++++++++
+|  KindleTool/kindle_tool.c             |    3 +++
+|  extract.h                            |   20 --------------------
+|  4 files changed, 26 insertions(+), 23 deletions(-)
+|  
+* commit 98edea5e3cbfb942778a21c897b3c7fcbd91d507
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Oct 28 19:53:02 2011 -0500
+| 
+|     Cleaned up source.
+| 
+|  KindleTool.xcodeproj/project.pbxproj |    9 ++
+|  KindleTool/extract.c                 |  151 ++++++++++++++++++++++
+|  KindleTool/kindle_tool.c             |  219 +-------------------------------
+|  KindleTool/kindle_tool.h             |  104 +++++++++++++++
+|  KindleTool/main.c                    |   18 ---
+|  extract.h                            |   20 +++
+|  6 files changed, 286 insertions(+), 235 deletions(-)
+|  
+* commit c5dbe08c805d1e9aa4468b383c42b7c784e71720
+| Author: Yifan Lu <yifanlu94@gmail.com>
+| Date:   Fri Oct 28 19:02:28 2011 -0500
+| 
+|     Most extract functions rewritten.
+| 
+|  KindleTool.xcodeproj/project.pbxproj |    8 +-
+|  KindleTool/kindle_tool.c             |  371 ++++++++++++++++++++++++++++++++
+|  2 files changed, 375 insertions(+), 4 deletions(-)
+|  
+* commit b7be007d7894dbd9617672e5b4904c2adc18216e
+  Author: Yifan Lu <yifanlu94@gmail.com>
+  Date:   Wed Oct 26 15:03:24 2011 -0500
+  
+      Initial Commit
+  
+   KindleTool.xcodeproj/project.pbxproj |  207 ++++++++++++++++++++++++++++++++
+   KindleTool/KindleTool.1              |   79 ++++++++++++
+   KindleTool/main.c                    |   18 +++
+   3 files changed, 304 insertions(+)

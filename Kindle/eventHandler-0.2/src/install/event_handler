@@ -1,0 +1,4 @@
+#!/bin/sh
+# start script for init.d
+
+/usr/local/bin/eventHandler.sh &

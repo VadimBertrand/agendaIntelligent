@@ -1,0 +1,37 @@
+#!/bin/sh
+
+HTTP_SERVER="http://dosowisko.net/kindle"
+RSYNC_SERVER="rsync://dosowisko.net/kindle"
+
+mkdir -p /mnt/us/documents/RSS
+
+if [[ -f /mnt/us/documents/RSS/.lock -a "$1" != "--force" ]]; then
+  echo "RSS updater already running, exiting..."
+  exit 1
+fi;
+
+touch /mnt/us/documents/RSS/.lock
+
+sleep 8
+
+# check if we need to update
+
+echo "Checking timestamp..."
+
+TIMESTAMP=`wget $HTTP_SERVER/timestamp.php -O - 2> /dev/null`
+
+if [[ "$TIMESTAMP" != "`cat /mnt/us/documents/RSS/.timestamp`" -a "$?" == "0" ]]; then
+  echo "Updating..."
+  lipc-set-prop com.lab126.pillow activityIndicator '{"activityIndicator":{"action":"start","clientId":"rss","timeout":60000,"text":"Downloading RSS..."}}'
+  rsync -PvzrlptD $RSYNC_SERVER/ /mnt/us/documents/RSS/
+  if [[ "$?" == "0" ]]; then
+    lipc-set-prop com.lab126.pillow activityIndicator '{"activityIndicator":{"action":"stop","clientId":"rss","timeout":3000,"text":"RSS downloaded"}}'
+    echo "$TIMESTAMP" > /mnt/us/documents/RSS/.timestamp
+  else
+    lipc-set-prop com.lab126.pillow activityIndicator '{"activityIndicator":{"action":"stop","clientId":"rss","timeout":10000,"text":"Could not download RSS"}}'
+  fi
+else
+  echo "Nothing to do, exiting..."
+fi
+
+rm /mnt/us/documents/RSS/.lock

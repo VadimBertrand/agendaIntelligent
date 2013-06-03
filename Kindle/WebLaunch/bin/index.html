@@ -1,0 +1,183 @@
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>WebLaunch</title>
+
+		<script type="text/javascript" src="/var/local/mesquite/shared/javascripts/Kindle.js"></script>	
+		<script type="text/javascript" src="/var/local/mesquite/shared/javascripts/logging.js"></script> 
+		<script type="text/javascript" src="/var/local/mesquite/shared/javascripts/eventing.js"></script> 
+		<script type="text/javascript" src="/var/local/mesquite/shared/javascripts/object.js"></script>
+		<script type="text/javascript" src="/var/local/mesquite/shared/javascripts/storage.js"></script>
+		<script type="text/javascript" src="/var/local/mesquite/shared/javascripts/applicationManager.js"></script> 
+		
+		<script type="text/javascript" src="pillowHelper.js"></script>
+		<script type="text/javascript">
+			var settings = undefined;
+		</script>
+		<script type="text/javascript" src="../settings.js"></script>
+		<script type="text/javascript">
+			//-----------------------------------------------------------------
+			// Register our handling functions 
+			Kindle.use(function(b) 
+			{
+				//=============================================================
+				// App name and settings
+				//=============================================================
+			
+				//-------------------------------------------------------------
+				// Define the app name for later use
+				var appName = 'com.PaulFreund.WebLaunch';
+				var preventScreenSaverStateBackup  = null;
+
+				//-------------------------------------------------------------
+				// Default settings if none supplied			
+				var sessionSettings = { 
+					url: 'error.html',
+					title: 'WebLaunch',
+					hideStatusbar: false,
+					enableWireless: false,
+					powerButtonClose: true,
+					enablePreventScreenSaver: false
+				};			
+				
+				//-------------------------------------------------------------
+				// Copy supplied config properties		
+				if( settings !== undefined && typeof(settings) === 'object' )
+				{
+					for( var key in sessionSettings )
+					{
+						if( !sessionSettings.hasOwnProperty(key) ) { continue; }
+						if( !settings.hasOwnProperty(key) ) { continue; }
+						sessionSettings[key] = settings[key];
+					}
+				}	
+
+				//=============================================================
+				// Helper functions
+				//=============================================================
+
+				//-------------------------------------------------------------
+				// Small helper function to call runAsDefaultStatusBar 
+				function pillowRun(fkt, callback) 
+				{ 
+					pillowHelper.Run('default_status_bar', appName, fkt, callback); 
+				}
+				
+				//-------------------------------------------------------------
+				// Get the initial state of preventScreenSaver and change it 		
+				function requestPreventScreenSaverState()
+				{
+					// Get state
+					pillowRun(
+						"return nativeBridge.getIntLipcProperty('com.lab126.powerd', 'preventScreenSaver');", 
+						function(state)
+						{
+							if( typeof(state) === 'number' && (state === 0 || state === 1 ) )
+							{
+								preventScreenSaverStateBackup = state;
+								setPreventScreenSaverState(1);
+							}
+						}
+					);
+				}
+				
+				//-------------------------------------------------------------
+				// Get the initial state of preventScreenSaver and change it 		
+				function setPreventScreenSaverState(state)
+				{				
+					if( typeof(state) === 'number' && (state === 0 || state === 1 ) )
+					{
+						pillowRun(	
+							"nativeBridge.setIntLipcProperty('com.lab126.powerd','preventScreenSaver',"
+							+state
+							+");"
+						); 
+					}
+				}
+				
+				//-------------------------------------------------------------
+				// Close the application
+				function exitApplication()
+				{
+					// Close the application
+					if( sessionSettings.powerButtonClose )
+						pillowRun("nativeBridge.setLipcProperty('com.lab126.appmgrd', 'stop', '"+appName+"');");
+				}				
+				
+				//-------------------------------------------------------------
+				// Register power button callback
+				function registerPowerButtonCallback()
+				{			
+					// Register Callback and watch for power button
+					pillowHelper.RegisterStatusBarEventCallback(appName, 
+						function(value) 
+						{
+							if( value.eventName && value.eventName === 'yoshibutton')
+								exitApplication();
+						}
+					);
+					
+					// Request powerbutton event
+					pillowHelper.RequestStatusBarEvent(
+						appName, 
+						'com.lab126.system.event', 
+						'yoshibutton'
+					);
+				}			
+						
+				//=============================================================
+				// Event handlers
+				//=============================================================
+
+				//-------------------------------------------------------------
+				// Open application
+				function openApp(state)
+				{
+					registerPowerButtonCallback();
+					
+					if( sessionSettings.enablePreventScreenSaver )
+						requestPreventScreenSaverState();
+					
+					// Enable networking if desired
+					if( sessionSettings.enableWireless )
+						kindle.net.setWirelessState('on');
+					
+					// Load url 
+					kindle.chrome.createContentWindow(sessionSettings.url);
+					
+					// Set window title
+					kindle.chrome.setTitleBar('', sessionSettings.title);
+					
+					// Remove statusBar if desired
+					if( sessionSettings.hideStatusbar )
+						pillowRun("nativeBridge.hideMe();");				
+				}
+
+				//-------------------------------------------------------------
+				// restore status bar on close
+				function closeApp() 
+				{ 
+					if( preventScreenSaverStateBackup !== null )
+						setPreventScreenSaverState(preventScreenSaverStateBackup);
+				
+					pillowHelper.UnRegisterStatusBarEventCallback(appName);
+					pillowRun("nativeBridge.showMe();"); 
+				}
+
+				//=============================================================
+				// Registration of event handlers
+				//=============================================================
+
+				b.applicationManager.addEventListener('go', openApp);
+				b.applicationManager.addEventListener('unload', closeApp);
+				b.applicationManager.addEventListener('pause', closeApp);
+			});
+
+		</script>
+	</head>
+	
+	<body>
+	</body>
+
+</html>

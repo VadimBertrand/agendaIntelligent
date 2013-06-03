@@ -1,0 +1,11 @@
+Mon Jun  3 10:53:41 EEST 2013
+kindle starts
+
+Mon Jun  3 10:54:18 EEST 2013
+FrontLight(Intensity) = 254
+
+turn off the screen
+FrontLight(Intensity) = 0
+
+Mon Jun  3 10:54:18 EEST 2013
+Kindle awakes

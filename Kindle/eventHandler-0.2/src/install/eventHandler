@@ -1,0 +1,29 @@
+#!/bin/sh
+# eventHandler 0.2 by dos
+# http://dosowisko.net/
+# GPLv3+
+
+mkdir -p /mnt/us/scripts/startup /mnt/us/scripts/suspend /mnt/us/scripts/resume
+
+execute() {
+  echo $1
+  for file in /mnt/us/scripts/$1/*; do
+    if [[ -f "$file" ]]; then
+      echo "... $file"
+      $file &
+    fi
+  done
+}
+
+sleep 5
+
+execute startup
+
+lipc-wait-event -m com.lab126.powerd goingToScreenSaver,outOfScreenSaver | while read event; do
+  case "$event" in
+    goingToScreenSaver*)
+      execute suspend;;
+    outOfScreenSaver*)
+      execute resume;
+ esac
+done;
