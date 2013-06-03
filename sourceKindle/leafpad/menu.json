@@ -1,5 +1,0 @@
-{
-	"items": [
-		{"name": "Leafpad", "priority": 1, "action": "bin/leafpad.sh"}
-	]
-}

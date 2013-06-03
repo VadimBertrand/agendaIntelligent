@@ -1,7 +1,0 @@
-#!/bin/sh
-
-rm -f /mnt/us/scripts/logs.txt
-rm -f /mnt/us/logs.txt
-
-date >> /mnt/us/scripts/logs.txt
-echo kindle starts >> /mnt/us/scripts/logs.txt
