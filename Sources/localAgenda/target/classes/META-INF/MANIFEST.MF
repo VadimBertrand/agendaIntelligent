@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: agendaIntelligent.localAgenda
+Built-By: vadimbertrand
+Build-Jdk: 1.7.0_13
+Bundle-Version: 1.0.0
+Tool: Bnd-0.0.357
+Bundle-Name: Local Agenda
+Bnd-LastModified: 1370380016481
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: localAgenda
+Import-Package: agendaIntelligent.localAgenda
+
