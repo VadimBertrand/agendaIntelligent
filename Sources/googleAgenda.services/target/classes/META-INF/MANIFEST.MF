@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: agendaIntelligent.googleAgenda.services
+Built-By: vadimbertrand
+Build-Jdk: 1.7.0_13
+Bundle-Version: 1.0.0
+Tool: Bnd-0.0.357
+Bundle-Name: Google Agenda Services
+Bnd-LastModified: 1370441874554
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: googleAgenda.services
+Import-Package: agendaIntelligent.googleAgenda.services
+

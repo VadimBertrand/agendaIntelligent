@@ -7,9 +7,13 @@
     <name>Agenda Intelligent Project</name>
     
     <modules>
-        <module>googleAgenda</module>
-    	<module>googleAgenda.Service1</module>
-        <module>localAgenda</module>
-    	<module>localAgenda.Client</module>
+        <module>googleAgenda.services</module>
+    	<module>googleAgenda.impl</module>
+        <module>localAgenda.services</module>
+    	<module>localAgenda.impl</module>
+    	<module>brainModule.services</module>
+    	<module>brainModule.impl</module>
+    	<module>webServer.services</module>
+    	<module>webServer.impl</module>
     </modules>
 </project>

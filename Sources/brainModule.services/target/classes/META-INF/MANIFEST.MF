@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: agendaIntelligent.brainModule.services
+Built-By: vadimbertrand
+Build-Jdk: 1.7.0_13
+Bundle-Version: 1.0.0
+Tool: Bnd-0.0.357
+Bundle-Name: Brain Module Services
+Bnd-LastModified: 1370441876887
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: brainModule.services
+Import-Package: agendaIntelligent.brainModule.services
+

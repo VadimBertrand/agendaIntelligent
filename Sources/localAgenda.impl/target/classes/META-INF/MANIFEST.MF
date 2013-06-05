@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Built-By: vadimbertrand
+Build-Jdk: 1.7.0_13
+Bundle-Version: 1.0.0
+Tool: Bnd-0.0.357
+Bundle-Name: Agenda Local Impl
+Bnd-LastModified: 1370441877566
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: localAgenda.impl
+Import-Package: agendaIntelligent.brainModule.services,agendaIntellige
+ nt.googleAgenda.services,agendaIntelligent.localAgenda.services
+
