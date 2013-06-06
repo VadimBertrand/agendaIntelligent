@@ -1,3 +1,5 @@
+AgendaIntelligent/.git/*
+AgendaIntelligent/.gitignore
 .DS_Store
 *.*~
 composants/*/target/*
