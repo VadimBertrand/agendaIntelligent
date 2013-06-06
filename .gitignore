@@ -1,3 +1,5 @@
-workspaceAgendaIntelligent/*
 .DS_Store
 *.*~
+composants/*/target/*
+felix/felix-cache/*
+*.swp

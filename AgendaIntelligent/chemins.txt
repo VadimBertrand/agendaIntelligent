@@ -1,0 +1,8 @@
+start file:../composants/googleAgenda.services/target/googleAgenda.services-1.0.0.jar
+start file:../composants/localAgenda.services/target/localAgenda.services-1.0.0.jar
+start file:../composants/brainModule.services/target/brainModule.services-1.0.0.jar
+start file:../composants/webServer.services/target/webServer.services-1.0.0.jar
+start file:../composants/googleAgenda.impl/target/googleAgenda.impl-1.0.0.jar
+start file:../composants/brainModule.impl/target/brainModule.impl-1.0.0.jar
+start file:../composants/localAgenda.impl/target/localAgenda.impl-1.0.0.jar
+start file:../composants/webServer.impl/target/webServer.impl-1.0.0.jar
