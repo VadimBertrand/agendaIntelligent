@@ -17,14 +17,15 @@
             <artifactId>googleAgenda.services</artifactId>
             <version>1.0.0</version>
         </dependency>
-	<dependency>
-	    <groupId>org.mnode.ical4j</groupId>
-	    <artifactId>ical4j</artifactId>
-	    <version>2.0-beta1-SNAPSHOT</version>
-	</dependency>
+		<dependency>
+			<groupId>org.mnode.ical4j</groupId>
+			<artifactId>ical4j</artifactId>
+			<version>2.0-beta1-SNAPSHOT</version>
+		</dependency>
     </dependencies>
 	 
 	<repositories>
+		<!--useful repository for ical4j-->
 		<repository>
 			<id>ical4j-repository</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
@@ -32,7 +33,8 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-</repositories>
+	</repositories>
+
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

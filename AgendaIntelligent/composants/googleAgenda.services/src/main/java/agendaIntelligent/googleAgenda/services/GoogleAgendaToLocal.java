@@ -1,5 +1,7 @@
 package agendaIntelligent.googleAgenda.services;
+
 import java.io.IOException;
+import net.fortuna.ical4j.model.*; 
 
 /**
  * Google Agenda Interface
@@ -15,7 +17,15 @@ public interface GoogleAgendaToLocal {
      * @return the hello message
      */
     String accountUser();
-    String returnMonth(int day,int month, int year);
-    String httpGet(String urlStr) throws IOException;
+    
+    /**
+     * Returns a calendar in ical format associated to a specified url
+     * @param 
+     * @return ical4j.calendar 
+     */
+    public net.fortuna.ical4j.model.Calendar getGoogleAgenda();
+    
+    
+//    String httpGet(String urlStr) throws IOException;
 }
 
