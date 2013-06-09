@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 5.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+	<title>Creat your own task !</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="title" content="Creer un evenement"/>
+		<script>
+			function load() {
+				document.getElementById('startDay30').style.display = 'none';
+				document.getElementById('startDay28').style.display = 'none';
+				document.getElementById('startDay29').style.display = 'none';
+				document.getElementById('startNotAllDay').style.display = 'none';
+				document.getElementById('endNotAllDay').style.display = 'none';
+			}
+			function startCheck() {
+				var monthJs = document.getElementById('startMonth').value;
+				if(monthJs == '2') {
+					document.getElementById('startDay31').style.display = 'none';
+					document.getElementById('startDay30').style.display = 'none';
+					if(document.getElementById('startYear').value == "2016") {
+						document.getElementById('startDay29').style.display = "";
+						document.getElementById('startDay28').style.display = 'none';
+					} else {	
+						document.getElementById('startDay28').style.display = "";
+						document.getElementById('startDay29').style.display = 'none';
+					}
+				} else if(monthJs == '4' || monthJs == '6' || monthJs == '9' || monthJs == '11') {
+					document.getElementById('startDay31').style.display = 'none';	
+					document.getElementById('startDay28').style.display = 'none';
+					document.getElementById('startDay29').style.display = 'none';
+					document.getElementById('startDay30').style.display = "";
+				} else {	
+					document.getElementById('startDay31').style.display = "";
+					document.getElementById('startDay30').style.display = 'none';
+					document.getElementById('startDay28').style.display = 'none';
+					document.getElementById('startDay29').style.display = 'none';
+				}
+			}
+			function allDayCheck() {
+				if(document.getElementById('yesAllDay').checked) {
+					document.getElementById('startNotAllDay').style.display = 'none';
+					document.getElementById('endNotAllDay').style.display = 'none';
+				} else {
+					document.getElementById('startNotAllDay').style.display = "";
+					document.getElementById('endNotAllDay').style.display = "";
+					document.getElementById('endDay30').style.display = 'none';
+					document.getElementById('endDay28').style.display = 'none';
+					document.getElementById('endDay29').style.display = 'none';
+				}
+			}
+			function endCheck() {
+				var monthJs = document.getElementById('endMonth').value;
+				if(monthJs == '2') {
+					document.getElementById('endDay31').style.display = 'none';
+					document.getElementById('endDay30').style.display = 'none';
+					if(document.getElementById('endYear').value == "2016") {
+						document.getElementById('endDay29').style.display = "";
+						document.getElementById('endDay28').style.display = 'none';
+					} else {	
+						document.getElementById('endDay28').style.display = "";
+						document.getElementById('endDay29').style.display = 'none';
+					}
+				} else if(monthJs == '4' || monthJs == '6' || monthJs == '9' || monthJs == '11') {
+					document.getElementById('endDay31').style.display = 'none';	
+					document.getElementById('endDay28').style.display = 'none';
+					document.getElementById('endDay29').style.display = 'none';
+					document.getElementById('endDay30').style.display = "";
+				} else {	
+					document.getElementById('endDay31').style.display = "";
+					document.getElementById('endDay30').style.display = 'none';
+					document.getElementById('endDay28').style.display = 'none';
+					document.getElementById('endDay29').style.display = 'none';
+				}
+			}
+			function compDate() {
+				var reg = new RegExp("^[-_(),;:.\"\'?! a-zA-Z0-9]+$","g");
+				var eventName = document.getElementById('eventName').value;
+				if(!reg.test(eventName)) {
+					alert("Veuillez indiquer un nom correct.")
+                		return false;
+        			}
+				var startYear = document.getElementById('startYear').value;
+				var startMonth = document.getElementById('startMonth').value
+				var startDay = document.getElementById('startDay31').value;
+				if(startMonth == "2") {
+					if(startYear == "2016") {
+						startDay = document.getElementById('startDay29').value;
+					} else {
+						startDay = document.getElementById('startDay28').value;
+					}
+				} else if(startMonth == '4' || startMonth == '6' || startMonth == '9' || startMonth == '11') {
+					startDay = document.getElementById('startDay30').value;
+				}
+				startMonth = parseInt(startMonth, 10);
+				startMonth = startMonth - 1;
+				var startDate = new Date();
+				startDate.setFullYear(startYear);
+				startDate.setMonth(startMonth);
+				startDate.setDate(startDay);
+				startDate.setSeconds(0);
+				startDate.setMilliseconds(0);
+				var currentDate = new Date();
+				if(document.getElementById('yesAllDay').checked) {
+					startDate.setHours(0);
+					startDate.setMinutes(0);
+					if(startDate<currentDate) {
+						alert("La date de debut de l evenement est deja passee.")
+                			return false;
+					}		
+				} else {
+					var startHour = parseInt(document.getElementById('startHour').value, 10) - 1;
+					var startMin = parseInt(document.getElementById('startMin').value, 10) - 1;
+					var endYear = document.getElementById('endYear').value;
+					var endMonth = document.getElementById('endMonth').value
+					var endDay = document.getElementById('endDay31').value;
+					var endHour = parseInt(document.getElementById('endHour').value, 10) - 1;
+					var endMin = parseInt(document.getElementById('endMin').value, 10) - 1;
+					if(endMonth == "2") {
+						if(endYear == "2016") {
+							endDay = document.getElementById('endDay29').value;
+						} else {
+							endDay = document.getElementById('endDay28').value;
+						}
+					} else if(endMonth == '4' || endMonth == '6' || endMonth == '9' || endMonth == '11') {
+						endDay = document.getElementById('endDay30').value;
+					}
+					endMonth = parseInt(endMonth, 10);
+					endMonth = endMonth - 1;
+					startDate.setHours(startHour);
+					startDate.setMinutes(startMin);
+					if(startDate<=currentDate) {
+						alert("La date de debut de l evenement est deja passee.")
+                			return false;
+					} else {
+						var endDate = new Date();
+						endDate.setFullYear(endYear);
+						endDate.setMonth(endMonth);
+						endDate.setDate(endDay);
+						endDate.setHours(endHour);
+						endDate.setMinutes(endMin);
+						endDate.setSeconds(0);
+						endDate.setMilliseconds(0);
+						if(endDate<=startDate) {
+							alert("La date de fin de l evenement est anterieur a la date de debut.")
+                				return false;
+						}
+					}
+				}
+				return true;
+			}
+		</script>
+	</head>
+
+	<body onload="load();">
+		<form method="post" onsubmit="return compDate();" action="./create">
+			<p>
+				<h2>Nom de l'evenement :</h2>
+				<input type="text" id="eventName" name="eventName">
+			</p>
+			<p>
+				<h2>Evenement d'une journee entiere ?</h2>
+				<input type="radio" name="allDay" value="yesAllDay" onchange="allDayCheck()" id="yesAllDay" checked>Oui</input>
+				<input type="radio" name="allDay" value="notAllDay" onchange="allDayCheck()">Non</input>
+			</p>
+			<br/>
+			<p>
+				<h2>Date de debut</h2>
+				Annee : 
+				<select id="startYear" name="startYear" onblur="startCheck();">
+					<option value="2013">2013</option>
+					<option value="2014">2014</option>
+					<option value="2015">2015</option>
+					<option value="2016">2016</option>
+					<option value="2017">2017</option>  
+				</select>
+				&nbsp &nbsp &nbsp &nbsp Mois :
+				<select id="startMonth" name="startMonth" onblur="startCheck();">
+					<option value="1">Janvier</option> 
+					<option value="2">Fevrier</option>
+					<option value="3">Mars</option>
+					<option value="4">Avril</option>
+					<option value="5">Mai</option>
+					<option value="6">Juin</option>
+					<option value="7">Juillet</option>
+					<option value="8">Aout</option>
+					<option value="9">Septembre</option>
+					<option value="10">Octobre</option>
+					<option value="7">Novembre</option>
+					<option value="7">Decembre</option>
+				</select>
+				&nbsp &nbsp &nbsp &nbsp Jour :
+				<select id="startDay31" name="startDay31">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				<select id="startDay30" name="startDay30">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+				</select>
+				<select id="startDay28" name="startDay28">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+				</select>
+				<select id="startDay29" name="startDay29">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+				</select>
+			
+				<span id="startNotAllDay">
+					&nbsp &nbsp &nbsp &nbsp Horaire :
+					<select id="startHour" name="startHour">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+					</select>
+					 : 
+					<select id="startMin" name="startMin">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45">45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						<option value="51">51</option>
+						<option value="52">52</option>
+						<option value="53">53</option>
+						<option value="54">54</option>
+						<option value="55">55</option>
+						<option value="56">56</option>
+						<option value="57">57</option>
+						<option value="58">58</option>
+						<option value="59">59</option>
+						<option value="60">60</option>
+					</select>
+				</span>
+			</p>
+			<br/>
+			<span id="endNotAllDay">
+				<p>
+					<h2>Date de fin</h2>
+					Annee : 
+					<select id="endYear" name="endYear" onblur="endCheck();">
+						<option value="2013">2013</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2016">2016</option>
+						<option value="2017">2017</option>  
+					</select>
+					&nbsp &nbsp &nbsp &nbsp Mois :
+					<select id="endMonth" name="endMonth" onblur="endCheck();">
+						<option value="1">January</option> 
+						<option value="2">February</option>
+						<option value="3">March</option>
+						<option value="4">April</option>
+						<option value="5">May</option>
+						<option value="6">June</option>
+						<option value="7">July</option>
+						<option value="8">August</option>
+						<option value="9">September</option>
+						<option value="10">October</option>
+						<option value="7">November</option>
+						<option value="7">December</option>
+					</select>
+					&nbsp &nbsp &nbsp &nbsp Jour :
+					<select id="endDay31" name="endDay31">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+					</select>
+					<select id="endDay30" name="endDay30">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+					</select>
+					<select id="endDay28" name="endDay28">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+					</select>
+					<select id="endDay29" name="endDay29">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+					</select>
+					&nbsp &nbsp &nbsp &nbsp Horaire :
+					<select id="endHour" name="endHour">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+					</select>
+					 : 
+					<select id="endMin" name="endMin">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45">45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						<option value="51">51</option>
+						<option value="52">52</option>
+						<option value="53">53</option>
+						<option value="54">54</option>
+						<option value="55">55</option>
+						<option value="56">56</option>
+						<option value="57">57</option>
+						<option value="58">58</option>
+						<option value="59">59</option>
+						<option value="60">60</option>
+					</select>
+				</p>
+				<br/>
+			</span>
+			<br/>
+			<input type="submit" value="Creer votre evenement !"/>
+		</form>
+	</body>
+</html>
