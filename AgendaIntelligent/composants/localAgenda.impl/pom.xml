@@ -27,6 +27,11 @@
             <artifactId>localAgenda.services</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <!--<dependency>
+		    <groupId>agendaIntelligent</groupId>
+		    <artifactId>webServer.services</artifactId>
+		    <version>1.0.0</version>
+        </dependency> -->
 		<dependency>
 		    <groupId>org.mnode.ical4j</groupId>
 		    <artifactId>ical4j</artifactId>

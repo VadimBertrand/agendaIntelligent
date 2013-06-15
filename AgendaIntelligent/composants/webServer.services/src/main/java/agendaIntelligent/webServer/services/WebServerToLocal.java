@@ -7,5 +7,10 @@ package agendaIntelligent.webServer.services;
  */
 
 public interface WebServerToLocal {
-
+	/*
+	* return the delay between two updates
+    * @param void
+    * @return the delay
+    */
+//	public int getDelay();
 }

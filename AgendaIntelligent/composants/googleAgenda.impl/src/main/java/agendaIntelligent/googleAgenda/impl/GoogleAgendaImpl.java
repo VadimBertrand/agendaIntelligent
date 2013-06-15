@@ -20,68 +20,65 @@ import java.net.*;
 @Instantiate
 public class GoogleAgendaImpl implements GoogleAgendaToLocal {
 	
-	private java.net.URL urlAgenda = null;
+	private String user1;
+	private String user2;
 	
+	private java.net.URL urlAgenda1 = null;
+	private java.net.URL urlAgenda2 = null;
+	//private Users user;
 	
-	/** 
-	* initialize the url of the google agenda
+		/** 
+	* initialize the url of the google agendas
 	*/
-	public void setUrlAgenda() {
+	public void setUrlAgenda(String nameUser, String url) {
 		try {
-			urlAgenda = new java.net.URL("https://www.google.com/calendar/ical/vadim.bertrand%40gmail.com/" + 					"private-601dc676388413da20ea7b702d5716fa/basic.ics");
+			if(this.urlAgenda1 == null){
+				this.user1 = nameUser;
+				if (url.equals("")) {
+					urlAgenda1 = null;
+				} else {
+					this.urlAgenda1 = new java.net.URL(url);
+				}
+			} else {
+				this.user2= nameUser;
+				if (url.equals("")) {
+					urlAgenda2 = null;
+				} else {
+					this.urlAgenda2 = new java.net.URL(url);
+				}
+
+				//urlAgenda1 = new java.net.URL("https://www.google.com/calendar/ical/projetfablab1%40gmail.com/private-2a002af9a99aba54ca9f63d4a8cd4604/basic.ics");
+				//urlAgenda2 = new java.net.URL("https://www.google.com/calendar/ical/projetfablab2%40gmail.com/private-5861a3fece00ffed1a2e4398d673116b/basic.ics");
+			}
 		} catch(Exception e) {
-			System.out.println("Erreur au passage a l'URL");
+			e.printStackTrace();
 		}
 	}
-	
-    /**
-     * Returns a message like : "Hello $user_name"
-     * @param name and password of the google account
-     * @return the hello message
-     * @see googleAgenda.services.GoogleAgendaToLocal#accountUser()
-     */
-    public String accountUser() {
-        return "google agenda ";
-    }
 
     
      /**
      * Returns a calendar in ical format associated to a specified url
-     * @param 
+     * @param String  representing the name of googleAgenda we want to get
      * @return ical4j.calendar 
-     * @see googleAgenda.services.GoogleAgendaToLocal#getGoogleAgenda()
      */
-	public net.fortuna.ical4j.model.Calendar getGoogleAgenda() {
-		this.setUrlAgenda();
-		try {
-			return net.fortuna.ical4j.util.Calendars.load(urlAgenda);
-		} catch (Exception e) {
-			System.out.println("Erreur a la recup de l'agenda");
+	public net.fortuna.ical4j.model.Calendar getGoogleAgenda(String name) {
+	//	this.setUrlAgenda();
+		if(name=="google1"){
+			try {
+				return net.fortuna.ical4j.util.Calendars.load(urlAgenda1);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if (name=="google2"){
+			try {
+				return net.fortuna.ical4j.util.Calendars.load(urlAgenda2);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}
-
-//	public String httpGet(String urlStr) throws IOException {
-//	  	URL url = new URL(urlStr);
-//	  	HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-//  		if (conn.getResponseCode() != 200) {
-//    			throw new IOException(conn.getResponseMessage());
-//  		}
-
-//	  	// Buffer the result into a string
-//	  	BufferedReader rd = new BufferedReader(
-//	      	new InputStreamReader(conn.getInputStream()));
-//	  	StringBuilder sb = new StringBuilder();
-//	  	String line;
-//	  	while ((line = rd.readLine()) != null) {
-//	  		sb.append(line);
-//	  	}
-//	  	rd.close();
-
-//	  	conn.disconnect();
-//	  	return sb.toString();
-//	}
 
 }
 

@@ -10,22 +10,16 @@ import net.fortuna.ical4j.model.*;
  */
 
 public interface GoogleAgendaToLocal {
-
-    /**
-     * Returns a message like : "Hello $user_name"
-     * @param name and password of the google account
-     * @return the hello message
-     */
-    String accountUser();
     
     /**
      * Returns a calendar in ical format associated to a specified url
-     * @param 
+     * @param String url of the googleAgenda we want to get
      * @return ical4j.calendar 
      */
-    public net.fortuna.ical4j.model.Calendar getGoogleAgenda();
+    public net.fortuna.ical4j.model.Calendar getGoogleAgenda(String name);
+    
+    public void setUrlAgenda(String nameUser, String url);
     
     
-//    String httpGet(String urlStr) throws IOException;
 }
 

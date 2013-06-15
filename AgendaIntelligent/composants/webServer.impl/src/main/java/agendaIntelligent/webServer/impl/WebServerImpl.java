@@ -1,10 +1,12 @@
 package agendaIntelligent.webServer.impl;
 
 import agendaIntelligent.localAgenda.services.LocalAgendaToWeb;
+import agendaIntelligent.brainModule.services.BrainModuleToWeb;
+import agendaIntelligent.webServer.impl.RemoveWrite;
+import agendaIntelligent.webServer.impl.ComponentsUtil;
 
 import java.lang.*;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.io.*;
 
 import org.apache.felix.ipojo.annotations.*;
@@ -20,12 +22,13 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.service.http.HttpService;
 
 import net.fortuna.ical4j.model.*;
-import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.util.*;
-import net.fortuna.ical4j.model.component.*;
-import net.fortuna.ical4j.model.property.*;
 
 import org.apache.commons.io.IOUtils;
+
+import java.text.SimpleDateFormat;
+import agendaIntelligent.webServer.impl.RemoveWrite;
+import agendaIntelligent.webServer.impl.ConfigUsers;
 
 /**
  * Component implementing the Local Agenda services
@@ -36,34 +39,50 @@ import org.apache.commons.io.IOUtils;
 @Instantiate
 public class WebServerImpl implements Runnable {
 
+	/*	ATTRIBUTES	*/
 	boolean active = false;
 	Timer t;
-	int delay = 5000;
+	int delay = 10*1000;
 	BundleContext context;
-	net.fortuna.ical4j.model.Calendar calendar;
-	
+	// Agenda commun
+	private net.fortuna.ical4j.model.Calendar calendarCommun;
+	// Agendas Google
+	private net.fortuna.ical4j.model.Calendar calendarGoogle1;
+	private net.fortuna.ical4j.model.Calendar calendarGoogle2;
 	@Requires
 	private LocalAgendaToWeb localAgendaToWeb;
+	@Requires
+	private BrainModuleToWeb brainModuleToWeb;
 
-
-	// permet de recuperer le context du bundle
+	
+	/*	METHODES		*/
+	/*public int getDelay() {
+		return this.delay;
+	}*/	
+	
+	
+	// Permet de recuperer le context du bundle
 	public WebServerImpl(BundleContext bc) {
 		this.context = bc;
 	}
-   
 
-	public void run() {
-		// demarrage du serveur et activation de la servlet
-		Activator serveurWeb = new Activator();
+   
+	public void run() {System.out.println("ENTREE DANS RUN");
+		// Demarrage du serveur et activation de la servlet
 		try {
+			Activator serveurWeb = new Activator();
 			serveurWeb.start(this.context);
 		} catch(Exception e) {
-			System.out.println("exception caught");
+			System.out.println("Exception Thread principal Run()");
 		}
 		if(active) {
-			// definition de la periode du timer
-			t = new Timer();
-			t.schedule(new MiseAJour(),0,delay);
+			// Definition de la periode du timer
+			try {
+				t = new Timer();
+				t.schedule(new MiseAJour(),0,delay);
+			} catch(Exception e) {
+				System.out.println("Exception Thread principal Timer");
+			}
 		}
 	}
 	
@@ -78,70 +97,100 @@ public class WebServerImpl implements Runnable {
 	public void stopping() {
 		active = false;
 	}
+
 	
+	
+		
+		
 	// récupération du localAgenda 
 	public void recupAgenda() {
+		ArrayList<String[]> userList = null;
 		try {
-			this.calendar = this.localAgendaToWeb.sendAgenda();
-		} 
-		catch (Exception e) {
-		    System.out.println("ERREUR de récupération de l'agenda");
+			userList = this.localAgendaToWeb.getUsersList();
+			if (userList==null){
+				return;
+			}
+			else if (userList.size()==1 && !(userList.get(0)[2].equals("")) ){
+				this.calendarGoogle1 = this.localAgendaToWeb.sendAgenda("google1");
+			}
+			else if (userList.size()>=2) {
+				if (!(userList.get(0)[2].equals(""))) {
+					this.calendarGoogle1 = this.localAgendaToWeb.sendAgenda("google1");
+				}
+				if (!(userList.get(1)[2].equals(""))) {
+					this.calendarGoogle2 = this.localAgendaToWeb.sendAgenda("google2");
+				}
+			}
+			//this.calendarGoogle1 = this.localAgendaToWeb.sendAgenda("google1");
+			//this.calendarGoogle2 = this.localAgendaToWeb.sendAgenda("google2");
+			this.calendarCommun = this.localAgendaToWeb.sendAgenda("commun");
+		
+			/* ========== A COMMENTER POUR RECUPERER TOUS LES AGENDAS  ========== */
+			/*this.calendarGoogle1 = null;
+			this.calendarGoogle2 = null;
+			this.calendarCommun = null;	*/
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+	    		System.out.println("ERREUR de récupération de l'agenda");
 		}
-		System.out.println("======= Liste de composants =======");
-		net.fortuna.ical4j.model.ComponentList comps = this.calendar.getComponents();
-		//System.out.println(comp.toString());
-
-		System.out.println("======= Liste de properties =======");
-		// TODO : iterateur sur comp
-		net.fortuna.ical4j.model.Component comp = (net.fortuna.ical4j.model.Component) comps.iterator().next();
-		net.fortuna.ical4j.model.PropertyList props = comp.getProperties();
-		System.out.println(props.toString());
-		System.out.println("======= Properties interessante =======");
-		net.fortuna.ical4j.model.Property propName = props.getProperty(net.fortuna.ical4j.model.Property.SUMMARY);
-		net.fortuna.ical4j.model.Property propStart = props.getProperty(net.fortuna.ical4j.model.Property.DTSTART);
-		net.fortuna.ical4j.model.Property propEnd = props.getProperty(net.fortuna.ical4j.model.Property.DTEND);
-		System.out.println(propName.toString());
-		System.out.println(propStart.toString());
-		System.out.println(propEnd.toString());
-		//System.out.println(this.calendar);
 	}
 	
 	
 	/**
-	 * classe definissant l'action executee par le timer
+	 * Classe definissant l'action executee par le timer
 	 */
 	class MiseAJour extends TimerTask {
 		public void run() {
 			WebServerImpl.this.recupAgenda();
+			localAgendaToWeb.checkAlarm();
 		}
 	}
+	 
+	 
 
 ////////////////////////////////////////////////////////////////////
 /////////////////////////// SERVLETS ///////////////////////////////
 ////////////////////////////////////////////////////////////////////
 
-	
+	 
 	/**
 	 * classe definissant la servlet d'affichage de l'agenda
 	 */
 	public class DisplayAgendaServlet extends HttpServlet {
-	
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException 
-		{
-			resp.getWriter().write(WebServerImpl.this.calendar.toString()); 
-		} 
+			throws ServletException, IOException {
+			
+			ArrayList<String[]> namesGoogle = WebServerImpl.this.localAgendaToWeb.getUsersList();
+			
+			Integer hourFilter = WebServerImpl.this.brainModuleToWeb.getHourFilter();
+			long dateFilter = WebServerImpl.this.brainModuleToWeb.getDateFilter();
+			
+			String myString = PrintWrite.printWriteHtml(
+				WebServerImpl.this.brainModuleToWeb.filterAgenda(WebServerImpl.this.calendarGoogle1, dateFilter), 
+				WebServerImpl.this.brainModuleToWeb.filterAgenda(WebServerImpl.this.calendarGoogle2, dateFilter), 
+				WebServerImpl.this.brainModuleToWeb.filterAgenda(WebServerImpl.this.calendarCommun, dateFilter),
+				hourFilter, dateFilter, namesGoogle
+			);
+
+			resp.getWriter().write(myString); 
+		}
 	}
 	
 	/**
-	 * classe definissant la servlet d'interface
+	 * classe definissant la servlet d'ajout de tâches à l'agenda commun
 	 */
 	public class InterfaceServlet extends HttpServlet {
 	
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
+		
+			if (req.getParameter("uid") != null) {
+				String uid = req.getParameter("uid");
+				localAgendaToWeb.removeComponent(new net.fortuna.ical4j.model.property.Uid(uid));
+			}	
 
 			InputStream myStream = new FileInputStream("../WebContent/WEB-INF/create.html");
 			String myString = IOUtils.toString(myStream);
@@ -153,105 +202,142 @@ public class WebServerImpl implements Runnable {
 			throws ServletException, IOException {
 			
 			// Recuperation des champs du formulaire :
-			
 			String eventName = getValeurChamp(request, "eventName");
+			ArrayList<String> attendees = new ArrayList();
 
-			int startYear = Integer.parseInt(getValeurChamp(request, "startYear"));
-			int startMonth = Integer.parseInt(getValeurChamp(request, "startMonth"));
-			int startDay = 0;
-			int startHour = 0;
-			int startMin = 0;
-
-			int endYear = 0;
-			int endMonth = 0;
-			int endDay = 0;
-			int endHour = 0;
-			int endMin = 0;
+			// remplissage de la liste des attendees
+			for (int i = 1; i <= 4; i++) {
+				if (getValeurChamp(request, "attendee" + String.valueOf(i)) != null) {
+					attendees.add(getValeurChamp(request, "attendee" + String.valueOf(i)));
+				}
+			}
 			
-			if (startMonth == 2) {
-				if (startYear == 2016) {
-					startDay = Integer.parseInt(getValeurChamp(request, "startDay29"));
-				} else {
-					startDay = Integer.parseInt(getValeurChamp(request, "startDay28"));
-				}
-			} else if (startMonth == 4 || startMonth == 6 || startMonth == 9 || startMonth == 11) {
-				startDay = Integer.parseInt(getValeurChamp(request, "startDay30"));
-			} else {
-				startDay = Integer.parseInt(getValeurChamp(request, "startDay31"));
-			}
+			// verification de la présence de tout les attendees dans la liste des utilisateurs de l'appli
+			Iterator<String> it = attendees.iterator();
+			ArrayList<String[]> listeUsers = WebServerImpl.this.localAgendaToWeb.getUsersList();
 
-			if (getValeurChamp(request, "allDay").equals("notAllDay")) {
+			if (listeUsers != null) {
 
-				startHour = Integer.parseInt(getValeurChamp(request, "startHour"));
-				startMin = Integer.parseInt(getValeurChamp(request, "startMin"));			
+				while (it.hasNext()) {
+					boolean match = false;
+					String currentName = it.next();
+					Iterator<String[]> it1 = listeUsers.iterator();
 
-				endYear = Integer.parseInt(getValeurChamp(request, "endYear"));
-				endMonth = Integer.parseInt(getValeurChamp(request, "endMonth"));
-				endDay = 0;
-				endHour = Integer.parseInt(getValeurChamp(request, "endHour"));
-				endMin = Integer.parseInt(getValeurChamp(request, "endMin"));
-
-				if (endMonth == 2) {
-					if (endYear == 2016) {
-						endDay = Integer.parseInt(getValeurChamp(request, "endDay29"));
-					} else {
-						endDay = Integer.parseInt(getValeurChamp(request, "endDay28"));
+					while (it1.hasNext()) {
+						if (it1.next()[0].equals(currentName)) {
+							match = true;
+						}
 					}
-				} else if (endMonth == 4 || endMonth == 6 || endMonth == 9 || endMonth == 11) {
-					endDay = Integer.parseInt(getValeurChamp(request, "endDay30"));
-				} else {
-					endDay = Integer.parseInt(getValeurChamp(request, "endDay31"));
+
+					if (!match) {
+						System.out.println("UN DES ATTENDEES N'EST PAS INSCRIT");
+
+						String myString = "Erreur : one of the attendees is not registered in the application.";
+						response.getWriter().write(myString); 
+						return;
+					}
 				}
-			} else { 
-				
-				startHour = 0;
-				startMin = 0;			
 
-				endYear = startYear;
-				endMonth = startMonth;
-				endDay = startDay;
-				endHour = 24;
-				endMin = 59;
+			} else {
+				String myString = "Please Sign in to add tasks";
+				response.getWriter().write(myString); 
+				return;
 			}
+			
 
-			// Creation des Calendar :
-
-			// Creation de la TimeZone
-			//TimeZoneRegistry registry = TimeZoneRegistryFactory.getInstance().createRegistry();
-			java.util.TimeZone timezone = java.util.TimeZone.getTimeZone("Europe/Paris");
-			// net.fortuna.ical4j.model.VTimeZone tz = timezone.getVTimeZone();
-
-			// Date de début de l'evenement
-			java.util.Calendar startDate = java.util.Calendar.getInstance();
-			startDate.setTimeZone(timezone);
-			startDate.set(startYear, startMonth, startDay, startHour, startMin);
-
-			// Date de fin de l'evenement
-			java.util.Calendar endDate = java.util.Calendar.getInstance();
-			endDate.setTimeZone(timezone);
-			endDate.set(endYear, endMonth, endDay, endHour, endMin);
-
+			CreateTask create = new CreateTask();
+			java.util.Calendar tablCal[] = create.createCalendars(request);
+			
 			// Ajout de l'evenement à l'agenda local :
-			localAgendaToWeb.createComponent(startDate, endDate, eventName);
+			localAgendaToWeb.createComponent(tablCal[0], tablCal[1], eventName, attendees, -1);
 
 			// reaffichage du formulaire d'ajout de tache :
 			doGet(request, response);
 		 }
-     
-		/*
-  	 	 * Methode utilitaire qui retourne null si un champ est vide, et son contenu
-   	 	 * sinon.
-   	 	 */
-  		 private String getValeurChamp(HttpServletRequest request, String nomChamp) {
-    		 String valeur = request.getParameter( nomChamp );
-    	   	 if ( valeur == null || valeur.trim().length() == 0 ) {
-       	   	  	return null;
-       		 } else {
-           		return valeur.trim();
-	       	 }
-		 }
-
 	}
+
+
+	/**
+	 * classe definissant la servlet de suppression/modification
+	 * d'evenements dans l'agenda commun
+	 */
+	public class RemoveAgendaServlet extends HttpServlet {
+	
+		@Override
+		protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+
+			RemoveWrite rem = new RemoveWrite();
+			String myString = rem.fileToString(WebServerImpl.this.calendarCommun);
+			
+			resp.getWriter().write(myString); 
+		}
+
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+			String uid = getValeurChamp(request, "eventUid");
+			localAgendaToWeb.removeComponent(new net.fortuna.ical4j.model.property.Uid(uid));
+
+			try {
+		    	WebServerImpl.this.calendarCommun = WebServerImpl.this.localAgendaToWeb.sendAgenda("commun");
+			} catch (Exception e) {
+				System.out.println("Erreur de récupération de l'agenda après suppression de tâche");
+			}
+
+			doGet(request, response);	
+		}
+	}
+
+	/*
+	 * Servlet de config de l'appli
+	 */
+	public class ConfigServlet extends HttpServlet {
+	
+		@Override
+		protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+			
+			ConfigUsers conf = new ConfigUsers();
+			String myString = conf.fileToString(WebServerImpl.this.localAgendaToWeb.getUsersList());
+			resp.getWriter().write(myString); 
+		}
+
+		protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+
+			String newUser = getValeurChamp(req, "newUser");
+			String newEmail = getValeurChamp(req, "newEmail");
+			String newUrl = null;
+
+			if (getValeurChamp(req, "newUrl") != null) {
+				newUrl = getValeurChamp(req,"newUrl");
+			} else {
+				newUrl = "";
+			}
+				
+			String infoUser[] = {newUser, newEmail, newUrl};
+
+			WebServerImpl.this.localAgendaToWeb.addUser(infoUser);
+
+			this.doGet(req, resp);
+		}
+	}
+
+
+	/*
+   	 * Methode utilitaire qui retourne null si un champ est vide, et son contenu
+   	 * sinon.
+   	 */
+  	 private String getValeurChamp(HttpServletRequest request, String nomChamp) {
+   		 String valeur = request.getParameter( nomChamp );
+   	   	 if ( valeur == null || valeur.trim().length() == 0 ) {
+   	   	  	return null;
+   		 } else {
+       		return valeur.trim();
+       	 }
+	}
+
 
 	/**
 	 * Enregistre la servlet
@@ -266,7 +352,11 @@ public class WebServerImpl implements Runnable {
   				System.out.println("start servlet interface");
    				service.registerServlet("/create", new InterfaceServlet(), null, null);
   				System.out.println("start servlet affichage");
-      			service.registerServlet("/chaine", new DisplayAgendaServlet(), null, null);
+      			service.registerServlet("/print", new DisplayAgendaServlet(), null, null);
+  				System.out.println("start servlet suppression");
+      			service.registerServlet("/remove", new RemoveAgendaServlet(), null, null);
+  				System.out.println("start servlet config");
+      			service.registerServlet("/config", new ConfigServlet(), null, null);
 			}
   		}
   		
