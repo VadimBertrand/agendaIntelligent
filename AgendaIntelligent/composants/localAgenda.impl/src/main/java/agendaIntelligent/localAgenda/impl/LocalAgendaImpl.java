@@ -181,12 +181,12 @@ public class LocalAgendaImpl implements LocalAgendaToWeb {
 				if (attendee.equals(this.userList.get(0).userName)) {
 					if (!(this.userList.get(0).url.equals(""))) {
 						googleAgenda = this.googleAgendaToLocal.getGoogleAgenda("google1");
-						brainModuleToLocal.checkGoogleAgenda(googleAgenda, event, this.getUsersList().get(0)[1]);
+						brainModuleToLocal.checkGoogleAgenda(googleAgenda, event, this.getUsersList().get(0));
 					}
 				} else if (this.userList.size() >= 2) {
 					if (attendee.equals(this.userList.get(1).userName) && !(this.userList.get(1).url.equals(""))) {
 						googleAgenda = this.googleAgendaToLocal.getGoogleAgenda("google2");
-						brainModuleToLocal.checkGoogleAgenda(googleAgenda, event, this.getUsersList().get(1)[1]);
+						brainModuleToLocal.checkGoogleAgenda(googleAgenda, event, this.getUsersList().get(1));
 					}
 				}
 			}
@@ -245,8 +245,9 @@ public class LocalAgendaImpl implements LocalAgendaToWeb {
 				while(it.hasNext()) {	
 					net.fortuna.ical4j.model.Component comp = (net.fortuna.ical4j.model.Component) it.next();
 					if (comp.getName().equals("VEVENT")) {
+						System.out.println("EVENT");
 						net.fortuna.ical4j.model.component.VEvent currentEvent = (net.fortuna.ical4j.model.component.VEvent) comp;
-						brainModuleToLocal.checkGoogleAgenda(calendarGoogle1, currentEvent, this.getUsersList().get(0)[1]);
+						brainModuleToLocal.checkGoogleAgenda(calendarGoogle1, currentEvent, this.getUsersList().get(0));
 					}
 				}
 			}
@@ -263,7 +264,7 @@ public class LocalAgendaImpl implements LocalAgendaToWeb {
 					net.fortuna.ical4j.model.Component comp = (net.fortuna.ical4j.model.Component) it.next();
 					if (comp.getName().equals("VEVENT")) {
 						net.fortuna.ical4j.model.component.VEvent currentEvent = (net.fortuna.ical4j.model.component.VEvent) comp;
-						brainModuleToLocal.checkGoogleAgenda(calendarGoogle2, currentEvent, this.getUsersList().get(1)[1]);
+						brainModuleToLocal.checkGoogleAgenda(calendarGoogle2, currentEvent, this.getUsersList().get(1));
 					}
 				}
 			}

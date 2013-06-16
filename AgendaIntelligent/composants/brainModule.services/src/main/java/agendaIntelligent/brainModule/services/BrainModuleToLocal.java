@@ -31,7 +31,7 @@ public interface BrainModuleToLocal {
     * check if there is no conflict between the google agendas and the event we want to add
     * @param net.fortuna.ical4j.model.Calendar calendarCommun, net.fortuna.ical4j.model.component.VEvent eventAdded
     */
-    public void checkGoogleAgenda(net.fortuna.ical4j.model.Calendar calendarGoogle, net.fortuna.ical4j.model.component.VEvent eventAdded, String userMail);
+    public void checkGoogleAgenda(net.fortuna.ical4j.model.Calendar calendarGoogle, net.fortuna.ical4j.model.component.VEvent eventAdded, String[] user);
 
 
     /**

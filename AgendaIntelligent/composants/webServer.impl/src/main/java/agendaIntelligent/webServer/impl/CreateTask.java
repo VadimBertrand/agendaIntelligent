@@ -100,7 +100,7 @@ public class CreateTask {
 	 * Return the time in ms between the alarme and the evenement
 	 */
 	public long alarmToMs(HttpServletRequest request) {
-		if (getValeurChamp(request, "alarmeOui").equals("oui")) {
+		if (getValeurChamp(request, "alarmeOui")!=null && getValeurChamp(request, "alarmeOui").equals("oui")) {
 			int alarmeJour = Integer.parseInt(getValeurChamp(request, "alarmeJour"));
 			int alarmeHeure = Integer.parseInt(getValeurChamp(request, "alarmeHeure")); 
 			int alarmeMin = Integer.parseInt(getValeurChamp(request, "alarmeMin"));

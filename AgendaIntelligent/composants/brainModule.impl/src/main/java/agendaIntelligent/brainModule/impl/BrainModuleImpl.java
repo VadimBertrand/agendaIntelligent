@@ -241,8 +241,8 @@ public class BrainModuleImpl implements BrainModuleToLocal, BrainModuleToWeb {
 		Boolean stop = false;
 		
 		listAttendeesAdded = eventAdded.getProperties(net.fortuna.ical4j.model.Property.ATTENDEE);
-		java.util.Date dateStartAdded =eventAdded.getStartDate().getDate();
-		java.util.Date dateEndAdded =eventAdded.getEndDate().getDate();
+		java.util.Date dateStartAdded = eventAdded.getStartDate().getDate();
+		java.util.Date dateEndAdded = eventAdded.getEndDate().getDate();
 		
 		net.fortuna.ical4j.model.ComponentList comps;
 		comps = calendarCommun.getComponents();
@@ -275,8 +275,9 @@ public class BrainModuleImpl implements BrainModuleToLocal, BrainModuleToWeb {
 										}
 										i++;
 									}
+									eventAdded.getSummary().setValue("Conflit ! " + eventAdded.getSummary().getValue());
 									DateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
-					   			        String timeStart = dateFormat.format(new java.util.Date(eventAdded.getStartDate().getDate().getTime()));
+					   			    String timeStart = dateFormat.format(new java.util.Date(eventAdded.getStartDate().getDate().getTime()));
 									SendMail mail = new SendMail();
 									mail.envoiConflit(email, eventAdded.getProperty(net.fortuna.ical4j.model.Property.SUMMARY).getValue(), timeStart);   
 								}
@@ -292,7 +293,7 @@ public class BrainModuleImpl implements BrainModuleToLocal, BrainModuleToWeb {
 	 * Check conflicts between common and google
 	 */
     public void checkGoogleAgenda(net.fortuna.ical4j.model.Calendar calendarGoogle,
-    			net.fortuna.ical4j.model.component.VEvent eventAdded, String userMail) 	
+    			net.fortuna.ical4j.model.component.VEvent eventAdded, String[] user) 	
     	{
 		
 		java.util.Date dateStartAdded = eventAdded.getStartDate().getDate();
@@ -300,12 +301,26 @@ public class BrainModuleImpl implements BrainModuleToLocal, BrainModuleToWeb {
 		
 		net.fortuna.ical4j.model.ComponentList comps = null;
 		comps = calendarGoogle.getComponents();
-
+		
+		net.fortuna.ical4j.model.PropertyList listAttendeesAdded = null;
+		listAttendeesAdded = eventAdded.getProperties(net.fortuna.ical4j.model.Property.ATTENDEE);
+		
+		String userName = user[0];
+		String userMail = user[1];
+		
+		Boolean stop = false;
+		
+		System.out.println("1 : " + userName);
+	
 		if (comps != null) {
+			System.out.println("2 : " + userName);
 			Iterator<net.fortuna.ical4j.model.Component> it = comps.iterator();
 			while(it.hasNext()) {
+				System.out.println("3 : " + userName);
+				stop = false;
 				net.fortuna.ical4j.model.Component comp = (net.fortuna.ical4j.model.Component) it.next();
 				if (comp.getName().equals("VEVENT")){
+					System.out.println("4 : " + userName);
 					net.fortuna.ical4j.model.component.VEvent currentEvent = (net.fortuna.ical4j.model.component.VEvent) comp;
 					java.util.Date dateStartEvent = (java.util.Date)currentEvent.getStartDate().getDate();
 					java.util.Date dateEndEvent = (java.util.Date)currentEvent.getEndDate().getDate();
@@ -314,10 +329,23 @@ public class BrainModuleImpl implements BrainModuleToLocal, BrainModuleToWeb {
 						(dateEndEvent.after(dateStartAdded) && dateEndEvent.before(dateEndAdded)) || 
 						(dateStartEvent.before(dateStartAdded) && dateEndEvent.after(dateEndAdded))) && 
 						!(eventAdded.getSummary().getValue().length()>7 && eventAdded.getSummary().getValue().substring(0,7).equals("Conflit"))) 
-					{
-						eventAdded.getSummary().setValue("Conflit ! " + eventAdded.getSummary().getValue());
-						SendMail mail = new SendMail();
-						mail.envoiConflit(userMail, eventAdded.getProperty(net.fortuna.ical4j.model.Property.SUMMARY).getValue(), eventAdded.getStartDate().getValue());   
+					{	
+						System.out.println("5 : " + userName);
+						Iterator<net.fortuna.ical4j.model.Property> it2 = listAttendeesAdded.iterator();
+						while (it2.hasNext() && !stop) {
+							System.out.println("6 : " +userName);
+							String addedUser = it2.next().getParameter("CN").toString().substring(3);
+							System.out.println(" + " + addedUser);
+							if (addedUser.equals(userName)) {
+								System.out.println("IF");
+								eventAdded.getSummary().setValue("Conflit ! " + eventAdded.getSummary().getValue());
+								DateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
+						   		String timeStart = dateFormat.format(new java.util.Date(eventAdded.getStartDate().getDate().getTime()));
+								SendMail mail = new SendMail();
+								mail.envoiConflit(userMail, eventAdded.getProperty(net.fortuna.ical4j.model.Property.SUMMARY).getValue(), timeStart);   
+								stop = true;
+							}
+						}			
 					}
 				}
 			}
