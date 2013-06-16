@@ -4,10 +4,12 @@ import agendaIntelligent.localAgenda.services.LocalAgendaToWeb;
 import agendaIntelligent.brainModule.services.BrainModuleToWeb;
 import agendaIntelligent.webServer.impl.RemoveWrite;
 import agendaIntelligent.webServer.impl.ComponentsUtil;
+import agendaIntelligent.webServer.impl.ConfigUsers;
 
 import java.lang.*;
 import java.util.*;
 import java.io.*;
+import java.text.SimpleDateFormat;
 
 import org.apache.felix.ipojo.annotations.*;
 
@@ -26,10 +28,6 @@ import net.fortuna.ical4j.util.*;
 
 import org.apache.commons.io.IOUtils;
 
-import java.text.SimpleDateFormat;
-import agendaIntelligent.webServer.impl.RemoveWrite;
-import agendaIntelligent.webServer.impl.ConfigUsers;
-
 /**
  * Component implementing the Local Agenda services
  * @author <a href="http://fablab.ensimag.fr/index.php/Service_Agenda_pour_Habitat_Intelligent">Agenda Intelligent Project Team</a>
@@ -40,6 +38,7 @@ import agendaIntelligent.webServer.impl.ConfigUsers;
 public class WebServerImpl implements Runnable {
 
 	/*	ATTRIBUTES	*/
+	
 	boolean active = false;
 	Timer t;
 	int delay = 10*1000;
@@ -56,18 +55,18 @@ public class WebServerImpl implements Runnable {
 
 	
 	/*	METHODES		*/
-	/*public int getDelay() {
-		return this.delay;
-	}*/	
 	
-	
-	// Permet de recuperer le context du bundle
+	/**
+	 * Return the bundle context
+	 */
 	public WebServerImpl(BundleContext bc) {
 		this.context = bc;
 	}
 
-   
-	public void run() {System.out.println("ENTREE DANS RUN");
+	/**
+	 * Run 
+	 */   
+	public void run() {
 		// Demarrage du serveur et activation de la servlet
 		try {
 			Activator serveurWeb = new Activator();
@@ -81,11 +80,15 @@ public class WebServerImpl implements Runnable {
 				t = new Timer();
 				t.schedule(new MiseAJour(),0,delay);
 			} catch(Exception e) {
+				e.printStackTrace();
 				System.out.println("Exception Thread principal Timer");
 			}
 		}
 	}
 	
+	/**
+	 * If start
+	 */
 	@Validate
 	public void starting() {
         	Thread thread = new Thread(this);
@@ -93,27 +96,26 @@ public class WebServerImpl implements Runnable {
         	thread.start();
 	}
 	
+	/**
+	 * If stop
+	 */
 	@Invalidate
 	public void stopping() {
 		active = false;
 	}
 
-	
-	
-		
-		
-	// récupération du localAgenda 
+	/**
+	 * Set all the calendar
+	 */
 	public void recupAgenda() {
 		ArrayList<String[]> userList = null;
 		try {
 			userList = this.localAgendaToWeb.getUsersList();
 			if (userList==null){
 				return;
-			}
-			else if (userList.size()==1 && !(userList.get(0)[2].equals("")) ){
+			} else if (userList.size()==1 && !(userList.get(0)[2].equals("")) ){
 				this.calendarGoogle1 = this.localAgendaToWeb.sendAgenda("google1");
-			}
-			else if (userList.size()>=2) {
+			} else if (userList.size()>=2) {
 				if (!(userList.get(0)[2].equals(""))) {
 					this.calendarGoogle1 = this.localAgendaToWeb.sendAgenda("google1");
 				}
@@ -121,15 +123,7 @@ public class WebServerImpl implements Runnable {
 					this.calendarGoogle2 = this.localAgendaToWeb.sendAgenda("google2");
 				}
 			}
-			//this.calendarGoogle1 = this.localAgendaToWeb.sendAgenda("google1");
-			//this.calendarGoogle2 = this.localAgendaToWeb.sendAgenda("google2");
 			this.calendarCommun = this.localAgendaToWeb.sendAgenda("commun");
-		
-			/* ========== A COMMENTER POUR RECUPERER TOUS LES AGENDAS  ========== */
-			/*this.calendarGoogle1 = null;
-			this.calendarGoogle2 = null;
-			this.calendarCommun = null;	*/
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 	    		System.out.println("ERREUR de récupération de l'agenda");
@@ -138,7 +132,7 @@ public class WebServerImpl implements Runnable {
 	
 	
 	/**
-	 * Classe definissant l'action executee par le timer
+	 * Class for the timer
 	 */
 	class MiseAJour extends TimerTask {
 		public void run() {
@@ -147,7 +141,6 @@ public class WebServerImpl implements Runnable {
 		}
 	}
 	 
-	 
 
 ////////////////////////////////////////////////////////////////////
 /////////////////////////// SERVLETS ///////////////////////////////
@@ -155,13 +148,15 @@ public class WebServerImpl implements Runnable {
 
 	 
 	/**
-	 * classe definissant la servlet d'affichage de l'agenda
+	 * The print servlet
 	 */
 	public class DisplayAgendaServlet extends HttpServlet {
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-			
+		
+			WebServerImpl.this.recupAgenda();			
+
 			ArrayList<String[]> namesGoogle = WebServerImpl.this.localAgendaToWeb.getUsersList();
 			
 			Integer hourFilter = WebServerImpl.this.brainModuleToWeb.getHourFilter();
@@ -179,7 +174,7 @@ public class WebServerImpl implements Runnable {
 	}
 	
 	/**
-	 * classe definissant la servlet d'ajout de tâches à l'agenda commun
+	 * The add event servlet
 	 */
 	public class InterfaceServlet extends HttpServlet {
 	
@@ -201,18 +196,18 @@ public class WebServerImpl implements Runnable {
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 			
-			// Recuperation des champs du formulaire :
+			// Get the form values
 			String eventName = getValeurChamp(request, "eventName");
 			ArrayList<String> attendees = new ArrayList();
 
-			// remplissage de la liste des attendees
+			// Fill the attendees list
 			for (int i = 1; i <= 4; i++) {
 				if (getValeurChamp(request, "attendee" + String.valueOf(i)) != null) {
 					attendees.add(getValeurChamp(request, "attendee" + String.valueOf(i)));
 				}
 			}
 			
-			// verification de la présence de tout les attendees dans la liste des utilisateurs de l'appli
+			// All the attendees are in the app ?
 			Iterator<String> it = attendees.iterator();
 			ArrayList<String[]> listeUsers = WebServerImpl.this.localAgendaToWeb.getUsersList();
 
@@ -230,8 +225,6 @@ public class WebServerImpl implements Runnable {
 					}
 
 					if (!match) {
-						System.out.println("UN DES ATTENDEES N'EST PAS INSCRIT");
-
 						String myString = "Erreur : one of the attendees is not registered in the application.";
 						response.getWriter().write(myString); 
 						return;
@@ -244,22 +237,20 @@ public class WebServerImpl implements Runnable {
 				return;
 			}
 			
-
 			CreateTask create = new CreateTask();
 			java.util.Calendar tablCal[] = create.createCalendars(request);
+			long durAlarme = create.alarmToMs(request);
 			
-			// Ajout de l'evenement à l'agenda local :
-			localAgendaToWeb.createComponent(tablCal[0], tablCal[1], eventName, attendees, -1);
+			// Add the event to the common agenda
+			localAgendaToWeb.createComponent(tablCal[0], tablCal[1], eventName, attendees, durAlarme);
 
-			// reaffichage du formulaire d'ajout de tache :
 			doGet(request, response);
 		 }
 	}
 
 
 	/**
-	 * classe definissant la servlet de suppression/modification
-	 * d'evenements dans l'agenda commun
+	 * add / remove the event servlet
 	 */
 	public class RemoveAgendaServlet extends HttpServlet {
 	
@@ -282,6 +273,7 @@ public class WebServerImpl implements Runnable {
 			try {
 		    	WebServerImpl.this.calendarCommun = WebServerImpl.this.localAgendaToWeb.sendAgenda("commun");
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.out.println("Erreur de récupération de l'agenda après suppression de tâche");
 			}
 
@@ -290,7 +282,7 @@ public class WebServerImpl implements Runnable {
 	}
 
 	/*
-	 * Servlet de config de l'appli
+	 * app config servlet
 	 */
 	public class ConfigServlet extends HttpServlet {
 	
@@ -326,8 +318,7 @@ public class WebServerImpl implements Runnable {
 
 
 	/*
-   	 * Methode utilitaire qui retourne null si un champ est vide, et son contenu
-   	 * sinon.
+   	 * Return the content of a champ
    	 */
   	 private String getValeurChamp(HttpServletRequest request, String nomChamp) {
    		 String valeur = request.getParameter( nomChamp );
@@ -340,8 +331,7 @@ public class WebServerImpl implements Runnable {
 
 
 	/**
-	 * Enregistre la servlet
-	 * Definie son chemin d'acces
+	 * Save and register servlets
 	 */
 	public class Activator implements BundleActivator {
 	
@@ -349,13 +339,9 @@ public class WebServerImpl implements Runnable {
     		ServiceReference sRef = context.getServiceReference(HttpService.class.getName());
     		if (sRef != null) {
       			HttpService service = (HttpService) context.getService(sRef);
-  				System.out.println("start servlet interface");
    				service.registerServlet("/create", new InterfaceServlet(), null, null);
-  				System.out.println("start servlet affichage");
       			service.registerServlet("/print", new DisplayAgendaServlet(), null, null);
-  				System.out.println("start servlet suppression");
       			service.registerServlet("/remove", new RemoveAgendaServlet(), null, null);
-  				System.out.println("start servlet config");
       			service.registerServlet("/config", new ConfigServlet(), null, null);
 			}
   		}

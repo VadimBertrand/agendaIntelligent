@@ -1,6 +1,7 @@
 package agendaIntelligent.webServer.impl;
 
 import javax.servlet.http.HttpServletRequest;
+
 import java.util.*;
 
 /**
@@ -13,7 +14,9 @@ public class CreateTask {
 		super();
 	}
 
-
+	/**
+	 * create a calendar
+	 */
 	public java.util.Calendar[] createCalendars(HttpServletRequest request) {
 
 		java.util.Calendar tablCal[] = new java.util.Calendar[2];
@@ -72,19 +75,17 @@ public class CreateTask {
 			endDay = startDay;
 		}
 
-		// Creation des Calendar :
+		// creation of the calendars
 
-		// Creation de la TimeZone
-		//TimeZoneRegistry registry = TimeZoneRegistryFactory.getInstance().createRegistry();
+		// creation of the TimeZone
 		java.util.TimeZone timezone = java.util.TimeZone.getTimeZone("Europe/Paris");
-		// net.fortuna.ical4j.model.VTimeZone tz = timezone.getVTimeZone();
 
-		// Date de début de l'evenement
+		// start date of the event
 		java.util.Calendar startDate = java.util.Calendar.getInstance();
 		startDate.setTimeZone(timezone);
 		startDate.set(startYear, startMonth, startDay, startHour, startMin, startSecond);
 
-		// Date de fin de l'evenement
+		// end date of the event
 		java.util.Calendar endDate = java.util.Calendar.getInstance();
 		endDate.setTimeZone(timezone);
 		endDate.set(endYear, endMonth, endDay, endHour, endMin, endSecond);
@@ -95,12 +96,27 @@ public class CreateTask {
 		return tablCal;
 	}
 
+	/**
+	 * Return the time in ms between the alarme and the evenement
+	 */
+	public long alarmToMs(HttpServletRequest request) {
+		if (getValeurChamp(request, "alarmeOui").equals("oui")) {
+			int alarmeJour = Integer.parseInt(getValeurChamp(request, "alarmeJour"));
+			int alarmeHeure = Integer.parseInt(getValeurChamp(request, "alarmeHeure")); 
+			int alarmeMin = Integer.parseInt(getValeurChamp(request, "alarmeMin"));
 
-	 /*
-	  * Methode utilitaire qui retourne null si un champ est vide, et son contenu
-	  * sinon.
-	  */
-	 private String getValeurChamp(HttpServletRequest request, String nomChamp) {
+			long durAlarme = (alarmeMin*60 + alarmeHeure*3600 + alarmeJour*3600*23) * 1000;
+			return durAlarme;
+		} else {
+			return -1;
+		}
+	}
+	 	
+	/**
+	 * Return the content of a champ
+	 * Or null
+	 */
+	private String getValeurChamp(HttpServletRequest request, String nomChamp) {
 	 	String valeur = request.getParameter( nomChamp );
 	 	if ( valeur == null || valeur.trim().length() == 0 ) {
 			 return null;

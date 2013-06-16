@@ -1,8 +1,6 @@
 package agendaIntelligent.webServer.impl;
 
 import java.util.*;
-//import java.io.*;
-//import org.apache.commons.io.IOUtils;
 
 /**
  * Classe pour la Gestion de l'ajout d'utilisateurs

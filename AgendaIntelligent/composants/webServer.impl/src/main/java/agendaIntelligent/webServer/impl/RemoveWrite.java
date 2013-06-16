@@ -17,7 +17,9 @@ public class RemoveWrite {
 		super();
 	}
 
-
+	/**
+   	 * Create the list of event
+   	 */
 	public String fileToString(net.fortuna.ical4j.model.Calendar cal) {
 		String chaine = null;
 		String startDate = null;
@@ -126,10 +128,10 @@ public class RemoveWrite {
 	}
 
 
-	/*
-   	 * Methode retourne la valeur d'une propriété sans sa description
+	/**
+   	 * Return of the value of a property
    	 */
-  	 private String getValue(String chaine) {
+  	private String getValue(String chaine) {
 	 	if (chaine.indexOf(":") != -1) {
 	 		chaine = chaine.substring(chaine.lastIndexOf(":") + 1);
 		}
@@ -139,6 +141,9 @@ public class RemoveWrite {
 		return chaine;
 	}
 
+	/**
+   	 * Return of the value of a property
+   	 */
 	private String echap(String chaine) {
 		if (chaine.indexOf("%") != -1) {
 			chaine = chaine.substring(0, chaine.indexOf("%") + 1) + "25" + chaine.substring(chaine.indexOf("%") + 1);

@@ -25,11 +25,10 @@ public class GoogleAgendaImpl implements GoogleAgendaToLocal {
 	
 	private java.net.URL urlAgenda1 = null;
 	private java.net.URL urlAgenda2 = null;
-	//private Users user;
 	
-		/** 
-	* initialize the url of the google agendas
-	*/
+	/** 
+	 * initialize the url of the google agendas
+	 */
 	public void setUrlAgenda(String nameUser, String url) {
 		try {
 			if(this.urlAgenda1 == null){
@@ -46,9 +45,6 @@ public class GoogleAgendaImpl implements GoogleAgendaToLocal {
 				} else {
 					this.urlAgenda2 = new java.net.URL(url);
 				}
-
-				//urlAgenda1 = new java.net.URL("https://www.google.com/calendar/ical/projetfablab1%40gmail.com/private-2a002af9a99aba54ca9f63d4a8cd4604/basic.ics");
-				//urlAgenda2 = new java.net.URL("https://www.google.com/calendar/ical/projetfablab2%40gmail.com/private-5861a3fece00ffed1a2e4398d673116b/basic.ics");
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -62,7 +58,6 @@ public class GoogleAgendaImpl implements GoogleAgendaToLocal {
      * @return ical4j.calendar 
      */
 	public net.fortuna.ical4j.model.Calendar getGoogleAgenda(String name) {
-	//	this.setUrlAgenda();
 		if(name=="google1"){
 			try {
 				return net.fortuna.ical4j.util.Calendars.load(urlAgenda1);

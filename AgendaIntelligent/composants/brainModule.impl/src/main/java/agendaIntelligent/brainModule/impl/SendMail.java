@@ -28,7 +28,7 @@ public class SendMail {
      * @return void
      */
     public void envoi(String email, String objet, String corps) throws Exception {
-	//Adresse mail et mot de passe de l'emetteur
+		// Mail adress and password of the emetteur
 		final String address = "agendaintelligent@gmail.com";
 		final String password = "projetfablab";
 		
